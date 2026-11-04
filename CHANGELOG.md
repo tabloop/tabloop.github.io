@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.10.1 — 2026-11-04
+
+### Improved
+- **Logo:** the loop now fills more of the icon, so it reads better in the browser tab and on the home screen.
+
 ## 0.10.0 — 2026-11-04
 
 ### New
