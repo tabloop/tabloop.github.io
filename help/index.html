@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tabloop help: getting started, playing, looping and practice</title>
+  <meta name="description" content="How to use Tabloop: open feedpak songs, play along with the tab, slow down, loop sections, save loops and track your practice." />
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <style>
+    :root { --bg: #0f1115; --panel: #171a21; --line: #2a2f3a; --text: #e8eaf0; --dim: #9aa3b2; --accent: #ffb347; --accent2: #ff8a3d; --link: #7cc4ff; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    a { color: var(--link); }
+    .wrap { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
+    nav { position: sticky; top: 16px; align-self: start; font-size: 14px; }
+    nav a { display: block; color: var(--dim); text-decoration: none; padding: 4px 8px; border-left: 2px solid transparent; }
+    nav a:hover { color: var(--text); border-left-color: var(--accent2); }
+    nav .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--text); font-weight: 800; font-size: 20px; border: 0; padding: 0; }
+    nav .brand img { width: 40px; height: 40px; border-radius: 10px; }
+    .wordmark .inf { display: inline-block; font-size: 1.55em; line-height: 0; vertical-align: -0.12em; color: var(--accent2); font-weight: 700; }
+    h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; }
+    h2 { font-size: 24px; margin: 56px 0 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+    h3 { font-size: 18px; margin: 26px 0 6px; }
+    p, li { max-width: 72ch; }
+    .lead { font-size: 18px; color: var(--dim); }
+    .cta { display: inline-block; margin: 10px 10px 0 0; padding: 10px 18px; border-radius: 10px; background: var(--accent); color: #17130a; font-weight: 700; text-decoration: none; }
+    .cta.alt { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 600; }
+    figure { margin: 16px 0 22px; }
+    figure img, video { display: block; width: 100%; max-width: 960px; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); }
+    figure.narrow img { max-width: 390px; }
+    figcaption { color: var(--dim); font-size: 14px; margin-top: 6px; }
+    kbd { display: inline-block; min-width: 1.6em; padding: 0 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; background: var(--panel); font: 13px/1.6 ui-monospace, Menlo, monospace; text-align: center; }
+    table { border-collapse: collapse; margin: 10px 0; font-size: 15px; }
+    td, th { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; text-align: left; vertical-align: top; }
+    .tip { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent2); border-radius: 8px; padding: 10px 14px; max-width: 72ch; }
+    footer { color: var(--dim); font-size: 13px; margin-top: 60px; }
+    @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; gap: 16px; } nav { position: static; } nav .links { display: flex; flex-wrap: wrap; gap: 2px 4px; } nav a { border: 0; padding: 2px 6px; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Help topics">
+    <a class="brand" href="../"><img src="../logo.png" alt="" /><span class="wordmark" aria-label="Tabloop">tabl<span class="inf" aria-hidden="true">∞</span>p</span></a>
+    <div class="links">
+      <a href="#what">What is Tabloop?</a>
+      <a href="#demo">Demo video</a>
+      <a href="#open">Opening songs</a>
+      <a href="#library">Library &amp; playlists</a>
+      <a href="#play">Playing along</a>
+      <a href="#speed">Speed, pitch &amp; mixer</a>
+      <a href="#loop">Looping</a>
+      <a href="#saved">Saved loops</a>
+      <a href="#trainer">Speed trainer &amp; count-in</a>
+      <a href="#drums">Drums</a>
+      <a href="#practice">Practice tracking</a>
+      <a href="#settings">Settings, sync &amp; backup</a>
+      <a href="#phone">Phones &amp; tablets</a>
+      <a href="#keys">Keyboard shortcuts</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1 id="what">Tabloop help</h1>
+    <p class="lead">Tabloop is a free practice player for guitar, bass and drums. It shows the tab of a song while the recording plays, so you can follow along, slow down, loop the hard parts and see how your practice adds up.</p>
+    <p>It runs in your browser, with nothing to install. Songs you open stay on your device: nothing is uploaded, and there's no account.</p>
+    <a class="cta" href="../">Open Tabloop</a><a class="cta alt" href="#demo">Watch the 1-minute demo</a>
+    <figure><img src="img/playing.png" alt="Tabloop playing the demo song: the tab scrolls past a red playhead, with the section list on the left" width="1280" height="800" />
+      <figcaption>Playing the demo song “First Riff”. The tab scrolls past the red line in time with the music.</figcaption></figure>
+
+    <h2 id="demo">Demo video</h2>
+    <video controls muted playsinline preload="metadata" poster="img/demo-poster.png" width="960" height="600">
+      <source src="demo.mp4" type="video/mp4" />
+      Your browser can't play this video. <a href="demo.mp4">Download it</a>.
+    </video>
+    <p>The quickest way to try everything: open Tabloop and press <b>▶ Try the demo song</b>. It loads “First Riff”, a short original song made for this guide, with lead guitar, bass and drums.</p>
+    <figure><img src="img/welcome.png" alt="The welcome screen with Try the demo song, Open a song file, Library and Help buttons" width="1280" height="800" loading="lazy" />
+      <figcaption>The welcome screen, shown until you open a song.</figcaption></figure>
+
+    <h2 id="open">Opening songs</h2>
+    <p>Tabloop plays <b>feedpak</b> song packages: <code>.feedpak</code> files (and the older <code>.sloppak</code>), which hold the recording, the tab and the song's sections. A pack can be a single zipped file or an unpacked folder.</p>
+    <ul>
+      <li><b>Open file</b>: pick a <code>.feedpak</code> or <code>.sloppak</code> file.</li>
+      <li><b>Open folder</b> (computers only): pick an unpacked pack folder. In the folder picker the files inside look greyed out; select the folder itself.</li>
+      <li><b>Drag and drop</b> a file or folder onto the window.</li>
+      <li><b>🕘 Recent</b> reopens one of the last 5 songs you played.</li>
+    </ul>
+    <div class="tip">Songs aren't included with Tabloop; you bring your own feedpak files. The demo song is there so you can try things out.</div>
+
+    <h2 id="library">Library &amp; playlists</h2>
+    <p>If you keep your songs in one folder, use <b>📚 Library</b> → <b>Choose folder…</b>. Every pack in it, including subfolders, is listed with its cover, artist, length, parts and tuning; a 🥁 badge marks songs with drums. Search, sort, filter by tuning, and click a song to open it. <b>↻ Refresh</b> picks up new songs.</p>
+    <figure><img src="img/library.png" alt="The library with song cards showing covers, tuning badges and filter chips" width="1280" height="800" loading="lazy" />
+      <figcaption>The library. Chrome and Edge remember the folder; Safari and Firefox remember the list but ask for the folder again each visit.</figcaption></figure>
+    <p><b>🎵 Playlists</b>: make a playlist, add songs with <b>＋ Add songs</b> or the <b>＋ Playlist</b> button on any song, then press <b>▶ Play</b>. With <b>Auto-advance</b> on, the next song opens and plays when one ends.</p>
+
+    <h2 id="play">Playing along</h2>
+    <ul>
+      <li>Press <b>▶</b> (or <kbd>Space</kbd>) to play and pause. Drag the timeline, or click anywhere on the tab, to jump.</li>
+      <li><b>Tabs</b> above the tab area pick the part: Lead, Bass, Drums… Click a part's <b>+</b> (or shift-click its tab) to show it as an extra lane, side by side.</li>
+      <li><b>Scrolling</b> moves the tab past a fixed red line. <b>Page</b> shows the whole song like printed tab, with a cursor that follows the music.</li>
+      <li><b>Notation</b> adds a standard staff under the tab; <b>Rhythm</b> adds note lengths without the staff.</li>
+      <li><b>Song / Tab / Both</b> chooses what you hear: the recording, a synth playing the tab notes, or both.</li>
+      <li><b>Metronome</b> clicks along with the song's beat.</li>
+    </ul>
+    <figure><img src="img/tracks.png" alt="Lead and bass tab shown as two lanes" width="1280" height="800" loading="lazy" />
+      <figcaption>Lead and bass side by side. The song header shows each part's tuning.</figcaption></figure>
+    <figure><img src="img/page-view.png" alt="Page view with standard notation under the tab" width="1280" height="800" loading="lazy" />
+      <figcaption>Page view with notation. Scrolling the page yourself pauses the auto-follow for a few seconds.</figcaption></figure>
+
+    <h2 id="speed">Speed, pitch &amp; mixer</h2>
+    <ul>
+      <li><b>Speed</b> (25–150 %) slows the song down or speeds it up without changing the pitch.</li>
+      <li><b>Pitch</b> moves the song up or down in half-steps at the same speed. <i>Tab: move frets</i> changes the fret numbers to match; <i>Tab: retune strings</i> keeps the frets and renames the strings.</li>
+      <li><b>🎚 Mixer</b>: turn each part of the recording, the tab synth, the metronome and the drums up, down or off.</li>
+    </ul>
+    <figure><img src="img/speed-mixer.png" alt="Speed set to 75 percent with the mixer panel open" width="1280" height="800" loading="lazy" />
+      <figcaption>Speed at 75 % and the mixer: guitar, bass and drums each have their own channel in this song.</figcaption></figure>
+
+    <h2 id="loop">Looping</h2>
+    <ol>
+      <li>Click a section on the left (Intro, Verse, Chorus…) to loop it. Shift-click another section to loop a range of sections.</li>
+      <li>Fine-tune the start and end in the loop bar: by bar (⇤ ⇥), beat (‹ ›) or 0.05 s (− +), by typing a time, by dragging the blue handles on the timeline, or with ⌖ (or <kbd>[</kbd> / <kbd>]</kbd>) at the current position.</li>
+      <li><b>⏮ Restart</b> (or <kbd>R</kbd>) jumps back to the loop start. <kbd>L</kbd> turns the loop on and off; <b>✕ Clear</b> removes it.</li>
+    </ol>
+    <figure><img src="img/loop-section.png" alt="The chorus looped, highlighted on the timeline, with the loop bar below" width="1280" height="800" loading="lazy" />
+      <figcaption>Looping the chorus. The loop is shaded on the tab and the timeline.</figcaption></figure>
+
+    <h2 id="saved">Saved loops</h2>
+    <p>Press <b>💾 Save</b> in the loop bar to name the loop and keep it. The open song's saved loops are listed under the sections: click one to loop it again, ✎ to rename, ⌖ to set it to the current loop, ↑ ↓ to reorder.</p>
+    <p>Tick several loops and press <b>▶ Play in a row</b> to practise them one after the other (× N times each, optionally repeating). <b>🔁 Loops</b> in the header lists every song's saved loops.</p>
+    <figure><img src="img/saved-loops.png" alt="A saved loop named Chorus chords in the sidebar" width="1280" height="800" loading="lazy" />
+      <figcaption>A saved loop in the sidebar. The divider between sections and saved loops can be dragged; <b>Sections</b> and <b>Saved loops</b> at the top right show or hide them.</figcaption></figure>
+
+    <h2 id="trainer">Speed trainer &amp; count-in</h2>
+    <p><b>🏋 Speed trainer</b> (in the loop bar) makes each pass of the loop a little faster: set the start and end speed, the step, and how many passes per step. It stays at the end speed once it gets there.</p>
+    <figure><img src="img/speed-trainer.png" alt="The speed trainer bar: from 60 to 100 percent in steps of 10 every 2 loops" width="1280" height="240" loading="lazy" />
+      <figcaption>From 60 % to 100 %, 10 % faster every 2 loops.</figcaption></figure>
+    <p><b>Count-in</b> plays one bar of clicks before the song starts, with big numbers on screen, so you're ready on the first beat.</p>
+
+    <h2 id="drums">Drums</h2>
+    <p>Songs with a drum part show a <b>Drums</b> tab: a drum chart with one row per kit piece (× for cymbals, ● for drums), coloured like Rock Band / Guitar Hero lanes. It plays through a built-in drum kit on its own mixer channel.</p>
+    <figure><img src="img/drums.png" alt="The drum chart: ride, snare and kick rows" width="1280" height="800" loading="lazy" />
+      <figcaption>The demo song's drum chart in the chorus.</figcaption></figure>
+    <p><b>＋ Drums</b> adds a drum part to any song from a MIDI file, a Clone Hero <code>.chart</code> / <code>.sng</code> or a Rock Band package. Line it up with the recording using the sync bar, map the kit with <b>🥁 Kit mapping</b>, and <b>💾 Save pack</b> keeps the result inside the song.</p>
+
+    <h2 id="practice">Practice tracking</h2>
+    <p>Tabloop records your practice automatically while you play, and keeps it only in your browser. <b>📈 Practice</b> shows:</p>
+    <ul>
+      <li>your <b>streak</b> (days in a row with at least 1 minute of playing; the header shows 🔥 while it runs),</li>
+      <li>time today, this week and in total, and a calendar of practice per day,</li>
+      <li>each song's time, plays and full plays, and how often and how fast you played each section and loop.</li>
+    </ul>
+    <p>Tag songs <b>📖 Learning</b> or <b>⭐ Mastered</b> (next to the song title) to filter them and see your repertoire.</p>
+    <figure><img src="img/practice.png" alt="The practice dashboard with streak tiles, a calendar and the song list" width="1280" height="800" loading="lazy" />
+      <figcaption>The practice dashboard.</figcaption></figure>
+
+    <h2 id="settings">Settings, sync &amp; backup</h2>
+    <p><b>⚙ Settings</b> holds string and drum colours, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes and a link back here.</p>
+    <figure><img src="img/settings.png" alt="The settings dialog with string colours and drum colours" width="1280" height="800" loading="lazy" />
+      <figcaption>Settings.</figcaption></figure>
+    <h3>Keeping your data across computers</h3>
+    <ul>
+      <li><b>🔄 Sync folder</b> (Chrome or Edge on a computer): choose a folder that Google Drive, iCloud Drive, Dropbox or OneDrive syncs, then the same folder on your other computers. Settings, practice history, saved loops and playlists then stay in sync by themselves.</li>
+      <li><b>💾 Export / Import</b> moves everything to another browser as one file.</li>
+      <li><b>☁ Google Drive</b> backs up to a private app folder in your own Drive (web version).</li>
+    </ul>
+    <div class="tip">Your data belongs to the web address you use. <a href="https://tabloop.github.io/">tabloop.github.io</a> and the older bazarcad-ai.github.io address keep separate data; use one of the options above to move it.</div>
+
+    <h2 id="phone">Phones &amp; tablets</h2>
+    <p>Tabloop works on phones and tablets in the browser. On iPhone or iPad, open it in Safari and use Share → <b>Add to Home Screen</b> for an app icon. The header buttons scroll sideways when they don't fit.</p>
+    <figure class="narrow"><img src="img/phone.png" alt="Tabloop on a phone" width="780" height="1688" loading="lazy" />
+      <figcaption>The demo song on a phone.</figcaption></figure>
+
+    <h2 id="keys">Keyboard shortcuts</h2>
+    <table>
+      <tr><td><kbd>Space</kbd></td><td>Play / pause</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Back / forward 5 seconds</td></tr>
+      <tr><td><kbd>L</kbd></td><td>Loop on / off</td></tr>
+      <tr><td><kbd>[</kbd> <kbd>]</kbd></td><td>Set the loop start / end at the current position</td></tr>
+      <tr><td><kbd>R</kbd></td><td>Restart: back to the loop start and play</td></tr>
+    </table>
+
+    <h2 id="faq">Questions</h2>
+    <h3>Where do I get songs?</h3>
+    <p>Tabloop opens feedpak song packages, an open format; songs aren't included. Use packs you have the rights to, or make your own with feedpak tools.</p>
+    <h3>Does it work offline?</h3>
+    <p>Yes. Download <a href="https://github.com/tabloop/tabloop.github.io/raw/main/index.html"><code>index.html</code></a> and double-click it; it's a single file that works without a connection. Google Drive backup and the demo song download need the web version.</p>
+    <h3>Is my data private?</h3>
+    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts, which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>.</p>
+    <h3>What's new?</h3>
+    <p>See the <a href="../CHANGELOG.md">release notes</a>.</p>
+
+    <footer>Screenshots show “First Riff” by Tabloop Demo, an original song made for this guide. Tabloop is independent and not affiliated with or endorsed by the got-feedback project; it reads their open feedpak format.</footer>
+  </main>
+</div>
+</body>
+</html>

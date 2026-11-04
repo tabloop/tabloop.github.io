@@ -2,6 +2,13 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.11.0 — 2026-11-04
+
+### New
+- **Help & guide:** https://tabloop.github.io/help/ explains opening songs, playing, looping, saved loops, the speed trainer, drums, practice tracking and settings, with screenshots and a 1-minute demo video. Linked from ⚙ Settings and the welcome screen.
+- **Welcome screen:** until a song is open, a card offers **▶ Try the demo song**, Open a song file, the Library and Help.
+- **Demo song:** “First Riff”, a short original song with lead guitar, bass and drums on separate tracks, sections and a drum chart, to try every feature.
+
 ## 0.10.1 — 2026-11-04
 
 ### Improved
