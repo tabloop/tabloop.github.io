@@ -1,6 +1,14 @@
 # Release log
 
-All notable changes to Feedpak Player, newest first. Each version is published to https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
+All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
+
+## 0.10.0 — 2026-11-04
+
+### New
+- **New name: Tabloop** (shown as **tabl∞p**). Feedpak Player is now Tabloop; it still opens feedpak / sloppak song packages. Your settings, practice history, sync folder and Drive backup carry on as before.
+- **New logo:** an infinity loop drawn as tab strings, with a play-head dot.
+- **New address:** https://tabloop.github.io/. The old address keeps working; each address keeps its own browser data, so use the sync folder, Export / Import or a Drive backup to move yours across.
+- The downloaded file is now called `tabloop.html`.
 
 ## 0.9.1 — 2026-11-04
 
