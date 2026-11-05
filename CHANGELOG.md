@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.11.1 — 2026-11-04
+
+### Improved
+- **Which browser?** The welcome screen notes that Tabloop works best in Chrome or Edge on a computer (shown only in browsers where something is limited), with a link to a new *Which browser?* section in the help that says what's limited in Firefox, Safari, on iPhone / iPad and in the downloaded file.
+- **Credits open by default:** in ⚙ Settings, the credits and open-source licences at the bottom are now shown open; each licence text is still collapsed.
+
 ## 0.11.0 — 2026-11-04
 
 ### New
