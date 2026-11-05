@@ -2,6 +2,25 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.15.0 — 2026-11-05
+
+### New
+- **👂 Live:** see how you're playing while you play, without recording. Press **👂 Live** (next to ⏺ Rec) and play along: every note of the tab is judged as it passes — right when it's on time (±40 ms) and in tune (±15 ¢), else early, late, flat, sharp or missed — and shown as ghost notes on the tab. A box in the tab's corner counts this pass, e.g. **14/16**, with what went wrong and your run of right notes.
+- **Loop passes:** with a loop on, each pass is counted on its own, and the box shows the **last 5 passes** (*12/16 14/16 16/16…*) and your best. A pass you stop or skip out of isn't kept. Without a loop it counts from ▶ and over the last 30 seconds.
+- Uses the record bar's input and latency compensation (and the input's nudge), works at any speed, and alongside ⏺ Rec. Nothing is stored; the setting is remembered in this browser.
+- **Tuner in the live bar:** the live bar shows the input note, as the record bar does while ⏺ Rec is armed: the note, how many cents off, the frequency and the nearest open string.
+- **Edit the MIDI instruments:** once a MIDI file is loaded, ＋ Instrument becomes **⚙ Instruments**, and the Instrument sync bar has **⚙ Edit instruments…** (it was 🎹 Tracks). Both open the tracks list with your current choices: switch a track between tab and piano roll, guitar and bass, change its tuning, or set it to *Not used*. The tabs, the sound and the remembered settings follow right away; the sync offset stays.
+- **None / Suggested / Another file…** in the list: mark every track as not used (then pick the few you want), go back to the automatic choice, or load a different MIDI file.
+- **🎸 Tuner:** the input note and the level meter without recording. The **🎸 Tuner** button (toolbar, next to 🎚 Mixer) opens your input just to listen: the record bar shows the input, its level and the note you play (name, cents needle, frequency, nearest open string), while the song plays or is paused. Nothing is recorded or stored. Arming ⏺ Rec while it's on carries on with the same input (no second permission prompt); disarming keeps the tuner. With both off, the microphone is released. It starts off on every visit, so Tabloop never asks for the microphone on its own.
+
+### Improved
+- **Phones:** ⟲ Loop and ⏺ Rec fit on screen next to the seek bar (on narrow phones ⏺ Rec ran past the right edge, and tapping it scrolled the bottom bar sideways).
+- **MIDI file not in this browser:** when a song's instrument settings are here but the file isn't (settings synced from another computer, storage cleared), the tab shows **⚙ Instruments ⚠** and the dialog says so, lists what's remembered and asks for the file again; choosing it brings the parts back as they were.
+- **Saved copies:** in a pack saved with its instruments, loading the same MIDI file again marks the tracks already in the pack (*Already in this pack as “Guitar”*) and leaves them out, so they aren't added twice; the copy keeps its own choices and starts at the saved parts' offset.
+- A MIDI part stays on screen when another track is switched off or when it changes from tab to piano roll.
+- **Remove** now also forgets the song's instrument choices, so the song doesn't bring them back or ask for the file.
+- **Input note (tuner):** fixed width in the record and live bars, so ⏱ Calibrate, Only keep complete passes and the buttons after it no longer shift as the note changes or goes silent.
+
 ## 0.14.0 — 2026-11-05
 
 ### New
