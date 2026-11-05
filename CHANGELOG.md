@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.16.0 — 2026-11-05
+
+### New
+- **🎯 Markers under the tab:** a second way to see how you played, for 👂 Live and recorded takes. Instead of ghost notes on the strings, each note of the tab gets a small marker in a row under the tab: **🎯** when you nail it (on time and in tune), a **triangle pointing to what was off** — ▲ sharp, ▼ flat, ◀ early, ▶ late — **yellow** when it's a little off and **red** when it's clearly off (more than twice the ±40 ms / ±15 ¢ limits), and **✕** for a missed note. When a note is off in both pitch and timing, the worse one shows; hover a marker for the numbers.
+- Choose it in **⚙ Settings → Note feedback**, or switch with the new **👻 Ghost notes / 🎯 Markers** button in the live bar and the record bar. Ghost notes stay the default; the choice is remembered (and synced with your settings).
+
 ## 0.15.2 — 2026-11-05
 
 ### Improved
