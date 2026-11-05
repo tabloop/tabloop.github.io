@@ -2,6 +2,26 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.14.0 — 2026-11-05
+
+### New
+- **Input note (tuner):** while ⏺ Rec is armed, the record bar shows the note you're playing next to the level meter — the name with its octave (“A2”), how far off it is (“−12 ¢”) on a small −50…+50 ¢ needle, green within ±5 ¢, blue flat, orange sharp — plus the frequency and the nearest open string of the song's tuning (“A string”). “—” when the input is silent or not a clear note. It reads down to a bass's low E, against the song's reference pitch (A440, or e.g. A435 when the arrangement has a cent offset), so it agrees with the ghost notes. Handy to check the input works and to tune up before recording.
+- **Lyrics:** songs with lyrics show a **Lyrics** box in the toolbar, and under the tab the line being sung, each syllable lighting up in amber as it's sung, with the next line dimmed. It stays in time at any speed, in loops and after seeks. Click a word or the next line to play from there. Songs without lyrics look as before.
+- **In tab:** the words in a row along the tab, each at its time, in the Scrolling and Page views.
+- **Lyrics languages:** when a song has several lyric tracks (original, a romanisation such as romaji, a translation), a menu switches between them. Right-to-left and Japanese, Chinese or Korean lyrics display correctly.
+- Remembered per song: lyrics on or off, the track, and *In tab*.
+- The demo song "First Riff" now has lyrics.
+- **＋ Instrument:** add guitar, bass and keys parts from a MIDI file. A dialog lists the file's tracks (name, instrument, notes, range); choose what each becomes: guitar or bass tab (with a tuning; E Standard and 4-string E A D G by default) or a keys piano roll. Each part gets its own tab (*Guitar (MIDI)*, *Keys (MIDI)*…), can be shown beside the other parts, and plays on the new **MIDI instruments** mixer channel.
+- **Automatic tab fingering:** low positions first, close to the previous hand position, chords on separate strings; notes the tuning can't reach are skipped and counted (Drop D brings back a low D).
+- **Instrument sync:** nudge, type an offset, or align the first note to the cursor, like the drums. The MIDI's tempo changes are followed.
+- **💾 Save pack** writes the instruments into the pack as real arrangements: guitar/bass tab files and a keys notation part, validated against the spec. The file, track choices and offset are remembered per song.
+- **Notation-only parts** in packs (keys, `type: piano`) now show as a piano roll and play, instead of "not supported yet".
+
+### Improved
+- Opening another song right after changing a setting (speed, loop, lyrics…) no longer loses that change for the song you left.
+- **Usage counts** (web version, anonymous, can be turned off in ⚙ Settings): new users, daily and weekly active users, loops saved, loop chains played and takes recorded are now counted too. Users are counted without any ID: the browser remembers that it was already counted (once ever, once a day, once a week), outside the settings, so exports, sync and *Reset settings* don't count it again. Nothing about the song, loop or take is sent. See the README's "Privacy and usage stats" for how to read the dashboard.
+- Texts and help now just say **.feedpak** for song files. Older `.sloppak` files still open as before.
+
 ## 0.13.1 — 2026-11-05
 
 ### New
@@ -55,7 +75,7 @@ All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first
 ## 0.10.0 — 2026-11-04
 
 ### New
-- **New name: Tabloop** (shown as **tabl∞p**). Feedpak Player is now Tabloop; it still opens feedpak / sloppak song packages. Your settings, practice history, sync folder and Drive backup carry on as before.
+- **New name: Tabloop** (shown as **tabl∞p**). Feedpak Player is now Tabloop; it still opens feedpak song packages. Your settings, practice history, sync folder and Drive backup carry on as before.
 - **New logo:** an infinity loop drawn as tab strings, with a play-head dot.
 - **New address:** https://tabloop.github.io/. The old address keeps working; each address keeps its own browser data, so use the sync folder, Export / Import or a Drive backup to move yours across.
 - The downloaded file is now called `tabloop.html`.
@@ -105,7 +125,7 @@ All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first
 ## 0.6.0 — 2026-11-04
 
 ### New
-- **📚 Library:** choose your songs folder once. Every `.feedpak` / `.sloppak` (zipped or unpacked), subfolders included, is listed with cover, artist, length and parts. Search, sort, ↻ Refresh. The list is cached, and Chrome/Edge remember the folder.
+- **📚 Library:** choose your songs folder once. Every `.feedpak` (zipped or unpacked), subfolders included, is listed with cover, artist, length and parts. Search, sort, ↻ Refresh. The list is cached, and Chrome/Edge remember the folder.
 - **🎵 Playlists:** create playlists, then add songs with ＋ Add songs, the ＋ Playlist on any song card, or ＋ Playlist in the header for the open song. Rename, reorder, remove, delete. ▶ Play, ⏮ ⏭ and Auto-advance. Songs missing from the library are skipped.
 - **Settings are remembered:** view, zoom, text size, speed, mixer and colours globally. Tracks, drum part, position, loop and speed per song. ↻ reopens the last song (Chrome/Edge). ⓘ → Settings (now ⚙ Settings) exports, imports or resets.
 - **Practice tags:** mark songs *Learning* or *Mastered*. The Practice dialog filters by tag and shows your repertoire.
@@ -187,7 +207,7 @@ Standalone build of Feedpak Player: a single HTML file with no install, and it w
 
 
 **What's in it**
-- Open feedpak / sloppak packs (zip or folder) and play them along with the tab
+- Open feedpak packs (zip or folder) and play them along with the tab
 - Several arrangements side by side
 - Scrolling or static Page view, with optional standard notation derived from the tab
 - Pitch-preserving speed, 25–150 %

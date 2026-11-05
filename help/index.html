@@ -53,6 +53,8 @@
       <a href="#saved">Saved loops</a>
       <a href="#trainer">Speed trainer &amp; count-in</a>
       <a href="#drums">Drums</a>
+      <a href="#instruments">Instruments from MIDI</a>
+      <a href="#lyrics">Lyrics</a>
       <a href="#record">Recording yourself</a>
       <a href="#practice">Practice tracking</a>
       <a href="#settings">Settings, sync &amp; backup</a>
@@ -81,9 +83,9 @@
       <figcaption>The welcome screen, shown until you open a song.</figcaption></figure>
 
     <h2 id="open">Opening songs</h2>
-    <p>Tabloop plays <b>feedpak</b> song packages: <code>.feedpak</code> files (and the older <code>.sloppak</code>), which hold the recording, the tab and the song's sections. A pack can be a single zipped file or an unpacked folder.</p>
+    <p>Tabloop plays <b>feedpak</b> song packages: <code>.feedpak</code> files, which hold the recording, the tab and the song's sections. A pack can be a single zipped file or an unpacked folder.</p>
     <ul>
-      <li><b>Open file</b>: pick a <code>.feedpak</code> or <code>.sloppak</code> file.</li>
+      <li><b>Open file</b>: pick a <code>.feedpak</code> file.</li>
       <li><b>Open folder</b> (computers only): pick an unpacked pack folder. In the folder picker the files inside look greyed out; select the folder itself.</li>
       <li><b>Drag and drop</b> a file or folder onto the window.</li>
       <li><b>🕘 Recent</b> reopens one of the last 5 songs you played.</li>
@@ -146,8 +148,19 @@
       <figcaption>The demo song's drum chart in the chorus.</figcaption></figure>
     <p><b>＋ Drums</b> adds a drum part to any song from a MIDI file, a Clone Hero <code>.chart</code> / <code>.sng</code> or a Rock Band package. Line it up with the recording using the sync bar, map the kit with <b>🥁 Kit mapping</b>, and <b>💾 Save pack</b> keeps the result inside the song.</p>
 
+    <h2 id="instruments">Instruments from MIDI</h2>
+    <p><b>＋ Instrument</b> (next to ＋ Drums) adds guitar, bass and keys parts from a MIDI file. A list shows the file's tracks with their instrument, number of notes and range; choose what each one becomes: <b>Guitar</b> or <b>Bass</b> as tab, with a tuning (E Standard, Drop D…), or <b>Keys</b> as a piano roll. Tabloop works out the fingering for you: low on the neck, close to where your hand already is, every note of a chord on its own string. Notes your tuning can't reach are skipped, and the list says how many.</p>
+    <p>Each part gets its own tab, <b>Guitar (MIDI)</b>, <b>Keys (MIDI)</b>…, which you can show alone or beside the song's own parts with <b>+</b>. They play on the <b>MIDI instruments</b> channel in the mixer. Line them up with the recording in the <b>Instrument sync</b> bar: put the cursor where the first note sounds and click <b>⌖ Align first note to cursor</b>, then nudge if needed. <b>🎹 Tracks</b> changes your choices, and <b>💾 Save pack</b> keeps the parts inside the song as real arrangements. Tabloop remembers the file, your choices and the offset for that song.</p>
+
+    <h2 id="lyrics">Lyrics</h2>
+    <p>Songs with lyrics show a <b>Lyrics</b> box in the toolbar. Under the tab you see the line being sung, with each word lighting up as it's sung, and the next line in grey. The lyrics follow the music at any speed, in loops and after a jump. Click a word or a line to play from there.</p>
+    <figure><img src="img/lyrics.png" alt="The demo song's verse: the line being sung under the tab, and the same words in a row along the tab" width="1280" height="800" loading="lazy" />
+      <figcaption>“Pick it up and play it slow”, with <b>In tab</b> on.</figcaption></figure>
+    <p><b>In tab</b> also puts the words in a row along the tab, each one at its time, in both Scrolling and Page view. When a song has more than one set of lyrics (the original words, a romanisation such as romaji, or a translation), a menu next to it switches between them. Right-to-left and Japanese, Chinese or Korean lyrics work too. Tabloop remembers for each song whether the lyrics are on and which set you chose.</p>
+
     <h2 id="record">Recording yourself</h2>
     <p>Press <b>⏺ Rec</b> (next to ⟲ Loop), choose your microphone or audio interface, then <b>▶</b>: Tabloop records you playing along until you pause. With a loop on, every pass becomes its own take; tick <b>Only keep complete passes</b> to keep only the passes you played from the loop start to its end. Use headphones, so the song doesn't get into the take.</p>
+    <p>While armed, the bar also shows the <b>note you're playing</b>, like a tuner: its name (“A2”), how many cents it's off on a small needle — green within ±5 ¢, blue flat, orange sharp — and the nearest open string. It shows “—” when the input is silent. Use it to check that your input works and to tune up before you record.</p>
     <p>Your latest take plays on the <b>My take</b> channel of the 🎚 Mixer and shows as a waveform under the tab, with marks for notes played early, late or on time. With a loop on, ▶ plays the loop with your take on every pass, or choose <b>Cycle through takes</b> to hear take 1, take 2, take 3… on successive passes. <b>Song + me</b>, <b>Only me</b> and <b>Only song</b> switch what you hear without changing the mixer.</p>
     <p><b>▶ Play take</b> plays the selected take with the song in one click (it stops recording and matches the take's speed); <b>‹ Prev</b> and <b>Next ›</b> step through your takes.</p>
     <p><b>👻 Ghost</b> notes show what you played right on the tab: each note is moved by how early or late you were, and coloured by its pitch — green in tune (within ±15 ¢), blue flat, orange sharp. Hollow boxes are notes you missed, faint rings are extra notes; chords get timing only. The summary adds it up, e.g. “Timing: 82 % within ±40 ms · Pitch: 74 % within ±15 ¢ · 3 missed”.</p>
@@ -205,7 +218,7 @@
     <h3>Does it work offline?</h3>
     <p>Yes. Download <a href="https://github.com/tabloop/tabloop.github.io/raw/main/index.html"><code>index.html</code></a> and double-click it; it's a single file that works without a connection. Google Drive backup needs the web version, and the demo song needs a connection to download.</p>
     <h3>Is my data private?</h3>
-    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts, which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>.</p>
+    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts (visits, active users, songs played, loops saved and takes recorded; never who you are), which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>.</p>
     <h3>What's new?</h3>
     <p>See the <a href="../CHANGELOG.md">release notes</a>.</p>
 
