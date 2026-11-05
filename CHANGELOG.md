@@ -2,6 +2,19 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.12.0 — 2026-11-04
+
+### New
+- **⏺ Record takes:** record yourself playing along from a microphone or audio interface. Press **⏺ Rec**, pick the input, then ▶: you're recorded until you pause, one take per pass when a loop is on. Echo cancellation, noise suppression and auto gain are off, so instruments sound like themselves; use headphones so the song doesn't bleed in.
+- **My take:** the selected take plays on its own mixer channel, in sync with the song, seeks and loops, at the speed it was recorded at (at other speeds it's silent and says so).
+- **Take lane:** the take's waveform under the tab, in the Scrolling and Page views; show or hide it with the **🎙 My take** tab.
+- **Timing feedback:** marks on the take lane show which notes you played early, late or on time (±40 ms), with a summary such as “82 % within ±40 ms”.
+- **Latency:** the app compensates for the output and input delay; nudge any take by ±1 / ±10 ms, keep a default per input device, or measure it with **⏱ Calibrate**.
+- **🎙 Takes:** each song's takes with date, length and speed; rename, delete, choose which one plays, download as WAV. Takes stay in this browser (up to 30 per song, 250 MB in all) and aren't part of the settings export or sync.
+
+### Improved
+- **Mixer on phones:** it opens along the bottom of the screen instead of running off the left edge.
+
 ## 0.11.1 — 2026-11-04
 
 ### Improved
