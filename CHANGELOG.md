@@ -2,6 +2,19 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.13.0 — 2026-11-04
+
+### New
+- **Loop with your takes:** with a loop on (and recording not armed), ▶ plays the loop with your take on every pass. Choose in the record bar what each pass plays: **Selected take every pass**, or **Cycle through takes** — pass 1 plays the loop's take 1, pass 2 take 2… to compare attempts. Works with saved loops, and in a loop chain each loop plays its own takes.
+- **Song + me / Only me / Only song:** quick solos in the record bar to hear just yourself, just the song, or both. The mixer's own settings stay as they are; changing the mixer ends the solo.
+- **👻 Ghost notes:** what you played, drawn on the tab note by note — moved by your timing and coloured by your pitch: green within ±15 ¢, blue flat, orange sharp, with labels such as “−22 ¢ · +35 ms”. Missed notes show as hollow boxes and extra notes as faint rings. Chords get timing only. Works for guitar and bass (down to the low E), in the Scrolling and Page views; the **👻 Ghost** button shows or hides them.
+- **Summary:** now pitch, missed and extra notes too, e.g. “Timing: 82 % within ±40 ms · Pitch: 74 % within ±15 ¢ · 3 missed”, also in the record bar.
+- **Only keep complete passes:** a record-bar setting (off by default). When on, a loop pass is kept only if you recorded it from the loop start to the loop end; a pass cut short is dropped, and the bar says so. Takes without a loop are always kept.
+
+### Improved
+- **Timing marks:** low notes no longer show up as several notes (the note detector now checks a whole period of a bass's low E).
+- **Tab synth:** an open string (fret 0) under a capo sounds at the capo.
+
 ## 0.12.0 — 2026-11-04
 
 ### New
