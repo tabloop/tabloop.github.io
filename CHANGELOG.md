@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.15.2 — 2026-11-05
+
+### Improved
+- **Page view:** fret numbers are bigger again: 50% bigger than in 0.15.0 (0.15.1 made them 30% bigger), with the same line spacing. The Scrolling view is as before.
+
 ## 0.15.1 — 2026-11-05
 
 ### Improved
