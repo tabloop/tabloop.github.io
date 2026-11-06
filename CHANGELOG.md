@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.18.2 — 2026-11-06
+
+### Improved
+- **Demo song "First Riff" has its own Keys part:** soft chords that follow the song and sit under the melody (verse Em – Em – C – D, chorus Em – G – Am – D). Show **Keys** to hear it.
+- **Terms of use:** a short, plain-English terms page at https://tabloop.github.io/terms.html (free, as is; only open songs you have the right to use; optional services such as Google Drive have their own terms). Linked next to the privacy policy on the welcome screen, at the top of ⚙ Settings and in the help, and from the privacy policy.
+
+### Fixed
+- **The Tab synth now plays guitar techniques** instead of a plain note each time. Bends glide up to the bent pitch (pre-bends, releases and bend curves too), slides glide to their fret, and an unpitched slide rises or falls and fades out. Hammer-ons, pull-offs and taps change the note on the ringing string without a new pick. Vibrato wobbles the pitch, palm mutes are short and dull, muted notes are a dead thunk with no pitch, and harmonics ring like a bell at the harmonic's own pitch (a harmonic at fret 7 sounds an octave above the fretted note; pinch harmonics squeal higher). Tremolo picking re-picks and accents are louder.
+- These follow the playback speed (at 50 % a bend takes twice as long, like the slowed-down song) and the song's **Pitch** setting.
+- The Tab synth's notes are also a little more in tune (they were about 5 ¢ flat on the higher strings).
+
 ## 0.18.1 — 2026-11-06
 
 ### Improved

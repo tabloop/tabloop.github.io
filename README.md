@@ -2,7 +2,7 @@
 
 # Tabloop
 
-**Version 0.18.1** · [what's new](CHANGELOG.md)
+**Version 0.18.2** · [what's new](CHANGELOG.md)
 
 **Open the app: https://tabloop.github.io/**
 
@@ -18,7 +18,7 @@ How to use it:
 - **New here?** Press **▶ Try the demo song** in the app, or read the [help & guide](https://tabloop.github.io/help/).
 - **Use it offline:** download [`index.html`](index.html) and double-click it. It's a single self-contained file.
 - **Sync across computers** (optional, Chrome or Edge): ⚙ Settings → *Sync folder*, then pick a folder that Google Drive, iCloud, Dropbox or OneDrive syncs.
-- **Privacy:** songs you open stay on your device and nothing is uploaded, except an optional Google Drive backup of your settings, which you start yourself. No accounts and no cookies. The microphone is used only while you have the tuner, ⏺ Rec, 👂 Live or 🎙 Sing on. The web version sends anonymous usage counts (visits, new and active users without any user ID, songs played with an anonymous song ID, loops saved and takes recorded; song names only if you tick *share song names*); turn them off in ⚙ Settings. See the [privacy policy](privacy.html).
+- **Privacy:** songs you open stay on your device and nothing is uploaded, except an optional Google Drive backup of your settings, which you start yourself. No accounts and no cookies. The microphone is used only while you have the tuner, ⏺ Rec, 👂 Live or 🎙 Sing on. The web version sends anonymous usage counts (visits, new and active users without any user ID, songs played with an anonymous song ID, loops saved and takes recorded; song names only if you tick *share song names*); turn them off in ⚙ Settings. See the [privacy policy](privacy.html) and the [terms of use](terms.html).
 
 ## Credits
 
