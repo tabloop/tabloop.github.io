@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.18.1 — 2026-11-06
+
+### Improved
+- **Help and guide brought up to date:** new sections for the 🎸 Tuner, 👂 Live, ghost notes or 🎯 markers, how forgiving the judging is, and the 🎤 Vocals tab, with new screenshots; the Drive "backup paused" notice, "A song or folder won't open" and "When does Tabloop use the microphone?" in the FAQ. The demo video now shows 👂 Live with 🎯 markers and singing in the 🎤 Vocals tab.
+- **Demo song "First Riff"** now has a vocal melody, so its 🎤 Vocals tab has something to sing along to.
+
 ## 0.18.0 — 2026-11-05
 
 ### New

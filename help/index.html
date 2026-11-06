@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tabloop help: getting started, playing, looping and practice</title>
-  <meta name="description" content="How to use Tabloop: open feedpak songs, play along with the tab, slow down, loop sections, save loops and track your practice." />
+  <title>Tabloop help: getting started, playing, looping, live feedback, singing and practice</title>
+  <meta name="description" content="How to use Tabloop: open feedpak songs, play along with the tab, slow down, loop sections, save loops, see how you play with Live, sing along with the Vocals tab and track your practice." />
   <link rel="icon" type="image/png" href="../logo.png" />
   <style>
     :root { --bg: #0f1115; --panel: #171a21; --line: #2a2f3a; --text: #e8eaf0; --dim: #9aa3b2; --accent: #ffb347; --accent2: #ff8a3d; --link: #7cc4ff; }
@@ -56,7 +56,11 @@
       <a href="#instruments">Instruments from MIDI</a>
       <a href="#lyrics">Lyrics</a>
       <a href="#vocals">Vocals / karaoke</a>
+      <a href="#tuner">Tuner</a>
       <a href="#record">Recording yourself</a>
+      <a href="#live">Live: see how you play</a>
+      <a href="#markers">Ghost notes &amp; markers</a>
+      <a href="#forgiveness">How forgiving</a>
       <a href="#practice">Practice tracking</a>
       <a href="#settings">Settings, sync &amp; backup</a>
       <a href="#phone">Phones &amp; tablets</a>
@@ -68,7 +72,7 @@
 
   <main>
     <h1 id="what">Tabloop help</h1>
-    <p class="lead">Tabloop is a free practice player for guitar, bass and drums. It shows the tab of a song while the recording plays, so you can follow along, slow down, loop the hard parts and see how your practice adds up.</p>
+    <p class="lead">Tabloop is a free practice player for guitar, bass, drums and vocals. It shows the tab of a song while the recording plays, so you can follow along, slow down, loop the hard parts, see how well you play or sing, and see how your practice adds up.</p>
     <p>It runs in your browser, with nothing to install. Songs you open stay on your device: nothing is uploaded, and there's no account.</p>
     <a class="cta" href="../">Open Tabloop</a><a class="cta alt" href="#demo">Watch the 1-minute demo</a>
     <figure><img src="img/playing.png" alt="Tabloop playing the demo song: the tab scrolls past a red playhead, with the section list on the left" width="1280" height="800" />
@@ -79,7 +83,7 @@
       <source src="demo.mp4" type="video/mp4" />
       Your browser can't play this video. <a href="demo.mp4">Download it</a>.
     </video>
-    <p>The quickest way to try everything: open Tabloop and press <b>▶ Try the demo song</b>. It loads “First Riff”, a short original song made for this guide, with lead guitar, bass and drums.</p>
+    <p>The quickest way to try everything: open Tabloop and press <b>▶ Try the demo song</b>. It loads “First Riff”, a short original song made for this guide, with lead guitar, bass and drums, lyrics and a vocal melody.</p>
     <figure><img src="img/welcome.png" alt="The welcome screen with Try the demo song, Open a song file, Library and Help buttons" width="1280" height="800" loading="lazy" />
       <figcaption>The welcome screen, shown until you open a song.</figcaption></figure>
 
@@ -103,7 +107,7 @@
     <ul>
       <li>Press <b>▶</b> (or <kbd>Space</kbd>) to play and pause. Drag the timeline, or click anywhere on the tab, to jump.</li>
       <li><b>Tabs</b> above the tab area pick the part: Lead, Bass, Drums… Click a part's <b>+</b> (or shift-click its tab) to show it as an extra lane, side by side.</li>
-      <li><b>Scrolling</b> moves the tab past a fixed red line. <b>Page</b> shows the whole song like printed tab, with a cursor that follows the music.</li>
+      <li><b>Scrolling</b> moves the tab past a fixed red line. <b>Page</b> shows the whole song like printed tab, with a cursor that follows the music and bigger fret numbers you can read from a music stand; <b>A−</b> / <b>A+</b> make everything smaller or bigger.</li>
       <li><b>Notation</b> adds a standard staff under the tab; <b>Rhythm</b> adds note lengths without the staff.</li>
       <li><b>Song / Tab / Both</b> chooses what you hear: the recording, a synth playing the tab notes, or both.</li>
       <li><b>Metronome</b> clicks along with the song's beat.</li>
@@ -163,31 +167,56 @@
 
     <h2 id="vocals">Vocals / karaoke</h2>
     <p>Songs with lyrics, a vocal melody or a separate vocals track get a <b>🎤 Vocals</b> tab next to the other tabs. It shows the singer's melody as bars on a pitch axis, higher notes higher up, with the words under it at their time, and the line being sung in the lyrics bar below. The note being sung lights up as the song plays, at any speed and in loops. Show it alone, or next to the guitar tab with <b>+</b>.</p>
+    <figure><img src="img/vocals.png" alt="The Vocals tab in Page view: the melody as bars on a pitch axis, the words under it, a green voice line over the notes sung and a score of notes in tune" width="1280" height="800" loading="lazy" />
+      <figcaption>The demo song's verse with <b>🎙 Sing</b> on: your voice is the line over the melody (green in tune, blue flat, orange sharp), and the box counts the notes sung in tune.</figcaption></figure>
     <p><b>Pitch − / +</b> moves the whole song up or down by half-steps to suit your voice: the melody moves with it.</p>
-    <p><b>Where the melody comes from.</b> Some songs come with it. If not, there are two ways to add it, in the bar under the play button:</p>
+    <p><b>Where the melody comes from.</b> Some songs come with it (the demo song does). If not, there are two ways to add it, in the bar under the play button:</p>
     <ul>
       <li><b>🎹 Melody from MIDI…</b>: choose a MIDI file of the song. In the list of its tracks, set the singer's track to <b>Vocal melody</b> (Tabloop suggests one when a track is called “Vocals” or “Voice”). Line it up with the recording in the <b>Instrument sync</b> bar, as for instruments from MIDI. Tabloop remembers it for the song.</li>
       <li><b>🔎 Find the melody from the vocals</b>, for songs that have a separate vocals track: Tabloop listens to it and works out the notes by itself. It takes a few seconds and is done once; the song keeps it. It's automatic, so it's <i>approximate</i>: check it against the song.</li>
     </ul>
     <p>When a song has more than one, a menu in that bar switches between them. <b>💾 Save pack</b> keeps a melody from MIDI or one found from the vocals inside the saved copy, so it's there next time without the MIDI file; a song's own melody is never replaced.</p>
-    <p><b>🎙 Sing:</b> press it and sing along (headphones help, so Tabloop hears you and not the song). Your voice shows as a line on the melody: <b>green</b> when you're in tune, <b>blue</b> when flat, <b>orange</b> when sharp. Each note is checked on its pitch only, not on timing: Tabloop takes the middle of the note, so sliding into a note or a bit of vibrato doesn't count against you. Singing an octave higher or lower than the melody counts as right, so a man can sing a woman's melody. How close counts as in tune is singing's own setting in <b>⚙ Settings → How forgiving the judging is → 🎤 Singing</b>: <b>Normal</b> ±30 cents, <b>Relaxed</b> ±50, <b>Strict</b> ±20, or your own value; it doesn't change how your guitar playing is judged. A box in the corner counts the notes you sang in tune, e.g. <b>9/11</b>, for this pass and your best.</p>
-    <p>The microphone is only used while 🎙 Sing is on; leaving the Vocals tab turns it off. Nothing you sing is recorded or stored.</p>
+    <p><b>🎙 Sing:</b> press it and sing along (headphones help, so Tabloop hears you and not the song). Your voice shows as a line on the melody: <b>green</b> when you're in tune, <b>blue</b> when flat, <b>orange</b> when sharp. Each note is checked on its pitch only, not on timing: Tabloop takes the middle of the note, so sliding into a note or a bit of vibrato doesn't count against you. Singing an octave higher or lower than the melody counts as right, so a man can sing a woman's melody. How close counts as in tune is singing's own setting in <b>⚙ Settings → How forgiving the judging is → 🎤 Singing</b>: <b>Relaxed</b> ±50 cents, <b>Normal</b> ±30 (the default), <b>Strict</b> ±20, or <b>Custom</b> (5–100), see <a href="#forgiveness">How forgiving</a>; it doesn't change how your guitar playing is judged. A box in the corner counts the notes you sang in tune, e.g. <b>9/11</b>, for this pass and your best.</p>
+    <p>The microphone is only used while 🎙 Sing is on (the button then says <b>🎙 Singing</b>); leaving the Vocals tab turns it off. Nothing you sing is recorded or stored.</p>
+
+    <h2 id="tuner">Tuner</h2>
+    <p>To tune up or check your input, press <b>🎸 Tuner</b> in the toolbar (next to 🎚 Mixer) and choose your microphone or audio interface. The bar under the play button shows the input level and the <b>note you're playing</b>: its name (“A2”), how many cents it's off on a small needle — green within ±5 ¢, blue flat, orange sharp — its frequency and the nearest open string of the song's tuning. It shows “—” when the input is silent. It works while the song plays or is paused, down to a bass's low E, and nothing is recorded.</p>
+    <p>Press 🎸 Tuner again to turn it off; with ⏺ Rec, 👂 Live and 🎙 Sing off too, Tabloop stops using the microphone. The tuner starts off on every visit, so Tabloop never asks for the microphone by itself. The same note display is in the record bar while ⏺ Rec is armed, and in the live bar while 👂 Live is on.</p>
 
     <h2 id="record">Recording yourself</h2>
-    <p>Press <b>⏺ Rec</b> (next to ⟲ Loop), choose your microphone or audio interface, then <b>▶</b>: Tabloop records you playing along until you pause. With a loop on, every pass becomes its own take; tick <b>Only keep complete passes</b> to keep only the passes you played from the loop start to its end. Use headphones, so the song doesn't get into the take.</p>
-    <p>While armed, the bar also shows the <b>note you're playing</b>, like a tuner: its name (“A2”), how many cents it's off on a small needle — green within ±5 ¢, blue flat, orange sharp — and the nearest open string. It shows “—” when the input is silent. Use it to check that your input works and to tune up before you record.</p>
-    <p id="tuner">To tune up or check your input <b>without recording</b>, press <b>🎸 Tuner</b> in the toolbar (next to 🎚 Mixer). The same bar opens with the input, its level and the note you're playing, while the song plays or is paused; nothing is recorded. Press ⏺ Rec when you're ready: it carries on with the same input. Press 🎸 Tuner again to turn it off; with Rec off too, Tabloop stops using the microphone.</p>
+    <p>Press <b>⏺ Rec</b> (next to ⟲ Loop), choose your microphone or audio interface, then <b>▶</b>: Tabloop records you playing along until you pause. With a loop on, every pass becomes its own take; tick <b>Only keep complete passes</b> to keep only the passes you played from the loop start to its end. Use headphones, so the song doesn't get into the take. If the 🎸 Tuner is on, ⏺ Rec carries on with the same input.</p>
     <p>Your latest take plays on the <b>My take</b> channel of the 🎚 Mixer and shows as a waveform under the tab, with marks for notes played early, late or on time. With a loop on, ▶ plays the loop with your take on every pass, or choose <b>Cycle through takes</b> to hear take 1, take 2, take 3… on successive passes. <b>Song + me</b>, <b>Only me</b> and <b>Only song</b> switch what you hear without changing the mixer.</p>
     <p><b>▶ Play take</b> plays the selected take with the song in one click (it stops recording and matches the take's speed); <b>‹ Prev</b> and <b>Next ›</b> step through your takes.</p>
-    <p><b>👻 Ghost</b> notes show what you played right on the tab: each note is moved by how early or late you were, and coloured by its pitch — green in tune (within ±15 ¢), blue flat, orange sharp. Hollow boxes are notes you missed, faint rings are extra notes; chords get timing only. The summary adds it up, e.g. “Timing: 82 % within ±40 ms · Pitch: 74 % within ±15 ¢ · 3 missed”.</p>
-    <h3 id="live">Live: see your notes as you play</h3>
-    <p>Press <b>👂 Live</b> (next to ⏺ Rec) to have Tabloop listen to your input and judge each note of the tab as it passes — without recording anything. A note is <b>right</b> when you play it within ±40 ms and in tune within ±15 ¢ (chords and muted notes: on time is enough). Ghost notes appear on the tab as you go, and a box in the tab's corner counts the notes you got right in this pass, e.g. <b>14/16</b>, with what went wrong (early, late, flat, sharp, missed, extra notes) and your run of right notes in a row.</p>
-    <p><b>🎯 Markers</b> instead of ghost notes: in <b>⚙ Settings → Note feedback</b>, or with the <b>👻 Ghost notes / 🎯 Markers</b> button in the live and record bars, choose markers under the tab. Each note gets one: 🎯 when you nail it, a triangle pointing to what was off — ▲ sharp, ▼ flat, ◀ early, ▶ late — yellow when a little off, red when clearly off (more than twice the limits), ✕ when missed. Hover a marker for the numbers.</p>
-    <p id="forgiveness"><b>⚖️ How forgiving:</b> the limits above (±40 ms, ±15 ¢) are the <b>Normal</b> setting. In <b>⚙ Settings → How forgiving the judging is</b>, choose <b>Relaxed</b> (±60 ms, ±25 ¢) while you're learning a part, <b>Strict</b> (±25 ms, ±10 ¢) to polish it, or <b>Custom</b> to type your own (timing 10–150 ms, pitch 5–50 ¢); <b>Reset to Normal</b> puts it back. It's one setting for 👂 Live and your recorded takes, and everything follows it — the count, ghost colours, markers and the take summaries. What's on screen is judged again as soon as you change it, including the loop's last passes.</p>
-    <figure><img src="img/live-ghost.png" alt="Live listening over a loop: the box in the tab's corner shows this pass's count and the last five passes, 0/8, 8/8, 4/8, 7/8, 8/8, with the best" width="1280" height="760" loading="lazy" />
+    <p>Each take is judged note by note and shown on the tab as <a href="#markers">ghost notes or markers</a>. The summary adds it up, e.g. “Timing: 82 % within ±40 ms · Pitch: 74 % within ±15 ¢ · 3 missed”, with the limits set in <a href="#forgiveness">How forgiving</a>.</p>
+    <p><b>🎙 Takes</b> lists your takes to rename, download as WAV or delete; the <b>Nudge</b> buttons and <b>⏱ Calibrate</b> line a take up if it sounds late. Takes stay on your device.</p>
+
+    <h2 id="live">Live: see how you play</h2>
+    <p>Press <b>👂 Live</b> (next to ⏺ Rec) to have Tabloop listen to your input and judge each note of the tab as it passes — without recording anything. A note is <b>right</b> when you play it on time and in tune: within ±40 ms and ±15 ¢ with the default <a href="#forgiveness">Normal</a> setting (chords and muted notes: on time is enough). Your notes show on the tab as you go, and a box in the tab's corner counts the notes you got right in this pass, e.g. <b>14/16</b>, with what went wrong (early, late, flat, sharp, missed, extra notes) and your run of right notes in a row. The live bar also shows the note you're playing, like the <a href="#tuner">tuner</a>.</p>
+    <figure><img src="img/live-ghost.png" alt="Live listening over a loop with ghost notes: the box in the tab's corner shows this pass's count and the last passes, with the best" width="1280" height="800" loading="lazy" />
       <figcaption>👂 Live over a loop: this pass, and the last passes with your best.</figcaption></figure>
     <p>With a loop on, every pass is counted on its own and the box keeps the <b>last five passes</b> (e.g. “12/16 · 14/16 · 16/16”) and your best, so you can see yourself improve. A pass you stop or skip out of isn't kept; one started in the middle of the loop is marked with *. Without a loop it counts from ▶ (and over the last 30 seconds). <b>↺ Reset</b> starts counting again. It uses the same input and latency settings as recording (⏱ Calibrate if notes show up late), works at any speed and together with ⏺ Rec, and is remembered in this browser. Nothing you play is stored.</p>
-    <p><b>🎙 Takes</b> lists your takes to rename, download as WAV or delete; the <b>Nudge</b> buttons and <b>⏱ Calibrate</b> line a take up if it sounds late. Takes stay on your device.</p>
+
+    <h3 id="markers">Ghost notes or markers</h3>
+    <p>There are two ways to see how you played, with 👂 Live and with recorded takes. Choose in <b>⚙ Settings → Note feedback</b>, or switch with the <b>👻 Ghost notes / 🎯 Markers</b> button in the live bar and the record bar; Tabloop remembers your choice.</p>
+    <ul>
+      <li><b>👻 Ghost notes</b> (the default) show what you played right on the strings: each note is moved by how early or late you were, and coloured by its pitch — green in tune, blue flat, orange sharp. Hollow boxes are notes you missed, faint rings are extra notes; chords get timing only. With a take, the <b>👻 Ghost</b> button in the record bar shows or hides them.</li>
+      <li><b>🎯 Markers</b> put one small sign under each note of the tab: <b>🎯</b> when you nail it (on time and in tune), a triangle pointing to what was off — <b>▲</b> sharp, <b>▼</b> flat, <b>◀</b> early, <b>▶</b> late — <b>yellow</b> when it's a little off, <b>red</b> when it's clearly off (more than twice the limit), and <b>✕</b> for a missed note. When a note is off in both pitch and timing, the worse one shows. Hover a marker for the numbers.</li>
+    </ul>
+    <figure><img src="img/markers.png" alt="Markers under the tab of the demo song's intro: target signs for right notes, triangles for notes a little or clearly sharp, flat, early or late, and a cross for a missed note; the box counts this pass" width="1280" height="800" loading="lazy" />
+      <figcaption>🎯 Markers with 👂 Live over the intro: one sign per note, yellow a little off, red clearly off.</figcaption></figure>
+
+    <h3 id="forgiveness">How forgiving the judging is</h3>
+    <p>How far off a note can be and still count as right is up to you, in <b>⚙ Settings → ⚖️ How forgiving the judging is</b>:</p>
+    <table>
+      <tr><th>Judging</th><th>On time within</th><th>In tune within</th></tr>
+      <tr><td><b>Relaxed</b>, while you're learning a part</td><td>±60 ms</td><td>±25 ¢</td></tr>
+      <tr><td><b>Normal</b> (the default)</td><td>±40 ms</td><td>±15 ¢</td></tr>
+      <tr><td><b>Strict</b>, to polish it</td><td>±25 ms</td><td>±10 ¢</td></tr>
+      <tr><td><b>Custom</b>: type your own</td><td>10–150 ms</td><td>5–50 ¢</td></tr>
+    </table>
+    <p>It's one setting for 👂 Live and your recorded takes, and everything follows it — the counts, ghost colours, markers, take summaries and timing marks. What's on screen is judged again as soon as you change it, including the loop's last passes. <b>Reset to Normal</b> puts it back. Singing has its own, wider limit just below it, <b>🎤 Singing</b>: Relaxed ±50 ¢, Normal ±30 ¢, Strict ±20 ¢ or Custom 5–100 ¢ (see <a href="#vocals">Vocals</a>). Both are remembered, and exported and synced with your settings.</p>
+    <figure><img src="img/forgiveness.png" alt="Settings: Note feedback (ghost notes or markers), How forgiving the judging is set to Normal, plus or minus 40 ms and 15 cents, and the Singing limit set to Normal, plus or minus 30 cents" width="640" height="564" loading="lazy" />
+      <figcaption>⚙ Settings: note feedback, and how forgiving the judging is for instruments and for singing.</figcaption></figure>
 
     <h2 id="practice">Practice tracking</h2>
     <p>Tabloop records your practice automatically while you play, and keeps it only in your browser. <b>📈 Practice</b> shows:</p>
@@ -201,15 +230,17 @@
       <figcaption>The practice dashboard.</figcaption></figure>
 
     <h2 id="settings">Settings, sync &amp; backup</h2>
-    <p><b>⚙ Settings</b> holds string and drum colours, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes and a link back here.</p>
+    <p><b>⚙ Settings</b> holds string and drum colours, <a href="#markers">note feedback</a>, <a href="#forgiveness">how forgiving the judging is</a>, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes, a link back here and the <a href="../privacy.html">privacy policy</a>.</p>
     <figure><img src="img/settings.png" alt="The settings dialog with string colours and drum colours" width="1280" height="800" loading="lazy" />
       <figcaption>Settings.</figcaption></figure>
     <h3>Keeping your data across computers</h3>
     <ul>
       <li><b>🔄 Sync folder</b> (Chrome or Edge on a computer): choose a folder that Google Drive, iCloud Drive, Dropbox or OneDrive syncs, then the same folder on your other computers. Settings, practice history, saved loops and playlists then stay in sync by themselves.</li>
       <li><b>💾 Export / Import</b> moves everything to another browser as one file.</li>
-      <li><b>☁ Google Drive</b> backs up to a private app folder in your own Drive (web version). Google's sign-in in the browser lasts about an hour; with automatic backup on, the app tries to renew it by itself, and if the browser doesn't let it, a small <i>Google Drive backup paused</i> notice shows the last backup and a <b>Reconnect</b> button. Practice done in the meantime is backed up when you reconnect.</li>
+      <li><b>☁ Google Drive</b> backs up to a private app folder in your own Drive (web version). Google's sign-in in the browser lasts about an hour; with automatic backup on, the app tries to renew it by itself, and if the browser doesn't let it, a small <i>Google Drive backup paused</i> notice shows the last backup and a <b>Reconnect</b> button. Practice done in the meantime is backed up when you reconnect, from the notice or from Settings; ⚙ shows a dot until then. None of this happens if you never linked Drive or back up by hand.</li>
     </ul>
+    <figure><img src="img/drive-paused.png" alt="A small notice in the corner: Google Drive backup paused, with the last backup time, a Reconnect button and a close button" width="620" height="130" loading="lazy" />
+      <figcaption>The <i>Google Drive backup paused</i> notice. <b>Reconnect</b> signs in again with one click (no password) and backs up; ✕ dismisses it.</figcaption></figure>
     <div class="tip">Your data belongs to the web address you use. <a href="https://tabloop.github.io/">tabloop.github.io</a> and the older bazarcad-ai.github.io address keep separate data; use one of the options above to move it.</div>
 
     <h2 id="phone">Phones &amp; tablets</h2>
@@ -240,8 +271,19 @@
     <p>Tabloop opens feedpak song packages, an open format; songs aren't included. Use packs you have the rights to, or make your own with feedpak tools.</p>
     <h3>Does it work offline?</h3>
     <p>Yes. Download <a href="https://github.com/tabloop/tabloop.github.io/raw/main/index.html"><code>index.html</code></a> and double-click it; it's a single file that works without a connection. Google Drive backup needs the web version, and the demo song needs a connection to download.</p>
+    <h3>A song or folder won't open</h3>
+    <p>Tabloop says why when it can't read a file. The usual reasons:</p>
+    <ul>
+      <li>The song is stored <b>online only</b> in OneDrive, iCloud Drive, Google Drive or Dropbox: make it available offline (in Finder or File Explorer), then open it again.</li>
+      <li>The file was <b>moved or deleted</b> since you opened it (also from 🕘 Recent): open it from where it is now.</li>
+      <li>A <b>📚 Library</b> song changed since you picked the folder: pick the folder again.</li>
+      <li>On a Mac, the browser isn't allowed to read that folder: allow it in System Settings → Privacy &amp; Security → Files and Folders.</li>
+    </ul>
+    <p>Songs with accents or different upper/lower case in their file names, and songs on USB drives or network shares, open as they do from your own disk. One unreadable file doesn't stop the rest: the Library lists every other song and marks only that one.</p>
+    <h3>When does Tabloop use the microphone?</h3>
+    <p>Only while <b>🎸 Tuner</b>, <b>⏺ Rec</b>, <b>👂 Live</b> or <b>🎙 Sing</b> is on; never by itself. Takes you record stay in your browser; the tuner, Live and singing record nothing.</p>
     <h3>Is my data private?</h3>
-    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts (visits, active users, songs played, loops saved and takes recorded; never who you are), which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>.</p>
+    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts (visits, active users, songs played, loops saved and takes recorded; never who you are), which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>. The <a href="../privacy.html">privacy policy</a> says what's stored where and how to delete it.</p>
     <h3>What's new?</h3>
     <p>See the <a href="../CHANGELOG.md">release notes</a>.</p>
 
