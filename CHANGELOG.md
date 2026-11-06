@@ -2,6 +2,20 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.19.0 — 2026-11-06
+
+### New
+- **Highway view:** a third view next to **Scrolling** and **Page**. The notes come down towards you in one lane per string, coloured like the strings (lowest string on the left, as on a chord diagram), to a red hit line near the bottom, and light up as they cross it. Each note is a block with its fret number, with a tail for how long it rings; chords get a bar across their strings with the chord's name. Beats and bars are lines across the highway, sections are labelled, and a loop is shaded.
+- At the hit line, each string's target shows the fret of its next note, and the **fret** number beside it is your hand position (the lowest fretted note coming up).
+- Techniques are marked simply for now: bends (an arrow with ½ / full), slides (the tail leans towards where it goes and ends on the target fret), H / P / T, PM, vibrato (a wavy tail), muted notes (x) and harmonics (<12>).
+- It follows **Zoom** (how fast the notes come), the speed, loops and **Pitch**, shows ghost notes or 🎯 markers from 👂 Live or a take, and the current lyric line under the highway when lyrics are **In tab**. Click above the hit line to jump to that moment, or drag the notes up or down. Several guitar / bass parts sit side by side (as many as fit); drums, keys and vocals stay in the Scrolling and Page views. Remembered like the other views.
+
+### Improved
+- **Practice and song settings are saved more often**, so less is lost if the browser or the computer closes unexpectedly. In this browser they're saved every 2 seconds while you play (was 5), and at once when you pause, at the end of each loop pass, at the end of the song and when you jump to another place.
+- **The sync folder is up to date sooner:** practice is written 5 seconds after it changes (was 15), at most 20 seconds apart while you keep playing (was a minute), and also when you pause or leave the page.
+- **Automatic Google Drive backup during long sessions:** it still runs half a minute after you stop practising, and now also at least every 2 minutes while you keep playing, and when you pause or leave the page. Only while signed in, and only when something changed; it never asks you to sign in.
+- **Option to start new songs with the lyrics hidden:** ⚙ Settings → *Lyrics* → **Show lyrics for new songs** (on by default). Songs you've already opened keep their own choice, and the **Lyrics** box in the toolbar still shows or hides them for each song. When lyrics are hidden, the 🎤 Vocals tab says how to show them.
+
 ## 0.18.2 — 2026-11-06
 
 ### Improved

@@ -108,6 +108,7 @@
       <li>Press <b>▶</b> (or <kbd>Space</kbd>) to play and pause. Drag the timeline, or click anywhere on the tab, to jump.</li>
       <li><b>Tabs</b> above the tab area pick the part: Lead, Bass, Drums… Click a part's <b>+</b> (or shift-click its tab) to show it as an extra lane, side by side.</li>
       <li><b>Scrolling</b> moves the tab past a fixed red line. <b>Page</b> shows the whole song like printed tab, with a cursor that follows the music and bigger fret numbers you can read from a music stand; <b>A−</b> / <b>A+</b> make everything smaller or bigger.</li>
+      <li><b>Highway</b> brings the notes down towards you, one lane per string in the strings' colours (the lowest string on the left), to a red line near the bottom; play each note as it reaches the line. The number on each note is the fret, a tail shows how long it rings, and the <b>fret</b> number beside the line is where your hand should be. <b>Zoom</b> sets how fast the notes come. Click above the line to jump to that moment. Drums, keys and vocals are shown in Scrolling and Page.</li>
       <li><b>Notation</b> adds a standard staff under the tab; <b>Rhythm</b> adds note lengths without the staff.</li>
       <li><b>Song / Tab / Both</b> chooses what you hear: the recording, a synth playing the tab notes, or both.</li>
       <li><b>Metronome</b> clicks along with the song's beat.</li>
@@ -163,7 +164,7 @@
     <p>Songs with lyrics show a <b>Lyrics</b> box in the toolbar. Under the tab you see the line being sung, with each word lighting up as it's sung, and the next line in grey. The lyrics follow the music at any speed, in loops and after a jump. Click a word or a line to play from there.</p>
     <figure><img src="img/lyrics.png" alt="The demo song's verse: the line being sung under the tab, and the same words in a row along the tab" width="1280" height="800" loading="lazy" />
       <figcaption>“Pick it up and play it slow”, with <b>In tab</b> on.</figcaption></figure>
-    <p><b>In tab</b> also puts the words in a row along the tab, each one at its time, in both Scrolling and Page view. When a song has more than one set of lyrics (the original words, a romanisation such as romaji, or a translation), a menu next to it switches between them. Right-to-left and Japanese, Chinese or Korean lyrics work too. Tabloop remembers for each song whether the lyrics are on and which set you chose.</p>
+    <p><b>In tab</b> also puts the words in a row along the tab, each one at its time, in both Scrolling and Page view. When a song has more than one set of lyrics (the original words, a romanisation such as romaji, or a translation), a menu next to it switches between them. Right-to-left and Japanese, Chinese or Korean lyrics work too. Tabloop remembers for each song whether the lyrics are on and which set you chose. To start new songs with the lyrics hidden, untick <b>⚙ Settings → Lyrics → Show lyrics for new songs</b>; songs you've already opened keep their own choice, and the <b>Lyrics</b> box brings them back for any song.</p>
 
     <h2 id="vocals">Vocals / karaoke</h2>
     <p>Songs with lyrics, a vocal melody or a separate vocals track get a <b>🎤 Vocals</b> tab next to the other tabs. It shows the singer's melody as bars on a pitch axis, higher notes higher up, with the words under it at their time, and the line being sung in the lyrics bar below. The note being sung lights up as the song plays, at any speed and in loops. Show it alone, or next to the guitar tab with <b>+</b>.</p>
@@ -219,7 +220,7 @@
       <figcaption>⚙ Settings: note feedback, and how forgiving the judging is for instruments and for singing.</figcaption></figure>
 
     <h2 id="practice">Practice tracking</h2>
-    <p>Tabloop records your practice automatically while you play, and keeps it only in your browser. <b>📈 Practice</b> shows:</p>
+    <p>Tabloop records your practice automatically while you play, and keeps it only in your browser: it's saved every couple of seconds while you play, and at once when you pause, at the end of each loop pass and of the song, and when you jump. <b>📈 Practice</b> shows:</p>
     <ul>
       <li>your <b>streak</b> (days in a row with at least 1 minute of playing; the header shows 🔥 while it runs),</li>
       <li>time today, this week and in total, and a calendar of practice per day,</li>
@@ -230,14 +231,14 @@
       <figcaption>The practice dashboard.</figcaption></figure>
 
     <h2 id="settings">Settings, sync &amp; backup</h2>
-    <p><b>⚙ Settings</b> holds string and drum colours, <a href="#markers">note feedback</a>, <a href="#forgiveness">how forgiving the judging is</a>, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes, a link back here, the <a href="../privacy.html">privacy policy</a> and the <a href="../terms.html">terms of use</a>.</p>
+    <p><b>⚙ Settings</b> holds string and drum colours, <a href="#markers">note feedback</a>, whether <a href="#lyrics">new songs show their lyrics</a>, <a href="#forgiveness">how forgiving the judging is</a>, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes, a link back here, the <a href="../privacy.html">privacy policy</a> and the <a href="../terms.html">terms of use</a>.</p>
     <figure><img src="img/settings.png" alt="The settings dialog with string colours and drum colours" width="1280" height="800" loading="lazy" />
       <figcaption>Settings.</figcaption></figure>
     <h3>Keeping your data across computers</h3>
     <ul>
-      <li><b>🔄 Sync folder</b> (Chrome or Edge on a computer): choose a folder that Google Drive, iCloud Drive, Dropbox or OneDrive syncs, then the same folder on your other computers. Settings, practice history, saved loops and playlists then stay in sync by themselves.</li>
+      <li><b>🔄 Sync folder</b> (Chrome or Edge on a computer): choose a folder that Google Drive, iCloud Drive, Dropbox or OneDrive syncs, then the same folder on your other computers. Settings, practice history, saved loops and playlists then stay in sync by themselves: changes are written a few seconds after you make them (at most 20 seconds apart while you keep playing), and when you pause or leave the page.</li>
       <li><b>💾 Export / Import</b> moves everything to another browser as one file.</li>
-      <li><b>☁ Google Drive</b> backs up to a private app folder in your own Drive (web version). Google's sign-in in the browser lasts about an hour; with automatic backup on, the app tries to renew it by itself, and if the browser doesn't let it, a small <i>Google Drive backup paused</i> notice shows the last backup and a <b>Reconnect</b> button. Practice done in the meantime is backed up when you reconnect, from the notice or from Settings; ⚙ shows a dot until then. None of this happens if you never linked Drive or back up by hand.</li>
+      <li><b>☁ Google Drive</b> backs up to a private app folder in your own Drive (web version). Automatic backup runs half a minute after you stop practising, at least every 2 minutes while you keep playing, and when you pause or leave the page (only while signed in, and only if something changed). Google's sign-in in the browser lasts about an hour; with automatic backup on, the app tries to renew it by itself, and if the browser doesn't let it, a small <i>Google Drive backup paused</i> notice shows the last backup and a <b>Reconnect</b> button. Practice done in the meantime is backed up when you reconnect, from the notice or from Settings; ⚙ shows a dot until then. None of this happens if you never linked Drive or back up by hand.</li>
     </ul>
     <figure><img src="img/drive-paused.png" alt="A small notice in the corner: Google Drive backup paused, with the last backup time, a Reconnect button and a close button" width="620" height="130" loading="lazy" />
       <figcaption>The <i>Google Drive backup paused</i> notice. <b>Reconnect</b> signs in again with one click (no password) and backs up; ✕ dismisses it.</figcaption></figure>
