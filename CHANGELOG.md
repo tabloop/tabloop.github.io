@@ -2,6 +2,21 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.20.0 — 2026-11-06
+
+### New
+- **Tracks panel:** a new side panel (the **Tracks** button next to *Saved loops*) lists the song's parts: each tab part (Lead, Bass…), Keys, Drums, MIDI instruments, 🎤 Vocals and **My take** once a take is selected. Each row has an 👁 eye to show or hide the part on screen (the same as clicking or shift-clicking its tab; one part always stays shown), **M** to mute it, **S** to solo it and a volume slider (double-click for 100 %). Clicking a part's name shows only that part.
+- A part's sound is whatever plays it: its stem of the recording in *Song*, the tab synth in *Tab* (while it's shown), both in *Both*, its MIDI-instrument synth, the drum synth or your take. Each row says what that is right now, e.g. "guitar stem + tab synth", and says so when no stem matches the part. Two parts that share a stem (Lead and Rhythm on the guitar stem) both say so: the stem goes silent only when both are muted.
+- Stems that belong to no part (e.g. *other*, the rest of the band) are listed under **Other stems**, with their own mute, solo and volume.
+- **Solo** plays only that part; Cmd/Ctrl-click S to add more parts. The metronome and the count-in keep playing. Solo is only for listening: it doesn't change the saved levels, and it isn't remembered.
+- The part levels are remembered for each song. They work inside the 🎚 Mixer's channels (Song, Tab synth, MIDI drums, MIDI instruments), and the Mixer lists the same levels under **This song's parts**: changing one changes the other. My take's row is the Mixer's My take channel.
+- **The side panels are stacked:** with more than one of Sections, Saved loops and Tracks open, each shows its title bar and only one is expanded. Click another title (or press Enter on it) to expand it, and the one that was open folds up. The toolbar buttons still open and close each panel, the expanded one is remembered, and 💾 Save brings Saved loops forward. To see them all at once as before, with the bar to drag between Sections and Saved loops, choose ⚙ Settings → *Side panels* → **Side by side**. On phones it works the same way, in the sheet over the tab.
+
+### Improved
+- **Techniques drawn like printed tab**, in the Scrolling and the Page view, in the string's colour: **bends** as a curved arrow up from the note with the amount (*¼*, *½*, *full*, *1½*, *2*), **releases** as an arrow down, **pre-bends** as a straight arrow up marked *PB*, and bend curves drawn as their shape; **hammer-ons / pull-offs** as an arc from the note before with a small *H* / *P*; **taps** as *T*; **slides** as a line rising or falling towards the next fret, and a slide off a note as a short slanted line after it; **vibrato** as a clearer wavy line; **tremolo picking** as three slashes; **pinch harmonics** as *P.H.*; **palm mutes** as *P.M.* with a dashed line over the run of palm-muted notes; **accents** as *>* (once per chord). Harmonics stay *<12>* and muted notes *x*.
+- The marks are placed so they never cover a fret number, a chord name or each other, grow with the Page view's text size (**A−** / **A+**), and stay readable on phones.
+- **Help:** a new *Reading the tab* section lists the symbols, with a picture.
+
 ## 0.19.0 — 2026-11-06
 
 ### New

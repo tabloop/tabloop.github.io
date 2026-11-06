@@ -48,7 +48,9 @@
       <a href="#open">Opening songs</a>
       <a href="#library">Library &amp; playlists</a>
       <a href="#play">Playing along</a>
+      <a href="#reading">Reading the tab</a>
       <a href="#speed">Speed, pitch &amp; mixer</a>
+      <a href="#trackspanel">Tracks panel</a>
       <a href="#loop">Looping</a>
       <a href="#saved">Saved loops</a>
       <a href="#trainer">Speed trainer &amp; count-in</a>
@@ -118,6 +120,19 @@
     <figure><img src="img/page-view.png" alt="Page view with standard notation under the tab" width="1280" height="800" loading="lazy" />
       <figcaption>Page view with notation. Scrolling the page yourself pauses the auto-follow for a few seconds.</figcaption></figure>
 
+    <h3 id="reading">Reading the tab</h3>
+    <p>Techniques are drawn as in printed tab, in the string's colour, in both views:</p>
+    <ul>
+      <li><b>Bend:</b> a curved arrow up from the note with how far to bend: <i>¼</i>, <i>½</i> (a half step, one fret), <i>full</i> (a whole step, two frets), <i>1½</i>, <i>2</i>. An arrow down is a <b>release</b>; a straight arrow up marked <i>PB</i> is a <b>pre-bend</b> (bend before you pick). A bend that goes up and comes back is drawn as its shape.</li>
+      <li><b>Hammer-on / pull-off:</b> an arc from the note before, marked <i>H</i> or <i>P</i>. <b>Tap:</b> <i>T</i> above the note.</li>
+      <li><b>Slide:</b> a straight line rising or falling to the next fret. A short slanted line after a note slides off it.</li>
+      <li><b>Vibrato:</b> a wavy line. <b>Tremolo picking:</b> three slashes above the note.</li>
+      <li><b>Harmonic:</b> the fret in angle brackets, <i>&lt;12&gt;</i>. <b>Pinch harmonic:</b> <i>P.H.</i></li>
+      <li><b>Palm mute:</b> <i>P.M.</i> with a dashed line over the notes to mute. <b>Muted (dead) note:</b> <i>x</i>. <b>Accent:</b> <i>&gt;</i>, pick harder.</li>
+    </ul>
+    <figure><img src="img/techniques.png" alt="Page view of a test song: bend arrows marked full, half and quarter, PB for a pre-bend, a release arrow, H and P arcs between notes, a T over a tapped note, slide lines, a wavy vibrato line, harmonics in angle brackets, P.H., and P.M. with a dashed line over palm-muted notes" width="1240" height="430" loading="lazy" />
+      <figcaption>The techniques as drawn in the Page view.</figcaption></figure>
+
     <h2 id="speed">Speed, pitch &amp; mixer</h2>
     <ul>
       <li><b>Speed</b> (25–150 %) slows the song down or speeds it up without changing the pitch.</li>
@@ -126,6 +141,10 @@
     </ul>
     <figure><img src="img/speed-mixer.png" alt="Speed set to 75 percent with the mixer panel open" width="1280" height="800" loading="lazy" />
       <figcaption>Speed at 75 % and the mixer: guitar, bass and drums each have their own channel in this song.</figcaption></figure>
+
+    <h2 id="trackspanel">Tracks panel</h2>
+    <p>Press <b>Tracks</b> (top right, next to <i>Saved loops</i>) for a list of the song's parts: Lead, Bass, Keys, Drums, MIDI instruments, 🎤 Vocals, and <b>My take</b> once you've recorded one. On each row, the 👁 eye shows or hides the part on screen (like shift-clicking its tab), <b>M</b> mutes it, <b>S</b> solos it and the slider sets its volume (double-click for 100 %). Click a part's name to show only that part. Solo plays just that part (Cmd/Ctrl-click <b>S</b> to add another); the metronome keeps going, and the levels you set aren't changed.</p>
+    <p>Each row says what you hear of the part: its stem of the recording in <i>Song</i> (e.g. “guitar stem”), the tab synth in <i>Tab</i>, both in <i>Both</i>, or its MIDI synth. If no stem matches a part, the row says so. Stems that belong to no part, like “other”, are listed under <b>Other stems</b>. The levels are kept for each song, and the 🎚 Mixer shows the same ones under <i>This song's parts</i>.</p>
 
     <h2 id="loop">Looping</h2>
     <ol>
@@ -140,7 +159,8 @@
     <p>Press <b>💾 Save</b> in the loop bar to name the loop and keep it. The open song's saved loops are listed under the sections: click one to loop it again, ✎ to rename, ⌖ to set it to the current loop, ↑ ↓ to reorder.</p>
     <p>Tick several loops and press <b>▶ Play in a row</b> to practise them one after the other (× N times each, optionally repeating). <b>🔁 Loops</b> in the header lists every song's saved loops.</p>
     <figure><img src="img/saved-loops.png" alt="A saved loop named Chorus chords in the sidebar" width="1280" height="800" loading="lazy" />
-      <figcaption>A saved loop in the sidebar. The divider between sections and saved loops can be dragged; <b>Sections</b> and <b>Saved loops</b> at the top right show or hide them.</figcaption></figure>
+      <figcaption>A saved loop in the sidebar. <b>Sections</b>, <b>Saved loops</b> and <b>Tracks</b> at the top right show or hide each panel.</figcaption></figure>
+    <p>With more than one panel open, they're stacked: you see each title, and one panel is open at a time. Click a title to open that panel; the others fold up. To see them all at once, with a divider to drag between sections and saved loops, choose <b>⚙ Settings → Side panels → Side by side</b>.</p>
 
     <h2 id="trainer">Speed trainer &amp; count-in</h2>
     <p><b>🏋 Speed trainer</b> (in the loop bar) makes each pass of the loop a little faster: set the start and end speed, the step, and how many passes per step. It stays at the end speed once it gets there.</p>
@@ -231,7 +251,7 @@
       <figcaption>The practice dashboard.</figcaption></figure>
 
     <h2 id="settings">Settings, sync &amp; backup</h2>
-    <p><b>⚙ Settings</b> holds string and drum colours, <a href="#markers">note feedback</a>, whether <a href="#lyrics">new songs show their lyrics</a>, <a href="#forgiveness">how forgiving the judging is</a>, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes, a link back here, the <a href="../privacy.html">privacy policy</a> and the <a href="../terms.html">terms of use</a>.</p>
+    <p><b>⚙ Settings</b> holds string and drum colours, how the side panels are laid out (stacked or side by side), <a href="#markers">note feedback</a>, whether <a href="#lyrics">new songs show their lyrics</a>, <a href="#forgiveness">how forgiving the judging is</a>, the sync folder, export / import, Google Drive backup and usage-count options. The top shows the version, the release notes, a link back here, the <a href="../privacy.html">privacy policy</a> and the <a href="../terms.html">terms of use</a>.</p>
     <figure><img src="img/settings.png" alt="The settings dialog with string colours and drum colours" width="1280" height="800" loading="lazy" />
       <figcaption>Settings.</figcaption></figure>
     <h3>Keeping your data across computers</h3>
