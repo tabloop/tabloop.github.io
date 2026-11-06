@@ -2,6 +2,23 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.17.0 — 2026-11-05
+
+### New
+- **⚖️ How forgiving the judging is:** choose in **⚙ Settings** how far off a note can be and still count as right — **Relaxed** (±60 ms, ±25 ¢), **Normal** (±40 ms, ±15 ¢, as before and the default), **Strict** (±25 ms, ±10 ¢), or **Custom** with your own values (timing 10–150 ms, pitch 5–50 ¢). **Reset to Normal** puts it back.
+- One setting for 👂 Live and recorded takes: the ✓ and X/Y counts, early / late / flat / sharp, ghost colours, the 🎯 markers (yellow up to twice the limit, red beyond), take summaries and timing marks all follow it. Change it and what's on screen is judged again right away, including the loop's last passes in the live box. Remembered, and exported and synced with your settings.
+
+### Fixed
+- **Google Drive backup no longer stops without telling you.** Google's sign-in in the browser lasts about an hour. With automatic backup on, the app now tries to renew it a few minutes before it ends, without a click or any Google screen. Browsers often block this (it needs Google's popup), and when it doesn't work a small **Google Drive backup paused** notice appears in the corner, outside Settings, with when the last backup was and a one-click **Reconnect**; ⚙ gets a dot. It shows once each time the sign-in is lost and can be dismissed with ✕.
+- **Practice done while Drive was disconnected is backed up when you reconnect**, from the notice or from Settings, also after a reload or in a new tab. Before, reconnecting from Settings didn't back it up until you practised again.
+- Nothing changes if you never linked Google Drive or back up by hand.
+- **Songs from some folders didn't play:** an unpacked song folder or a song file whose file names have accents (*Café*, *Ünïcode*) failed with "File missing from pack" when it was made or copied on a Mac, which spells accents differently from the song's manifest. These songs now open and play.
+- Songs whose manifest names a file in different upper/lower case (*Stems/Guitar.ogg* for *stems/guitar.ogg*), or with `./` in front, now open too, as they do on Mac and Windows disks.
+- **External drives:** the hidden `._` files a Mac leaves on USB drives and network shares no longer show up as broken songs in the 📚 Library, and are no longer taken for a song's drum chart.
+- **Files the browser can't read** now say why and what to do, instead of the browser's "could not be read, typically due to permission problems": a song stored *online only* in OneDrive, iCloud Drive, Google Drive or Dropbox (make it available offline), a file moved or deleted since it was opened (also when reopening from 🕘 Recent), a Library song changed since the folder was picked (pick the folder again), and, on a Mac, a folder the browser isn't allowed to read (Privacy & Security settings).
+- One unreadable file no longer stops everything: a song folder opens even if an unrelated file in it can't be read, and a Library scan lists every other song, marking only the unreadable one.
+- Picking a folder that comes through empty (e.g. a link to another folder) now says so instead of doing nothing.
+
 ## 0.16.1 — 2026-11-05
 
 ### Improved
