@@ -55,6 +55,7 @@
       <a href="#drums">Drums</a>
       <a href="#instruments">Instruments from MIDI</a>
       <a href="#lyrics">Lyrics</a>
+      <a href="#vocals">Vocals / karaoke</a>
       <a href="#record">Recording yourself</a>
       <a href="#practice">Practice tracking</a>
       <a href="#settings">Settings, sync &amp; backup</a>
@@ -159,6 +160,18 @@
     <figure><img src="img/lyrics.png" alt="The demo song's verse: the line being sung under the tab, and the same words in a row along the tab" width="1280" height="800" loading="lazy" />
       <figcaption>“Pick it up and play it slow”, with <b>In tab</b> on.</figcaption></figure>
     <p><b>In tab</b> also puts the words in a row along the tab, each one at its time, in both Scrolling and Page view. When a song has more than one set of lyrics (the original words, a romanisation such as romaji, or a translation), a menu next to it switches between them. Right-to-left and Japanese, Chinese or Korean lyrics work too. Tabloop remembers for each song whether the lyrics are on and which set you chose.</p>
+
+    <h2 id="vocals">Vocals / karaoke</h2>
+    <p>Songs with lyrics, a vocal melody or a separate vocals track get a <b>🎤 Vocals</b> tab next to the other tabs. It shows the singer's melody as bars on a pitch axis, higher notes higher up, with the words under it at their time, and the line being sung in the lyrics bar below. The note being sung lights up as the song plays, at any speed and in loops. Show it alone, or next to the guitar tab with <b>+</b>.</p>
+    <p><b>Pitch − / +</b> moves the whole song up or down by half-steps to suit your voice: the melody moves with it.</p>
+    <p><b>Where the melody comes from.</b> Some songs come with it. If not, there are two ways to add it, in the bar under the play button:</p>
+    <ul>
+      <li><b>🎹 Melody from MIDI…</b>: choose a MIDI file of the song. In the list of its tracks, set the singer's track to <b>Vocal melody</b> (Tabloop suggests one when a track is called “Vocals” or “Voice”). Line it up with the recording in the <b>Instrument sync</b> bar, as for instruments from MIDI. Tabloop remembers it for the song.</li>
+      <li><b>🔎 Find the melody from the vocals</b>, for songs that have a separate vocals track: Tabloop listens to it and works out the notes by itself. It takes a few seconds and is done once; the song keeps it. It's automatic, so it's <i>approximate</i>: check it against the song.</li>
+    </ul>
+    <p>When a song has more than one, a menu in that bar switches between them. <b>💾 Save pack</b> keeps a melody from MIDI or one found from the vocals inside the saved copy, so it's there next time without the MIDI file; a song's own melody is never replaced.</p>
+    <p><b>🎙 Sing:</b> press it and sing along (headphones help, so Tabloop hears you and not the song). Your voice shows as a line on the melody: <b>green</b> when you're in tune, <b>blue</b> when flat, <b>orange</b> when sharp. Each note is checked on its pitch only, not on timing: Tabloop takes the middle of the note, so sliding into a note or a bit of vibrato doesn't count against you. Singing an octave higher or lower than the melody counts as right, so a man can sing a woman's melody. How close counts as in tune is singing's own setting in <b>⚙ Settings → How forgiving the judging is → 🎤 Singing</b>: <b>Normal</b> ±30 cents, <b>Relaxed</b> ±50, <b>Strict</b> ±20, or your own value; it doesn't change how your guitar playing is judged. A box in the corner counts the notes you sang in tune, e.g. <b>9/11</b>, for this pass and your best.</p>
+    <p>The microphone is only used while 🎙 Sing is on; leaving the Vocals tab turns it off. Nothing you sing is recorded or stored.</p>
 
     <h2 id="record">Recording yourself</h2>
     <p>Press <b>⏺ Rec</b> (next to ⟲ Loop), choose your microphone or audio interface, then <b>▶</b>: Tabloop records you playing along until you pause. With a loop on, every pass becomes its own take; tick <b>Only keep complete passes</b> to keep only the passes you played from the loop start to its end. Use headphones, so the song doesn't get into the take.</p>

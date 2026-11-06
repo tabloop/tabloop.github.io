@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.18.0 — 2026-11-05
+
+### New
+- **🎤 Vocals tab (karaoke):** songs with lyrics, a vocal melody or a vocals stem get a **🎤 Vocals** tab next to the arrangement tabs. It shows the vocal melody as bars on a pitch axis (like the keys piano roll), the lyrics in time under it and in the karaoke bar, following playback, loops, speed and **Pitch** (move the song up or down to suit your voice: the melody moves with it). Show it alone, or beside the tab with **+** / shift-click.
+- **Where the melody comes from:** a pack's own vocal pitch files (`vocal_pitch.json` and its pitch contour, drawn as a thin line), **🎹 Melody from MIDI…** (any track of a MIDI file, marked *Vocal melody* in the ＋ Instrument / ⚙ Instruments dialog, with the file's sync offset), or **🔎 Find the melody from the vocals**, which finds it automatically from the pack's vocals stem (approximate; done once per song, then kept). A song with several lists them in the vocal bar. A song without any says how to add one.
+- **💾 Save pack keeps the vocal melody:** a melody from MIDI or found from the vocals is written into the saved copy as the pack's own `vocal_pitch.json` (feedpak spec §7.2; a found one with its `pitch_extraction` note), synced and at the song's own pitch, as tab is saved. A pack that already has its own vocal melody keeps it unchanged.
+- **🎙 Sing:** turn it on in the vocal bar and sing along: your voice is drawn as a line on the melody, green when in tune, blue when flat, orange when sharp, and each note is judged on its pitch (not its timing). The judging ignores the scoop into a note and the slide out of it, and takes the middle of a note with vibrato. Singing has its own, wider pitch limit in ⚙ Settings → *How forgiving* → **🎤 Singing**: Relaxed ±50 ¢, **Normal ±30 ¢** (the default), Strict ±20 ¢, or Custom (5–100 ¢); the instruments' limit is unchanged, and what's shown is judged again when you change it. Singing an octave off counts as right (a man singing a woman's melody, say). A score shows notes in tune out of notes sung, this pass and the best. The microphone opens only while 🎙 Sing is on and nothing is recorded or stored.
+
 ## 0.17.0 — 2026-11-05
 
 ### New
