@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.25.0 — 2026-11-07
+
+### New
+- **Judge timing only (ignore pitch).** For when you're sure of the notes and want to train speed and timing: tick **Judge timing only** in ⚙ Settings → ⚖️ How forgiving the judging is, or press **⏱ Timing only** in the 👂 Live bar (the two stay in sync). With 👂 Live and recorded takes, a note played on time then counts as right whatever its pitch: only *early*, *late*, *missed* and *extra* count, never flat or sharp. Ghost notes are coloured by timing (green on time, yellow a little off, red clearly off, like the markers), 🎯 markers show only 🎯 ◀ ▶ ✕, the live box says *timing only* and take summaries start *Timing only:* without the pitch part; the card on a ghost or marker still shows the pitch you played, marked *not judged*. What's on screen is judged again as soon as you switch. Off by default; remembered, exported and synced. 🎙 Sing is judged on pitch by nature and isn't affected. [#3](https://github.com/bazarcad-ai/feedpak-player/issues/3)
+
+### Improved
+- **The anonymous usage counts (hosted site only) now also include rough practice patterns, still without any user ID.** Once a day, for the last day you used Tabloop, a few counts with ranges only: about how long you practised (e.g. 10–20 minutes), in how many sessions and the longest one, how many different songs, and which features you used (e.g. the tuner, loops, the speed trainer, slowed-down playback, the metronome); once a week, on how many of the last 7 days you opened the app. This shows how Tabloop is used (how many people practise 10–20 minutes a day, how many use the tuner …), never who: no cookies, no user ID, no song names, no settings. As before they're never sent from a downloaded copy, respect Do Not Track and Global Privacy Control, and stop when you untick **⚙ Settings → Send anonymous usage counts** (which also deletes the day gathered so far). The [privacy policy](https://tabloop.github.io/privacy.html) lists them.
+
 ## 0.24.2 — 2026-11-07
 
 ### Fixed
