@@ -2,6 +2,22 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.21.0 — 2026-11-06
+
+### New
+- **Google Drive keeps several computers in step.** Each time the app starts while you're signed in to Google (or right after you click **Reconnect**), it compares this browser with your Drive backup. Nothing differs: nothing happens. Only one side changed since they were last in step: the app takes the newer side by itself, another computer's changes come here or this browser's go to Drive, and a small message says what it did, with **Undo**.
+- **When both changed, you choose.** A window lists what differs. For practice stats: **Combine** (every session from both computers, each counted once), **Use Google Drive's** or **Keep this browser's**. For each setting, saved loop or song's state: this browser's or Google Drive's value, with when each changed (the newer one is selected), or all at once. Then: **Also update Google Drive with the result?** (Yes by default).
+- **A new computer asks first:** the first time a browser that already has data connects to a Google Drive that has a backup, the same window opens. Settings you never changed on that browser (its defaults) are grouped in one folded row with Google Drive's value selected, so only real differences stand out. A browser with nothing of its own yet simply takes the backup.
+- **Restore from Drive** now opens the same window with Google Drive's side selected, so you can keep some things from this browser instead of replacing everything. **Back up now** still backs up; if another computer changed something in Drive since, it's merged in first instead of being overwritten.
+
+### Improved
+- **Practice history from several computers adds up exactly through Google Drive**, as it already did through the sync folder: the backup now keeps each browser's own share (and when each setting and saved loop changed, deletions included). Backups made by older versions can still be read and restored; when merging one of those, sessions on the same day and song count once (the larger of the two) instead of twice. Backups made by this version can't be restored by older versions (0.20 and before): update the app on your other computers too.
+- **Saved and synced at more moments:** opening or changing songs, adding or editing instruments, saving, renaming or deleting a loop, changing a setting, tagging a song, editing a playlist and closing a window now save at once and make the sync folder and the automatic Google Drive backup write within a few seconds. A burst of changes still makes one write.
+- **Sync folder and Google Drive together** agree on what's newer and never count a session twice.
+- **Solo silences the metronome and the count-in too:** while a part is soloed in the Tracks panel you hear only that part. The Metronome and Count-in settings stay as they were and come back when the solo ends; solo is still not remembered.
+- **Songs that have both a full mix and separate stems now play the separate stems,** so each part can be muted, soloed and set on its own in the Tracks panel (before, these songs played the full mix while every stem was on). The full mix is used when a song has no separate stems, or when one of them can't be read or decoded; the Tracks rows then say "in the full mix (stems couldn't load)".
+- **Highway:** techniques are now drawn as on the tab in Scrolling and Page, with the same marks turned to fit the highway: bends as an arrow rising from the note and leaning across the lane, with ¼, ½, full, 1½ or PB; hammer-ons and pull-offs as a slur from the note before with H / P; slides as the tail leaning towards the fret they end on, with its number; vibrato as a wave along the tail; P.M. with a dashed line over a palm-muted run; T, P.H., tremolo slashes, accents, x and <12>. Labels never cover a fret number and stay readable on a phone.
+
 ## 0.20.0 — 2026-11-06
 
 ### New
