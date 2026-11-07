@@ -2,6 +2,18 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.23.0 — 2026-11-06
+
+### New
+- **⏱ Calibration:** a short guided calibration of what you see, hear and play on your setup, in ⚙ Settings → *Calibration* and behind **⏱ Calibrate** in the record, live and vocal bars. The first time an input is opened, the app suggests it once. Three steps (about a minute), each one skippable and each showing its result in ms:
+  1. **Sound & screen:** tap along with 12 clicks you hear, then with 12 flashes you see. The difference is how much later the sound reaches you than the picture (Bluetooth headphones often add a lot), and the cursor and notes are drawn that much later. **▶ Preview** shows a marker that should reach its line on each click, with a slider to fine-tune it.
+  2. **Your input:** **🔊 Automatic** (the mic near the speaker listens for the app's clicks) or **🎸 Play along** (play a short note on each of 8 clicks after a count-in; works with headphones and audio interfaces). The result becomes the input's nudge for ⏺ Rec, 👂 Live and 🎤 Sing.
+  3. **Check:** play on 8 clicks. Each note shows as 🎯 or ◀ / ▶ with its ms, plus the median, while a cursor crosses each beat as you hear it. **Looks right** keeps it; **Adjust** gives a fine-tune slider (the markers move as you drag) and **Use median**.
+- The values are kept **for each output and input device** in this browser only (never exported or synced). ⚙ Settings lists them and has **Reset**. A warning shows for Bluetooth outputs and recommends wired headphones or an audio interface. Until you calibrate, nothing changes.
+
+### Improved
+- **🎚 Mixer: bigger, scrollable, and steady.** With many channels (the song's parts and stems, MIDI instruments, My take, the input…) the mixer no longer runs off the screen: it's wider, as tall as there's room for (when there isn't room below 🎚 Mixer it takes the window's full height beside the button), and its channels scroll inside it while the title and a new **✕** stay put. On a phone and in Portrait it's a sheet along the bottom, up to about 85 % of the height, scrolling inside. The **Input** section keeps one size: the level meter, its readout (*—* when silent) and the Clip light always take their room and the *you hear yourself … ms late* line keeps its space while monitoring is off, so nothing in the mixer moves while you play, stop, clip or switch Monitor.
+
 ## 0.22.0 — 2026-11-06
 
 ### New
