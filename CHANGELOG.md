@@ -2,6 +2,13 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.24.2 — 2026-11-07
+
+### Fixed
+- **🕘 Recent stays on each device: it's no longer copied to Google Drive, the sync folder or the settings export.** Each computer, phone or tablet opens songs from its own files and its own library folder, so another device's list didn't work there and overwrote this one's. Now each device keeps its own Recent list. Backups and sync files made by earlier versions still contain the old list: it's ignored (it never replaces this device's list and isn't listed in the Google Drive differences window), and the next backup or sync leaves it out. Importing an older settings export keeps this device's list too. The 📚 Library's folder and song list already stayed on each device; its sort order is a preference and still syncs. [#1](https://github.com/bazarcad-ai/feedpak-player/issues/1)
+- **Playlists synced from another device find their songs even when its library folders are organised differently.** A playlist song is looked up in this device's library by its place in the library folder, and now also by title and artist, so it no longer shows as *missing* just because the folders differ.
+- **📈 Practice time now counts only while the song is actually heard, in real time.** It used to count from the moment ▶ was pressed: the count-in, the short wait before the sound starts and time with the audio stopped by the system (e.g. a phone's background tab) were counted as practice. Now the time comes from the audio clock: it counts while the song plays in every mode (loops and loop chains, 👂 Live, ⏺ recording, 🎙 Sing, the speed trainer, ▶ Play take), at real time whatever the speed (5 s at 50 % counts 5 s), and with the page in the background as long as the song keeps playing; never while paused, during the count-in, while the audio is suspended or with the app just open. [#6](https://github.com/bazarcad-ai/feedpak-player/issues/6)
+
 ## 0.24.1 — 2026-11-07
 
 ### Fixed
