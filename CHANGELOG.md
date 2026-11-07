@@ -2,6 +2,16 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.22.0 — 2026-11-06
+
+### New
+- **Portrait layout (optional), for phones and tablets held upright or a monitor turned on its side.** In ⚙ Settings → *Layout*, choose **Portrait (more room for the song)**: the tab, page or highway gets most of the height (about 77 % on a phone, 86 % on a tablet, 90 % on a tall monitor). The header and the toolbar rows fold into one slim bar with the song title, its parts (scrolling sideways) and a **☰** menu holding everything else; Sections, Saved loops and Tracks open over the tab (✕ or a tap on the tab closes them); ▶, seek, the time, ⟲ Loop and speed stay at the bottom, and the loop, record and live bars appear as one compact row each while they're on. **Automatic** uses Portrait while the screen is taller than wide and goes back to Standard when you turn it; Portrait chosen on its own stays when you turn the screen. Kept per device (not synced). Standard stays the default and is unchanged.
+- **🎚 Mixer → Input: set the level of your microphone or instrument, and hear yourself.** While the input is open (🎸 Tuner, ⏺ Rec, 👂 Live or 🎙 Sing), the mixer has an **Input** section: a **Level** (0–400 %, double-click for 100 %) that applies to everything that listens — new recordings (it's part of the take), the tuner, Live and Sing — with a level meter and a **Clip** light, remembered for each input device. **Monitor** plays your input through the app with its own volume: off by default (and after every reload), with a reminder to use headphones and how late you hear yourself. It doesn't change your recordings, and it stops when the input is closed.
+
+### Improved
+- **🎙 Takes: delete several takes at once.** Tick takes in the list (or **Select all**; it shows how many are selected) and press **Delete selected**, or **Delete all** to clear this song's takes (other songs keep theirs). Before anything is deleted, a window says how many takes and how long they are, e.g. *Delete 3 takes (2:14)? This can't be undone.*, with **Cancel** focused; Cancel or Escape deletes nothing. Deleting a single take with ✕ asks in the same window. If the selected take is deleted, the newest one left is selected; if a deleted take was playing, playback stops.
+- **Ghost notes and 🎯 markers explain themselves:** hover one (or tap it on a phone or tablet) and a small card shows what the tab expected and what you played, e.g. *Expected D3, A string, fret 5 · Played C#3 · Pitch −30 ¢, flat · Timing +25 ms, on time · ♭ Flat*. Chords show their name and notes (timing only), missed notes say *not played*, extra notes say *Extra note: you played E3 (not in the tab)*. In tune, on time, flat and sharp follow your ⚖️ forgiveness setting, with the same colours as the ghosts and markers. It works in Scrolling, Page and Highway, while playing or paused, and replaces the short browser tooltip. On touch screens, tapping a ghost shows its card instead of jumping there; tap anywhere else to hide it (and jump, as before).
+
 ## 0.21.0 — 2026-11-06
 
 ### New
