@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.23.1 — 2026-11-06
+
+### Improved
+- **Phones and tablets held upright now use the Portrait layout automatically; turn it off in ⚙ Settings → Layout.** *Automatic: use Portrait when the screen is taller than wide* is now on by default, so the song gets most of the height out of the box on an upright screen; turning the screen sideways, or a computer's landscape window, keeps the Standard layout as before. Untick Automatic to always use the Layout chosen above it (Standard unless you pick Portrait). If you already chose a layout in 0.22.0, your choice is kept.
+
 ## 0.23.0 — 2026-11-06
 
 ### New
