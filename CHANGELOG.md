@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.24.1 — 2026-11-07
+
+### Fixed
+- **Safari (Mac, iPhone and iPad): the input opens again.** 🎸 Tuner, ⏺ Rec, 👂 Live, 🎙 Sing and ⏱ Calibration failed with *Couldn't start recording: AudioSession category is not compatible with audio capture.* Safari only lets a page use the microphone while its audio is set up to play *and* record, and the app switched to that only after asking for the microphone. It now switches just before opening the input, and back to plain playback (which on iPhone/iPad keeps the song playing with the silent switch on) as soon as nothing uses the input any more, or when opening it fails. If Safari still refuses, the message says so plainly (*Safari couldn't switch the audio to play-and-record…*) instead of the technical text.
+
 ## 0.24.0 — 2026-11-07
 
 ### Improved
