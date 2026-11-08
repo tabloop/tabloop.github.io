@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.27.0 — 2026-11-07
+
+### New
+- **Karaoke songs: UltraStar files open in Tabloop.** Open an UltraStar song folder (the `.txt` song file of UltraStar Deluxe, Vocaluxe or Performous, its audio and cover) with **Open folder**, drop it on the window, or open a zip of it (or just the `.txt`, without sound) with **Open file**. It opens on the **🎤 Vocals** tab alone, with the melody, the lyrics joined into words and lines, the cover and the audio (separate vocals and instrumental tracks too, when the song has them). Golden notes are drawn in gold; rap and freestyle notes have no pitch, so 🎙 Sing only checks that you sing them on time. Duets get a singer menu in the vocal bar: the melody and the lyrics switch together, remembered per song. Old song files in Windows (Latin-1) text, relative timing and tempo changes are read too. **💾 Save pack** keeps the song as a feedpak (audio, melody, lyrics), so it opens like any other song. Lyrics and melodies are usually copyrighted: only open files you have the right to use.
+- **Rock Band / Clone Hero / YARG vocals.** A chart loaded with **＋ Drums** now also brings its vocals: `PART VOCALS` and the harmonies `HARM1`–`HARM3` become the 🎤 Vocals tab's melody and lyrics (one part per harmony, each with its lyric track), with the chart's phrases as lyric lines, slides held, and talky / unpitched notes judged on timing only by 🎙 Sing. They move with the drum sync offset, and **💾 Save pack** writes them into the song.
+
 ## 0.26.0 — 2026-11-07
 
 ### New
