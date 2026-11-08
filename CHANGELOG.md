@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.30.0 — 2026-11-08
+
+### New
+- **🎯 Target practice: see where your notes land, and fix the latency from it.** A new **🎯 Target** tab in ⏱ Calibration (also **⚙ Settings → ⏱ Audio & calibration → 🎯 Target practice**, and a button in 🔍 Check my input). The app tells you what to play and when — the 5th fret of the A string 8 times, the open strings low to high (in the song's tuning), or a string and fret you pick — with a count-in, a click and a flash on every beat (or the flash alone, silent). After each note a dot lands on a **bullseye**: left early, right late, up sharp, down flat, with rings at your forgiveness limits (Normal: ±40 ms, ±15 ¢) and at 2× and 4× them; point at a dot for its note, ms and cents; missed notes are listed. Then the average timing and its spread, the average pitch, and tips: when every note is off by about the same (e.g. all 40 ms late) the app proposes the **input nudge** that fixes it (−40 ms), and after a round on the flash alone also a **screen offset**, with **Apply** (try another round with it) and **💾 Save**; scattered notes mean practice, not latency; notes all sharp or flat mean tuning. Nothing is recorded.
+
 ## 0.29.0 — 2026-11-08
 
 ### New
