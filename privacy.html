@@ -27,7 +27,7 @@
 <main>
   <a class="brand" href="./"><img src="logo.png" alt="" width="40" height="40" />Tabloop</a>
   <h1>Privacy policy</h1>
-  <p class="dim">Last updated: 7 November 2026</p>
+  <p class="dim">Last updated: 8 November 2026</p>
 
   <p>Tabloop (<a href="https://tabloop.github.io/">tabloop.github.io</a>) is a free web app for practising music: it plays
   song packages (<code>.feedpak</code> files) with their tab, and lets you slow down, loop, record yourself and track your
@@ -36,7 +36,8 @@
   <div class="box">
     <p><b>In short:</b> Tabloop has no server and no user accounts. Your songs, recordings and microphone audio never leave
     your device. Your settings and practice history are stored in your browser, and only go elsewhere if <i>you</i> choose to
-    back them up to your own Google Drive or sync them through a folder you pick. The hosted site sends anonymous usage counts,
+    back them up to your own Google Drive or sync them through a folder you pick. If you open a YouTube video, it plays in
+    YouTube's own player and Google's privacy policy applies to it. The hosted site sends anonymous usage counts,
     which you can turn off. Nothing is sold or shared for advertising.</p>
   </div>
 
@@ -87,6 +88,32 @@
   to you; it is not used for advertising, not sold, not transferred to others, not used to train AI models, and not read by
   people.</p>
 
+  <h2 id="youtube">YouTube videos (optional)</h2>
+  <p>Tabloop uses the <b>YouTube API Services</b> (YouTube's official embedded player and its IFrame Player API) to play
+  YouTube videos you choose to open with <b>▶ YouTube</b>. By playing YouTube videos you agree to the
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a> applies to what YouTube's player does.</p>
+  <table>
+    <tr><th>When</th><td>Only when you open a video. Until then the app makes no request to YouTube or Google.</td></tr>
+    <tr><th>What your browser contacts</th><td>youtube.com (to load YouTube's player script) and youtube-nocookie.com (the
+    player, in YouTube's <i>privacy-enhanced mode</i>), and the Google servers the player uses to stream the video. Like any
+    website, these receive standard web request information (such as your IP address and the address of this page). YouTube's
+    player may store cookies or similar data in your browser, mostly once you play a video; see the Google Privacy Policy.</td></tr>
+    <tr><th>What Tabloop keeps</th><td>On your device, as for your other songs: the video's id, its title as YouTube's player
+    reports it (refreshed each time you open the video; a title not refreshed for 30 days is replaced by “YouTube video
+    &lt;id&gt;”), and what <i>you</i> make for it: its loops, saved loops, the sections you mark, the speed and the position,
+    and your practice time on it. These are included in exports, folder sync and Google Drive backups like other songs'
+    (the 🕘 Recent list stays on this device). Tabloop does not download, record or store any of the video or its sound, and
+    does not collect any YouTube account data: it never asks you to sign in to YouTube.</td></tr>
+    <tr><th>Usage counts</th><td>Only that the YouTube feature was used that day (<code>features/youtube</code>, see below) and,
+    as for any song, that a video was played, by an anonymous ID; never its id or title.</td></tr>
+    <tr><th>How to remove it</th><td>Delete a video's saved loops in Tabloop, remove it from 🕘 Recent, or clear this site's data
+    in your browser. YouTube's own cookies and data are managed in your browser and your Google account; Google's
+    <a href="https://myaccount.google.com/permissions">security settings</a> list any access you gave apps (Tabloop has
+    none for YouTube).</td></tr>
+  </table>
+  <p>Spotify is not supported.</p>
+
   <h2>Sync folder (optional)</h2>
   <p>If you choose a sync folder in Settings, Tabloop writes your settings and practice history to that folder on your
   computer. If the folder is synced by a service such as Google Drive, iCloud Drive, Dropbox or OneDrive, that service's own
@@ -101,7 +128,7 @@
   <p><b>Rough practice patterns:</b> once a day, for the last day you used Tabloop, the counts also include a few
   facts about that day, each only as a range: about how long you practised (for example “10–20 minutes”), in how many
   sessions and how long the longest one was, how many different songs you played (for example “2–3”), and which
-  features you used (for example the tuner, loops, the speed trainer, slowed-down playback or the metronome). Once a
+  features you used (for example the tuner, loops, the speed trainer, slowed-down playback, the metronome or YouTube videos). Once a
   week they include on how many of the last 7 days you opened the app. Each of these is a separate count with a fixed
   name, so we only see how many browsers fall into each range, not who, and not which song or setting.</p>
   <ul>

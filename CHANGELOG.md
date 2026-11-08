@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.29.0 — 2026-11-08
+
+### New
+- **YouTube videos as songs: loop them and slow them down** ([#5](https://github.com/bazarcad-ai/feedpak-player/issues/5)). **▶ YouTube** (header, or **▶ YouTube video…** on the welcome screen): paste a link (`youtube.com/watch?v=…`, `youtu.be/…`, Shorts, embed links, or the 11-character id; a `t=` start time is kept), or drop a YouTube link on the window, or paste one anywhere. The video plays in **YouTube's own player** in the song area, and Tabloop's controls drive it: **▶ / ❚❚**, the seek bar, Space and ← →; playing or pausing in YouTube's player is followed too.
+- **Loops on a video** like on a feedpak: ⟲ Loop, start / end, ⌖, nudges (‹ › 0.25 s, ⇤ ⇥ 1 s, − + 0.05 s), the seek-bar handles, `[` `]`, ⏮ Restart, **saved loops**, **loop chains** and the **speed trainer**, kept per video (exported, synced and backed up like a song's). On a real video the jump back is sent 1–9 ms after the loop end (1–19 ms at 200 %) and YouTube's player confirms it about 10 ms later (up to ~50 ms); it may stutter briefly while it buffers.
+- **Sections you mark** on a video: **＋ Mark** in Sections (or **M**) where a part starts, then name it; each runs to the next mark. Click to loop, Shift-click for several, ✎ rename, ✕ delete. Kept (and synced) with the video.
+- **Speed on a video**: the speeds YouTube offers for it (usually 25–200 % in 25 % steps, pitch kept); − / + step through them, a typed speed goes to the nearest, and the tooltip lists them. A video with only 100 % turns the speed control off.
+- **Not for YouTube videos, by design:** pitch (*YouTube's player doesn't allow changing the pitch*), the tab, metronome and count-in, ⏺ Rec, 👂 Live, the mixer: the sound stays inside YouTube's player, which Tabloop never downloads, records or processes (YouTube's terms don't allow it). The 🎸 Tuner works. Practice stats count the time the video actually plays, and 🕘 Recent lists it.
+- **Privacy:** YouTube's player script is loaded only when a video is opened, and the player is YouTube's privacy-enhanced one (youtube-nocookie.com). The [privacy policy](https://tabloop.github.io/privacy.html#youtube) and the [terms](https://tabloop.github.io/terms.html) now cover YouTube videos; usage counts gain `features/youtube` (never a video's id or title).
+- **Spotify isn't supported:** its developer terms limit an app like this to 5 hand-listed Premium users unless it belongs to a business with 250,000+ monthly users, don't allow its music to overlap other sound, and its player has no speed control (see the help).
+
 ## 0.28.0 — 2026-11-08
 
 ### New

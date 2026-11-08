@@ -46,6 +46,7 @@
       <a href="#what">What is Tabloop?</a>
       <a href="#demo">Demo video</a>
       <a href="#open">Opening songs</a>
+      <a href="#youtube">YouTube songs</a>
       <a href="#library">Library &amp; playlists</a>
       <a href="#play">Playing along</a>
       <a href="#reading">Reading the tab</a>
@@ -97,8 +98,24 @@
       <li><b>Open folder</b> (computers only): pick an unpacked pack folder. In the folder picker the files inside look greyed out; select the folder itself.</li>
       <li><b>Drag and drop</b> a file or folder onto the window.</li>
       <li><b>🕘 Recent</b> reopens one of the last 5 songs you played.</li>
+      <li><b>▶ YouTube</b>: paste a YouTube link to loop and slow down a video (see <a href="#youtube">YouTube songs</a>).</li>
     </ul>
     <div class="tip">Songs aren't included with Tabloop; you bring your own feedpak files. The demo song is there so you can try things out.</div>
+
+    <h2 id="youtube">YouTube songs</h2>
+    <p>Lessons and play-alongs on YouTube can be practised like a song: <b>▶ YouTube</b> (header, or <b>▶ YouTube video…</b> on the welcome screen), paste the video's link (<code>youtube.com/watch?v=…</code>, <code>youtu.be/…</code>, Shorts, or just the 11-character id) and <b>Open</b>. You can also drop a YouTube link on the window, or paste one anywhere (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>V</kbd>) once you've opened a video before. A link with a start time (<code>?t=90</code>) opens there.</p>
+    <p>The video plays in <b>YouTube's own player</b>, in the song area; Tabloop's controls drive it:</p>
+    <ul>
+      <li><b>▶ / ❚❚</b>, the seek bar, <kbd>Space</kbd> and <kbd>←</kbd> <kbd>→</kbd> as for any song. Playing or pausing in YouTube's player works too.</li>
+      <li><b>Loops</b>: ⟲ Loop, the start / end boxes, ⌖ (here), the nudge buttons (‹ › 0.25 s, ⇤ ⇥ 1 s, − + 0.05 s), the handles on the seek bar, <kbd>[</kbd> <kbd>]</kbd>, ⏮ Restart. At the loop end Tabloop tells the player to jump back; the jump is sent within about 10–20 ms of the end and YouTube's player makes it a few tens of milliseconds later, so loops are a little less tight than a feedpak's (it may also stutter briefly while it buffers).</li>
+      <li><b>Sections</b>: a video has no tab, so you mark them: while it plays, press <b>＋ Mark</b> in Sections (or <kbd>M</kbd>) where a part starts and type its name. Each mark starts a section that runs to the next one; click it to loop it, Shift-click to loop several. ✎ renames, ✕ deletes. They're kept with the video.</li>
+      <li><b>Saved loops</b>, loop chains and the <b>speed trainer</b> work as for a feedpak, per video (exported, synced and backed up like a song's).</li>
+      <li><b>Speed</b>: only the speeds YouTube offers for the video (usually 25 %, 50 %, 75 %, 100 %, 125 %, 150 %, 175 %, 200 %; the pitch is kept). − and + step through them; a typed speed goes to the nearest one, which is shown. The speed trainer's steps are rounded the same way. Some videos offer only 100 %: the speed control is then off.</li>
+      <li><b>Practice stats</b> count the time the video is actually playing (not while it buffers), and <b>🕘 Recent</b> lists it.</li>
+    </ul>
+    <p><b>Not available for YouTube videos</b>, because the sound stays inside YouTube's player (Tabloop never downloads, records or processes it, which YouTube's terms don't allow): <b>pitch</b> (<i>YouTube's player doesn't allow changing the pitch</i>), the tab, the metronome and count-in, <b>⏺ Rec</b> (a take couldn't be lined up with the video reliably), <b>👂 Live</b> and note judging, the mixer and Tracks. A tab shown <i>in</i> the video stays part of the video: Tabloop can't read it. The <b>🎸 Tuner</b> works as usual (it only listens to your input).</p>
+    <div class="tip"><b>Where it works:</b> in the online version, <a href="https://tabloop.github.io/">tabloop.github.io</a>. YouTube usually refuses to play videos in a copy opened from a file on your computer. Some videos can't be played outside YouTube (their owner turned embedding off): Tabloop says so. On phones, the first time you may need to tap the video itself to start it. YouTube's <a href="https://www.youtube.com/t/terms">Terms of Service</a> and Google's <a href="https://policies.google.com/privacy">Privacy Policy</a> apply to the videos you play; see the <a href="../privacy.html#youtube">privacy policy</a>.</div>
+    <p id="spotify"><b>Spotify?</b> Not supported. A Spotify app like this one may only be used by up to 5 Spotify Premium users whom the developer lists by hand; opening it to everyone needs Spotify's approval, which (since May 2025) is only given to registered businesses with at least 250,000 monthly users. Spotify's developer policy also doesn't allow its music to be mixed or overlapped with other sound (such as Tabloop's metronome or your monitored instrument), and its web player has no speed control, so it couldn't slow songs down anyway.</p>
 
     <h2 id="library">Library &amp; playlists</h2>
     <p>If you keep your songs in one folder, use <b>📚 Library</b> → <b>Choose folder…</b>. Every pack in it, including subfolders, is listed with its cover, artist, length, parts and tuning; a 🥁 badge marks songs with drums. Search, sort, filter by tuning, and click a song to open it. <b>↻ Refresh</b> picks up new songs.</p>
@@ -308,6 +325,7 @@
       <tr><td><kbd>L</kbd></td><td>Loop on / off</td></tr>
       <tr><td><kbd>[</kbd> <kbd>]</kbd></td><td>Set the loop start / end at the current position</td></tr>
       <tr><td><kbd>R</kbd></td><td>Restart: back to the loop start and play</td></tr>
+      <tr><td><kbd>M</kbd></td><td>YouTube videos: mark a section starting here</td></tr>
       <tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>Previous / next recorded take (with two or more)</td></tr>
     </table>
 
@@ -328,7 +346,7 @@
     <h3>When does Tabloop use the microphone?</h3>
     <p>Only while <b>🎸 Tuner</b>, <b>⏺ Rec</b>, <b>👂 Live</b> or <b>🎙 Sing</b> is on; never by itself. Takes you record stay in your browser; the tuner, Live and singing record nothing.</p>
     <h3>Is my data private?</h3>
-    <p>Songs never leave your device. The web version sends anonymous, cookie-free usage counts (visits, active users, songs played, loops saved and takes recorded; never who you are), which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>. The <a href="../privacy.html">privacy policy</a> says what's stored where and how to delete it.</p>
+    <p>Songs never leave your device. A YouTube video you open plays in YouTube's own player, where Google's privacy policy applies. The web version sends anonymous, cookie-free usage counts (visits, active users, songs played, loops saved and takes recorded; never who you are), which you can turn off in ⚙ Settings; song names are only sent if you tick <i>share song names</i>. The <a href="../privacy.html">privacy policy</a> says what's stored where and how to delete it.</p>
     <h3 id="settings-differ">My settings differ between computers</h3>
     <p>Each browser keeps its own copy of your settings and practice history; they only meet through a <b>🔄 sync folder</b> or <b>☁ Google Drive</b>. With a sync folder they stay in step by themselves. With Google Drive, the app compares the two each time it starts while signed in to Google (Google's sign-in lasts about an hour, so after that it compares right after you click <b>Reconnect</b>). If both computers changed the same thing in between, it asks which to keep; otherwise it takes the newer side by itself and offers <b>Undo</b>. Practice stats from several computers are added up with each session counted once. To force one computer's version: on that computer use <b>Back up now</b>; on the others <b>Restore from Drive</b> and choose <i>Use all Google Drive's</i>. Settings that change how the app looks (view, colours, mixer) take effect after a reload, which the app offers.</p>
     <h3>What's new?</h3>
