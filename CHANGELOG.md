@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.26.0 — 2026-11-07
+
+### New
+- **Highway for drums, keys and vocals.** The Highway view now draws every kind of part, not only guitar and bass tab. **Drums** get a lane per kit piece the song uses, left to right as the kit sits in front of you (crash, hi-hat, snare, kick, the toms, ride), in your drum colours: drums are pads, cymbals flat discs, an open hi-hat a ring, with the piece's letters; louder hits are bigger, accents get a light rim and ghost notes are small with a dashed edge. The kit mapping and the drum sync apply as in the chart. **Keys** and MIDI instruments fall onto a piano keyboard at the hit line, each note on its key (black keys narrower), long notes as long bars, the keys lighting up as they sound; Pitch moves them. **🎤 Vocals** show the melody on a pitch highway, and with 🎙 Sing your voice as a line coming out of the hit line.
+- **Split-screen highways for several players.** Show several parts (the **+** on their tabs, any mix of guitar, bass, drums, keys and vocals) and the Highway splits into one highway per part, side by side and equal in width, each with its own name at the top, lanes and hit line, all moving together, so two or more players can each follow their own part. Up to 4 fit on a computer, 2 on a phone (also in the Portrait layout); more are named at the top (Scrolling and Page still show them all). Tap a part's name to swap it with its neighbour. Ghost notes and 🎯 markers stay on their own part, clicking any highway jumps to that moment, and the lyric line runs once under them all.
+
 ## 0.25.0 — 2026-11-07
 
 ### New
