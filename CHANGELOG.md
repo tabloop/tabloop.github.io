@@ -2,6 +2,12 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.30.1 — 2026-11-08
+
+### Improved
+- **New default string colours:** brighter tones that read better on the dark tab, in the same colour per string as before (Low E red, A yellow, D blue, G orange, B green, high E purple). If you'd picked the previous default, you get the new one; custom colours are kept.
+- **New colour presets:** **High contrast (black & white)** for the strings, and a new **Colour-blind friendly** palette (Paul Tol's "bright" scheme). If you'd chosen the old colour-blind preset, your colours stay as they were (shown as *Custom*).
+
 ## 0.30.0 — 2026-11-08
 
 ### New
