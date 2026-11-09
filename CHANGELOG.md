@@ -2,6 +2,15 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.40.0 — 2026-11-09
+
+### New
+- **Chord names for 2-note chords** (F-56). **Power chords** are named now: root and 5th as *E5*, and a 4th, an inverted power chord, by its upper note over the lower (*D5/A*). With **⚙ Settings → 🎨 Display → 2-note chords → Power chords and double stops**, 3rds and 6ths are named too, as the chord they most likely belong to, in lighter italics as it's only implied (C and E: *C*; A and C: *Am*; C and A: *Am/C*; E and C: *C/E*); **Off** names 3 notes or more only, as before. Octaves, 2nds, 7ths and the tritone get no name, two notes count only when nothing else is ringing, and a riff of the same power chord is named once (again for another voicing or after a few seconds). The note card always shows a 2-note name, marked *implied* for a double stop, whatever the setting; 💾 Save pack writes the power chords you edit as chord templates.
+- **String order: the low string on top** (F-37). **⚙ Settings → 🎨 Display → Tab → String order**: *High string on top* (standard tab, as before) or *Low string on top*, as you look down at the guitar. Scrolling and Page follow throughout: string names and colours, notes, chord names (still above the staff), technique marks (bends still point up), ghost notes, 🎯 markers, the note card and hint cards on hover, and ✏ Edit (click a string to add a note there; Shift+↑ / ▲ move a note to the string drawn above). 7- and 8-string guitars and bass too, and the 🎼 Scales fretboard. The Highway keeps its lanes (the lowest string on the left, as on the neck), and chord diagrams stay as usual. Remembered and synced with your view settings.
+
+### Improved
+- **✏ Edit: ▲ / ▼ and Shift+↑ / ↓ say "the string above / below"**, as drawn, rather than higher / lower.
+
 ## 0.39.2 — 2026-11-09
 
 ### Improved
