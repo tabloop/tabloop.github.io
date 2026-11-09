@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.31.1 — 2026-11-08
+
+### Fixed
+- **Extra notes (ones not in the tab) read an octave or two too low** (since 0.28.0) in take feedback and 👂 Live: a D3 played while the A2 before it still rang showed as "Extra note: you played G1". With no tab note to guide the reading, the two notes sounding together were read as one lower note (the pitch at which they repeat together). Many such extra notes were also not shown at all, taken for an echo of the note before. Now an extra note is measured again with the note before it filtered out, as notes in the tab already were. In the detection benchmark, extra notes found and read right go from 46 % to 56 % (takes) and from 48 % to 58 % (👂 Live). Notes in the tab are read the same as before.
+
 ## 0.31.0 — 2026-11-08
 
 ### New
