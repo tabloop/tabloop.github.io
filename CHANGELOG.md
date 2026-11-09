@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.35.0 — 2026-11-09
+
+### New
+- **Chord names worked out from the notes.** When 3 or more notes sound together — struck at once (or strummed, within 30 ms), or a note played while the notes before it still ring, as in an arpeggio — the chord's name is shown above the string lines, as for the chord names a song already carries: *C*, *Am7*, *D/F#*, *E5*, *Bm7b5*, *Cadd9*… It's worked out from the pitches with the part's tuning and capo (drop D, 4- and 5-string bass included). In **✏ Edit the tab** it follows every change as you make it: add the notes of a chord and its name appears, change one and it's renamed, delete one and it goes, undo brings it back. A song's own chord names come first; a chord you've edited is named from its new notes. Chords that came without a name — Guitar Pro and MIDI imports, *Tab (from images)* parts — are named too, in Scrolling, Page and Highway. A name is shown only when the chord changes, and notes that don't make a common chord get none. **💾 Save pack** stores the name of an edited chord in the pack (as a chord template), so other players show it too.
+
 ## 0.34.1 — 2026-11-09
 
 ### Fixed
