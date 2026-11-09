@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.36.1 — 2026-11-09
+
+### Fixed
+- **Chord names with a string skipped or muted in between** (B-14). A chord like *x3x010* (C without the D string), *3x0003* (G without the A string) or *x0x210* (Am), or with a muted string (x) between its notes, now gets its name like any other. The notes in between never stopped the naming, but a chord repeating the name shown before it was left out: so a C played another way after a C (say with the D string skipped, after the full shape) showed no name, and nor did a chord whose name had appeared minutes earlier. Now a chord is named again when it's another voicing of the chord before it, and after 4 seconds without a chord name; the same chord strummed again and again is still named once. Notes muted with the fret hand (shown as x, as in many converted songs) no longer count as sounding notes either, so they don't change or remove the chord's name, and a fully muted chord (a chug) gets none. Also new: the *7#5* chord (e.g. *8x899x*, C7#5).
+
+### New
+- **Choose which chord names are shown** (B-14): **Chords** in the toolbar (in the ☰ menu on a phone) and in **⚙ Settings → 🎨 Display → Chord names**, the same setting: **All** (the default: the song's own names, and the ones Tabloop works out from the notes for chords without one, one name per chord), **Song's** (only the names that come with the song: its chord templates, a Guitar Pro file's chord names), **Worked out** (only the names Tabloop works out, also for chords you edit) or **Off**. In Scrolling, Page and Highway; remembered, and synced and exported with your other view settings.
+
 ## 0.36.0 — 2026-11-09
 
 ### New
