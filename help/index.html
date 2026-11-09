@@ -50,6 +50,7 @@
       <a href="#library">Library &amp; playlists</a>
       <a href="#play">Playing along</a>
       <a href="#reading">Reading the tab</a>
+      <a href="#tab-edit">Edit the tab</a>
       <a href="#speed">Speed, pitch &amp; mixer</a>
       <a href="#trackspanel">Tracks panel</a>
       <a href="#loop">Looping</a>
@@ -164,6 +165,24 @@
     <p>The notes become a <b>Tab (from images)</b> part, next to the song's own (for a YouTube video, under the player), in Scrolling, Page or Highway. For a feedpak it's heard with <i>Tab</i> / <i>Both</i> and judged by 👂 Live like any part; <b>💾 Save pack</b> writes it into the pack as a real arrangement. Add more images to build up the song. The dialog lists what each image added (✕ removes it), <b>⬇ Export as text</b> saves a plain-text tab, and <b>🗑 Clear it</b> starts again. It's saved with the song (and synced and backed up like its loops).</p>
     <p>What it reads: 4 to 7 evenly spaced lines (several systems per image, dark on light or light on dark), fret numbers 0–24, chords, bar lines, <code>x</code>, string names at the left, and <code>h</code> <code>p</code> <code>/</code> <code>\</code> <code>b</code> <code>~</code> <code>&lt;12&gt;</code> between notes. Not read: rhythm stems and note lengths, text above the tab (P.M., let ring, bend amounts), and standard notation. Numbers smaller than about 8 pixels, blurred or slanted photos give more mistakes: crop closer, or take the photo straight on.</p>
     <p><b>Your image stays on your device</b>: it's read by Tabloop itself (no upload, no online service) and isn't kept once the window closes; only the notes are saved. For a YouTube video the part is silent (the sound stays in YouTube's player) and 👂 Live stays off. Only use tabs you have the right to use.</p>
+
+    <h2 id="tab-edit">Edit the tab</h2>
+    <p>Found a wrong note, or want to write a part yourself? Any tab part shown — a song's own guitar or bass part, or a <a href="#tab-image">Tab (from images)</a> part — can be edited:</p>
+    <ol>
+      <li>Press <b>✏ Edit</b> in the toolbar (on a phone: in ☰). A bar appears over the tab, and the tab gets an orange outline. The part is edited as written, so the pitch goes back to 0.</li>
+      <li><b>Click a note</b> to select it (<kbd>Shift</kbd>-click to select more). Then:
+        <ul>
+          <li><b>Fret:</b> type it (<kbd>0</kbd>–<kbd>9</kbd>; two digits quickly for 10–24) or use the <b>Fret</b> box; <kbd>↑</kbd> / <kbd>↓</kbd> one fret up / down.</li>
+          <li><b>String:</b> <kbd>Shift</kbd>+<kbd>↑</kbd> / <kbd>↓</kbd> or ▲ ▼ move it to the string above / below.</li>
+          <li><b>Time:</b> <kbd>←</kbd> / <kbd>→</kbd> or ◀ ▶ move it one grid step earlier / later; ⟷− ⟷＋ make it shorter / longer.</li>
+          <li><b>Techniques:</b> the buttons <b>h</b> (hammer-on), <b>p</b> (pull-off), <b>/</b> (slide, to the next note's fret), <b>b</b> (bend: full, click again for 2 semitones, then ½, then none), <b>~</b> (vibrato), <b>PM</b> (palm mute), <b>x</b> (muted note), <b>◇</b> (harmonic), <b>PH</b> (pinch harmonic), <b>T</b> (tap), <b>&gt;</b> (accent), <b>tr</b> (tremolo). Keys: <kbd>H</kbd> <kbd>P</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>V</kbd> <kbd>X</kbd> <kbd>T</kbd>.</li>
+          <li><b>Delete:</b> <kbd>Delete</kbd> / <kbd>Backspace</kbd> or 🗑.</li>
+        </ul></li>
+      <li><b>Click an empty spot on a string</b> to add a note there. It lands on the <b>Grid</b>: the song's beats split in ½, ⅓, ¼ (the default) or ⅙, whole beats, or <i>Free</i> (10 ms steps). Type its fret right away.</li>
+      <li><kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>⇧</kbd>+<kbd>⌘</kbd>+<kbd>Z</kbd> (<kbd>Ctrl</kbd>+<kbd>Y</kbd>) redoes. <b>Revert…</b> puts the part back as it was written (Undo still brings your edits back while the song is open). <kbd>Esc</kbd> clears the selection, then <b>Done</b> (or <kbd>Esc</kbd> again) ends editing.</li>
+    </ol>
+    <p>It works in the Scrolling, Page and Highway views. With two parts side by side, click a note of the other one to edit that one. Outside edit mode a click on the tab seeks, as always.</p>
+    <p>Everything uses your edits: the views, the tab synth (<i>Tab</i> / <i>Both</i>), <a href="#live">👂 Live</a> and the feedback on your takes. An edited part shows ✏ on its tab. The edits are <b>saved on your device with the song</b> (and synced and backed up with it, like its loops), and <b>💾 Save pack</b> writes them into a copy of the pack: only the edited part's notes change. Parts added from MIDI (＋ Instrument) can't be edited: save them into the pack first.</p>
 
     <h2 id="speed">Speed, pitch &amp; mixer</h2>
     <ul>
@@ -346,6 +365,17 @@
       <tr><td><kbd>R</kbd></td><td>Restart: back to the loop start and play</td></tr>
       <tr><td><kbd>M</kbd></td><td>YouTube videos: mark a section starting here</td></tr>
       <tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>Previous / next recorded take (with two or more)</td></tr>
+    </table>
+    <p>While <a href="#tab-edit">editing the tab</a>, with a note selected:</p>
+    <table>
+      <tr><td><kbd>0</kbd>–<kbd>9</kbd></td><td>Its fret (two digits quickly: 10–24)</td></tr>
+      <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>One fret up / down</td></tr>
+      <tr><td><kbd>Shift</kbd>+<kbd>↑</kbd> <kbd>↓</kbd></td><td>The string above / below</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>One grid step earlier / later</td></tr>
+      <tr><td><kbd>Delete</kbd> <kbd>Backspace</kbd></td><td>Delete the note(s)</td></tr>
+      <tr><td><kbd>H</kbd> <kbd>P</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>V</kbd> <kbd>X</kbd> <kbd>T</kbd></td><td>Hammer-on, pull-off, slide, bend, vibrato, muted note, tap</td></tr>
+      <tr><td><kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>Z</kbd>, <kbd>⇧</kbd>+<kbd>⌘</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Undo, redo</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Clear the selection; again: stop editing</td></tr>
     </table>
 
     <h2 id="faq">Questions</h2>

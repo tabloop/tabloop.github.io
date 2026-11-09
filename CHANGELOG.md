@@ -2,6 +2,13 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.32.0 — 2026-11-08
+
+### New
+- **✏ Edit the tab: fix a tab, or write one, right in the app.** With a tab part shown (a song's own guitar or bass part, or the *Tab (from images)* part), press **✏ Edit** in the toolbar: **click a note** to select it (Shift-click adds more), then type its **fret** (or ↑ / ↓), move it to **another string** (Shift+↑ / ↓) or **earlier / later** on the beat grid (← / →), make it longer or shorter, and set its **techniques** — hammer-on, pull-off, slide, bend, vibrato, palm mute, muted note, harmonic, pinch harmonic, tap, accent, tremolo. **Click an empty spot on a string** to add a note there, on the song's beats (whole, ½, ⅓, ¼ or ⅙ beats, or free); **Delete** removes. **⌘Z / ⇧⌘Z** (Ctrl+Z / Ctrl+Y) undo and redo, and **Revert…** puts the part back as it was written. Works in the Scrolling, Page and Highway views, and on a phone (tap a note, then the bar's buttons). Outside edit mode, clicking the tab seeks as before.
+- **Everything follows your edits:** the views, the tab synth (*Tab* / *Both*), 👂 Live and the feedback on your takes, loops and sections. An edited part shows ✏ on its tab.
+- **Kept with the song, and in the pack if you like.** The edits are saved on your device with the song (and folder-synced and backed up to Google Drive with it, like its loops). **💾 Save pack** writes them into a copy of the pack: the edited part's notes change, everything else stays exactly as it was.
+
 ## 0.31.1 — 2026-11-08
 
 ### Fixed
