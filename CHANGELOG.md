@@ -2,6 +2,13 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.33.0 — 2026-11-08
+
+### New
+- **Open Guitar Pro, TuxGuitar and MIDI files as songs.** Guitar Pro 3, 4 and 5 (`.gp3` `.gp4` `.gp5`), Guitar Pro 6 (`.gpx`), Guitar Pro 7 and 8 (`.gp`), TuxGuitar 2 (`.tg`) and MIDI (`.mid`) files open with **Open file**, drag and drop, **Open folder** and from the **📚 Library** (which now lists Guitar Pro and TuxGuitar files with their parts and tunings). Each track becomes a part: guitar and bass as tab with their tuning (4 to 8 strings) and capo, keyboards as a piano roll, the drums as the drum part, a vocal track as the 🎤 Vocals melody with the file's lyrics. The tempo changes, time signatures and markers (as sections) come along, and repeats and first / second endings are played out, so the beat grid, the metronome, loops and sections follow the song as it's heard.
+- **The techniques too:** hammer-ons and pull-offs, slides, bends with their shape, vibrato, harmonics, palm mute, dead notes, tapping, slap and pop, accents, let ring, staccato, tremolo picking and trills, ties, grace notes, chord names and the fingering, drawn on the tab and played by the tab synth.
+- **No recording, so it plays with the synths:** the tab synth is switched on for you (*Both*), and the keys and drum parts play through their synths while they're shown. **💾 Save pack** turns the file into a feedpak (with the original file kept inside), so it opens like any other song. Swing, D.C. / D.S. jumps, gradual tempo changes and a Guitar Pro 7 file's own audio track aren't carried over; the message when the song opens says so. Tabloop reads these files itself, on your device: nothing is uploaded or downloaded.
+
 ## 0.32.2 — 2026-11-08
 
 ### Fixed

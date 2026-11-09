@@ -46,6 +46,7 @@
       <a href="#what">What is Tabloop?</a>
       <a href="#demo">Demo video</a>
       <a href="#open">Opening songs</a>
+      <a href="#guitar-pro">Guitar Pro &amp; MIDI files</a>
       <a href="#youtube">YouTube songs</a>
       <a href="#library">Library &amp; playlists</a>
       <a href="#play">Playing along</a>
@@ -101,8 +102,21 @@
       <li><b>Drag and drop</b> a file or folder onto the window.</li>
       <li><b>🕘 Recent</b> reopens one of the last 5 songs you played.</li>
       <li><b>▶ YouTube</b>: paste a YouTube link to loop and slow down a video (see <a href="#youtube">YouTube songs</a>).</li>
+      <li><b>Guitar Pro, TuxGuitar and MIDI files</b> (<code>.gp3</code>, <code>.gp4</code>, <code>.gp5</code>, <code>.gpx</code>, <code>.gp</code>, <code>.tg</code>, <code>.mid</code>) open the same ways, as songs played by Tabloop's synths (see <a href="#guitar-pro">Guitar Pro &amp; MIDI files</a>).</li>
     </ul>
     <div class="tip">Songs aren't included with Tabloop; you bring your own feedpak files. The demo song is there so you can try things out.</div>
+
+    <h2 id="guitar-pro">Guitar Pro, TuxGuitar &amp; MIDI files</h2>
+    <p>Tabloop opens <b>Guitar Pro</b> files (<code>.gp3</code>, <code>.gp4</code>, <code>.gp5</code>, <code>.gpx</code> from Guitar Pro 6 and <code>.gp</code> from Guitar Pro 7 and 8), <b>TuxGuitar</b> files (<code>.tg</code>, saved by TuxGuitar 2) and <b>MIDI</b> files (<code>.mid</code>) as songs: use <b>Open file</b>, drop the file on the window, <b>Open folder</b> on a folder holding one, or keep them in your <a href="#library">📚 Library</a> folder (they're listed with your feedpaks).</p>
+    <ul>
+      <li><b>Each track becomes a part.</b> Guitar and bass tracks are tab, with their tuning (4 to 8 strings) and capo; keyboards are a piano roll; the drum track is the drum part; a vocal track is the 🎤 Vocals melody, with the lyrics if the file has them. In a MIDI file, guitar and bass are fretted for you in standard tuning.</li>
+      <li><b>Played as written:</b> the tempo changes, the bars and time signatures (the metronome and count-in follow them), the file's markers as sections, and repeats and first / second endings played out, so loops and sections work on the song as you hear it.</li>
+      <li><b>Techniques</b> shown and played: hammer-ons and pull-offs, slides, bends (with their shape), vibrato, harmonics, palm mute, dead notes, tapping, accents, let ring, tremolo picking and trills, ties, grace notes, chords with their names, and the fingering when the file gives it.</li>
+      <li><b>There's no recording:</b> the song plays with Tabloop's tab synth (switched on for you; <b>Audio: Tab / Both</b>), the keys synth and the drum synth. Each part plays while it's shown: add parts with the <b>+</b> on their tabs. ⏺ Rec records you over it as usual.</li>
+      <li><b>💾 Save pack</b> turns it into a feedpak, so it opens like any other song (and keeps your loops and sections).</li>
+      <li>Not carried over: swing (triplet feel), D.C. / D.S. / coda jumps, gradual tempo changes (they change at once), the whammy bar, and a Guitar Pro 7 file's own audio track. The message when the song opens says what applies to that file.</li>
+    </ul>
+    <div class="tip">Tabloop reads these files itself, on your device: nothing is uploaded. Older TuxGuitar files (version 1) can't be read: open them in TuxGuitar 2 and save again, or export them as Guitar Pro 5. Tabs are usually copyrighted: only open files you have the right to use.</div>
 
     <h2 id="youtube">YouTube songs</h2>
     <p>Lessons and play-alongs on YouTube can be practised like a song: <b>▶ YouTube</b> (header, or <b>▶ YouTube video…</b> on the welcome screen), paste the video's link (<code>youtube.com/watch?v=…</code>, <code>youtu.be/…</code>, Shorts, or just the 11-character id) and <b>Open</b>. You can also drop a YouTube link on the window, or paste one anywhere (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>V</kbd>) once you've opened a video before. A link with a start time (<code>?t=90</code>) opens there.</p>
@@ -120,7 +134,7 @@
     <p id="spotify"><b>Spotify?</b> Not supported. A Spotify app like this one may only be used by up to 5 Spotify Premium users whom the developer lists by hand; opening it to everyone needs Spotify's approval, which (since May 2025) is only given to registered businesses with at least 250,000 monthly users. Spotify's developer policy also doesn't allow its music to be mixed or overlapped with other sound (such as Tabloop's metronome or your monitored instrument), and its web player has no speed control, so it couldn't slow songs down anyway.</p>
 
     <h2 id="library">Library &amp; playlists</h2>
-    <p>If you keep your songs in one folder, use <b>📚 Library</b> → <b>Choose folder…</b>. Every pack in it, including subfolders, is listed with its cover, artist, length, parts and tuning; a 🥁 badge marks songs with drums. Search, sort, filter by tuning, and click a song to open it. <b>↻ Refresh</b> picks up new songs.</p>
+    <p>If you keep your songs in one folder, use <b>📚 Library</b> → <b>Choose folder…</b>. Every pack in it (and every Guitar Pro or TuxGuitar file), including subfolders, is listed with its cover, artist, length, parts and tuning; a 🥁 badge marks songs with drums. Search, sort, filter by tuning, and click a song to open it. <b>↻ Refresh</b> picks up new songs.</p>
     <figure><img src="img/library.png" alt="The library with song cards showing covers, tuning badges and filter chips" width="1280" height="800" loading="lazy" />
       <figcaption>The library. Chrome and Edge remember the folder; Safari and Firefox remember the list but ask for the folder again each visit.</figcaption></figure>
     <p><b>🎵 Playlists</b>: make a playlist, add songs with <b>＋ Add songs</b> or the <b>＋ Playlist</b> button on any song, then press <b>▶ Play</b>. With <b>Auto-advance</b> on, the next song opens and plays when one ends.</p>
@@ -380,7 +394,7 @@
 
     <h2 id="faq">Questions</h2>
     <h3>Where do I get songs?</h3>
-    <p>Tabloop opens feedpak song packages, an open format; songs aren't included. Use packs you have the rights to, or make your own with feedpak tools.</p>
+    <p>Tabloop opens feedpak song packages, an open format; songs aren't included. Use packs you have the rights to, or make your own with feedpak tools. It also opens <a href="#guitar-pro">Guitar Pro, TuxGuitar and MIDI files</a> you have, and <b>💾 Save pack</b> turns them into feedpaks.</p>
     <h3>Does it work offline?</h3>
     <p>Yes. Download <a href="https://github.com/tabloop/tabloop.github.io/raw/main/index.html"><code>index.html</code></a> and double-click it; it's a single file that works without a connection. Google Drive backup needs the web version, and the demo song needs a connection to download.</p>
     <h3>A song or folder won't open</h3>
