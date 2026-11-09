@@ -2,6 +2,15 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.37.0 — 2026-11-09
+
+### New
+- **Open your own recordings as songs** (F-42): an MP3, M4A (AAC), WAV, OGG, FLAC or Opus file you have opens with **Open file** or dropped on the window, like a feedpak: slow it down (the pitch is kept), change its pitch, loop the hard bits (and save the loops), ⏺ Rec yourself, 👂 Live, the mixer (one *Song* stem). Its title, artist, album, year and cover are read from the file's tags (ID3 for MP3, the MP4 tags of an M4A, Vorbis comments for OGG and FLAC, a WAV's INFO), or the title from the file name.
+- **＋ Create a song: your recording and a tab, lined up, saved as a feedpak** (F-48). **＋ Create** (on the welcome screen and at the top; in the ☰ menu on a phone) takes the recording, then, in **＋ Song…**, its title, artist, album, year and cover, and a tab: a **Guitar Pro, TuxGuitar or MIDI file** (its parts ticked: guitar and bass tab, keys, drums, vocals and lyrics, with its beats, bars and sections) or **parts of another feedpak**. Or write one: **✏ Edit** on the empty *My tab* part, **📷 Tab from an image**, **＋ Instrument** for a MIDI file.
+- **⇆ Sync lines the tab up with the recording**, even when they don't share a tempo: shift it (−100 / −10 / +10 / +100 ms, a typed offset, or **⌖ First note here** at the cursor), type the recording's tempo, or give **📍 Two points**: where bar 1 and a later bar are in the recording (typed, or **⌖ Now** at the cursor), and the tab is shifted and stretched to fit, its tempo changes too. **🥁 Tap the beats** (T) along with the song fits the tab to your taps; *Follow my tapping* follows a recording that speeds up and slows down. **✨ Guess** listens to the recording and suggests where the tab's notes land (check it; ↶ undoes it). A waveform around the cursor shows the recording's notes under the tab's, and the metronome and bars follow. A recording without a tab gets a beat grid from your taps. Changes apply as the song plays.
+- **💾 Save pack** writes it all as a feedpak: the recording, the title, artist and cover, the tab synced, its beats, sections and lyrics; opened again it's the same song, in sync. A WAV or OGG recording goes in as it is; for an MP3, M4A or FLAC it asks: keep it (smaller; plays in Tabloop and most players) or store it as WAV, which every feedpak player must play.
+- **Songs in progress are kept on this device**, with a copy of the recording and the tab file: come back to one from **＋ Create**'s list or 🕘 Recent, without the files; opening the same recording again continues it. *Forget* deletes one. Nothing is uploaded.
+
 ## 0.36.1 — 2026-11-09
 
 ### Fixed
