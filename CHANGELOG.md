@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.39.2 — 2026-11-09
+
+### Improved
+- **🎧 Ear training tracks your progress, session by session** (F-58). Every round is kept as a session: when, how long, the settings (intervals, directions, sound, reference, weak ones), questions, right, accuracy, the average and median time to answer, the best streak, and per interval what was asked, got right, how fast, and what it was taken for. **📊 Your record** (and 📈 Practice → Other practice → Ear training) now shows: **since last session** (your accuracy and speed against the session before, the intervals that improved and the ones that slipped); **practise next**, the intervals to work on (with what you mix them up with), and **▶ Practise these** to start a round of them with the weakest asked most; a **status per interval** (★ Mastered: at least 90 % right over your last 20+ answers, 3 s or less each; Good: 75 % or more; Needs work; Not practised) with its **trend** (improving, steady or slipping) and a small line of its accuracy; **accuracy per session** with the average of the last 5, and the **time per answer** per session; and the **sessions list**: tap one for its details. Readable on a phone. Sessions are synced (sync folder, Google Drive), backed up and exported with the rest of your practice, each counted once however it arrives; the last 500 are kept in full, older ones as monthly summaries. Your earlier record stays as it was.
+
 ## 0.39.1 — 2026-11-09
 
 ### Improved
