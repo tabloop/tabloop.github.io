@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.34.1 — 2026-11-09
+
+### Fixed
+- **🎸 Tuner and 👂 Live no longer double the panel at the bottom** (B-13). With both on, the input device, level meter and heard note showed twice, once in the record bar for the tuner and once in the live bar, so the two buttons looked like they did the same thing. Now that row shows once: with 👂 Live on, the tuner joins the live bar (its note, labelled *🎸 Tuner*, becomes the large tuner reading) and turning Live off brings it back to its own *🎸 Tuner* bar; with ⏺ Rec armed it's in the record bar only. Without the tuner the note is labelled *Heard*. The tooltips now say what each is for: 🎸 Tuner tunes the instrument (note, cents, nearest string), 👂 Live is for playing along with feedback (ghost notes and a score). Pressing 🎸 Tuner without a song now shows its message instead of nothing.
+
 ## 0.34.0 — 2026-11-09
 
 ### Improved
