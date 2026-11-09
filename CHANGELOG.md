@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.34.0 — 2026-11-09
+
+### Improved
+- **A small bullseye on the ghost-note card.** Point at a ghost note or a 🎯 marker (or tap it on a phone) after a take or with 👂 Live, and the card now shows a little target like the one in ⏱ Calibration → 🎯 Target practice: a dot for that note, left when early and right when late, up when sharp and down when flat, over rings at your forgiveness limits (and twice and four times them). The dot is green within the limits, yellow when a little off and red when clearly off, like the markers, with the numbers beside it (e.g. *+38 ms late · −12 ¢ flat*). Change the forgiveness in ⚙ Settings and the rings follow. Judging timing only, there's no up and down (*pitch not judged*); a chord is judged on its timing, so its dot sits on the timing line; a missed note shows the empty target and says *missed*; an extra note has no target. Screen readers read out the numbers.
+
 ## 0.33.0 — 2026-11-08
 
 ### New
