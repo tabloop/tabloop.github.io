@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.36.0 — 2026-11-09
+
+### New
+- **Play the note again onto the bullseye** (F-47). Click a ghost note or a 🎯 marker (tap it on a phone) and its card now stays open, with a ✕ (or press Esc, or click anywhere else on the tab). Press **🎤 Play it** on the card and play the note: every try lands on the little bullseye as a dart, a small diamond beside the note's own dot (which stays put), up when sharp and down when flat against the note the tab expects, green, yellow or red like the dot. Each dart shows for a second, then fades, so a few tries show together and you see where you're really hitting; the latest one's numbers show under the dot's (e.g. *Now: +12 ¢ sharp · pitch only (paused)*) and screen readers read them out. Paused there's nothing to time against, so the darts stay on the up–down line (*pitch only (paused)*); with the song playing, looping over that bar say, a note played near that note's moment also lands left when early and right when late. Judging timing only, or for a chord, the darts sit on the timing line. With 👂 Live on, or the input already open for the 🎸 Tuner or ⏺ Rec, the card just listens; 🎤 Play it lets go of the input when the card closes. Nothing is recorded, and the tries don't count in Live's score or your practice stats.
+
+### Fixed
+- **👂 Live's bar fits on one row again on a laptop screen** (since 0.34.1): the "Heard" label had pushed ↺ Reset and ✕ onto a second row at 1280 px. The heard note's Hz now shows there only when the 🎸 Tuner is in the bar, and the spacing is a little tighter.
+
 ## 0.35.0 — 2026-11-09
 
 ### New
