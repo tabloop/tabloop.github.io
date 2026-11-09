@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.32.1 — 2026-11-08
+
+### Improved
+- **✏ Edit the tab: moving a note to another string keeps the same note.** Shift+↑ / ↓ (or ▲ ▼) now changes the fret by the interval between the two strings, with the part's tuning: a C on the D string stays a C on the G string. A slide's target moves with it, and a note that can't be played on that string (below its open note) stays where it is, with a message.
+
 ## 0.32.0 — 2026-11-08
 
 ### New

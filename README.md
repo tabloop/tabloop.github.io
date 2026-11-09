@@ -2,7 +2,7 @@
 
 # Tabloop
 
-**Version 0.32.0** · [what's new](CHANGELOG.md)
+**Version 0.32.1** · [what's new](CHANGELOG.md)
 
 **Open the app: https://tabloop.github.io/**
 
