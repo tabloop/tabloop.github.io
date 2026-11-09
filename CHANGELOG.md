@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.39.1 — 2026-11-09
+
+### Improved
+- **🎼 Scales: choose how many notes per string** (F-57). **Notes per string** (the shapes' new name for *3 notes per string*, now for every scale) offers **1, 2, 3, 4, 5 or 6** notes on each string, **2-3** and **3-4 alternating**, or a **Custom…** pattern typed string by string from low to high (*3-3-4-3-3-3*, *2-3-2-3-2-2*; a shorter one repeats across the strings), so the same scale is practised with other fingerings and position shifts. Each pattern starts on a degree of the scale (one per degree, as the 7 three-notes-per-string patterns) and repeats up the neck, on 6-, 7- and 8-string guitar and 4-, 5- and 6-string bass, in any tuning; 1 note per string is an arpeggio-like run across the strings in one position. The suggested fingers keep the hand within a position (one finger per fret, a fret's stretch at most); where a string's notes need more, the hand **shifts by sliding the same finger** (4 notes over 6 frets: *1, slide 1, 3, 4*): a bar between the two dots on the fretboard, a dashed ring where the hand moves, and a **slide on the tab**. Choices that don't fit the neck (5 per string of a 7-note scale across 6 strings) are greyed out, and a custom pattern that isn't one (*only digits 1–6*, *7 digits for 6 strings*) says why. The exercises are named *4nps pattern 2*, *2-3nps pattern 1*, *Custom 3-3-4-3-3-3 pattern 1*, and 📈 Practice keeps each one apart (by shape); 3 notes per string keeps its shapes, names and practice history.
+
 ## 0.39.0 — 2026-11-09
 
 ### New
