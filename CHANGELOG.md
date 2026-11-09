@@ -2,6 +2,20 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.39.0 — 2026-11-09
+
+### New
+- **🎧 Ear training: name the interval** (F-52). **🎧 Ear training** (on the welcome screen and at the top; in the ☰ menu on a phone) plays a reference note, then a second one, higher, lower or both together, and you pick the interval: unison, minor and major 2nds, 3rds, 6ths and 7ths, perfect 4th and 5th, the tritone and the octave, and, if you like, the compound ones up to two octaves. Choose the intervals (presets *Beginner: P4, P5, octave*, *Thirds*, *All within an octave*… or tick your own), the directions, a fixed reference note (always A, say) or a random one within a range, the sound (the tab synth's guitar, keys or a sine), the gap between the notes, and 10, 20, 30, 50 questions a round or endless. **🔁 Replay** both notes (R), the **Reference** or the **Second note** alone; after a wrong answer hear **▶ The right one** against **▶ Yours**. Keys for the answers (1–9, 0, -, =, then A, S, D…), **Enter** or **Space** for the next question.
+- **Answer by playing it**: tick *🎤 Answer by playing it* and play the second note on your instrument (any octave): Tabloop listens on your input (as the 🎸 Tuner does) and it counts when it's the right note. Nothing is recorded.
+- **Your record**: accuracy per interval and per direction, what each interval was taken for, the current and best streak, the average time to answer, accuracy per day, and your **weakest intervals** highlighted; *Practise my weak ones* asks those more often.
+- **📈 Practice → Other practice → 🎧 Ear training**: the time spent and the results count in your practice, as their own category (not a song): in the day's total, the streak and the calendar, with the whole record in its row. Exported, synced (sync folder, Google Drive) and backed up with the rest of your practice; two computers' answers add up.
+- **🎼 Scales: every scale, shape and position on the fretboard, practised as a tab** (F-51). **🎼 Scales** (on the welcome screen and at the top; in the ☰ menu on a phone) shows any scale in any key on a fretboard: the major scale and its modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian), major and minor pentatonic, the minor and major blues scales, harmonic minor and melodic minor and their modes (Phrygian dominant, Lydian dominant, altered…), whole-tone, diminished (half-whole, whole-half) and chromatic, each with its notes spelled as musicians write them, its degrees and its formula. Choose the shapes: the five **CAGED** shapes, **3 notes per string** from each degree, the five **pentatonic boxes** (the blues scales with their blue note), a **position at any fret**, or the **whole neck**; one shape or several, up and down the neck (to fret 24, in a fret range you choose). For 6-, 7- and 8-string guitar and 4-, 5- and 6-string bass, in standard, drop or open tunings, or the tuning of the song you have open. The diagram colours the shapes, rings the root and labels the notes with their degrees, names or the fingers suggested.
+- **▶ Practise** opens the scale as the song (“Scales: A minor pentatonic, box 1”): its tab in Scrolling, Page and Highway, played by the tab synth, ascending, descending or both, straight or in 3s, 4s or thirds, at your tempo in quarters, 8ths, triplets or 16ths, repeated; each shape is a section to loop; speed, the metronome, the speed trainer, 👂 Live and ⏺ Rec work as on any song. **↩ Back to song** opens the song you had open again.
+- **📈 Practice: Scales as a category**, not a song: the time you practise scales, the shapes you play through and your 👂 Live scores, by scale, key and shape. It counts toward your streak, and is synced and exported with the rest of your practice.
+
+### Improved
+- **📈 Practice** says *No songs practised yet* (instead of *No practice recorded yet*) when you've only practised scales or ear training.
+
 ## 0.38.0 — 2026-11-09
 
 ### New
