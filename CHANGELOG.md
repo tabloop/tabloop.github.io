@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.32.2 — 2026-11-08
+
+### Fixed
+- **Tab synth: sustained notes died out long before the end of their line** (*Tab* / *Both* playback). Every note faded like a short pluck, high notes fastest, and a pluck with little fundamental faded faster still, so a note held for 2 s on the high E string was 30 dB down after 0.3 s. Now a held note keeps ringing, slowly mellowing like a held string, to the end of its sustain, then stops in a short click-free release; this holds for chords, bends, slides, vibrato, hammer-ons, harmonics and at slow speeds. Measured on notes held 1–4 s (low E, G and high E strings, 100 % and 50 % speed): the sound now stays within 30 dB of the pluck right to the drawn end (it used to fall that far 0.04–7.5 s early) and is gone 0.02–0.07 s after it. Short notes sound as before; a new note on the same string still stops the old one, a note on another string doesn't.
+
 ## 0.32.1 — 2026-11-08
 
 ### Improved
