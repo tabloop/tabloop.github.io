@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.45.0 — 2026-11-10
+
+### New
+- **⭐ Premium, with a license key** (F-63): no account and no sign-in. **Get premium** opens Lemon Squeezy's checkout; it emails you a license key, which you paste in **⚙ Settings → Premium** (a new section) → **Activate**. The key is checked with Lemon Squeezy when you activate it and then at most once a day; offline, premium keeps working for 14 days after the last check. **Remove from this device** frees the activation for another computer. The key stays in this browser only (never exported, synced or backed up).
+- **What premium unlocks, so far**: 📅 **Practice plans** — the free tier uses the Beginner plan as written; every other ready-made plan, your own plans, editing, duplicating and the minutes / days choice need premium. 🎧 **Ear training settings** — the free tier trains with the default settings (P4, P5 and the octave, going up); presets, directions, the sound, the range, round length, weak-ones mode, answering by playing and ▶ Practise these need premium.
+- **Locked, not hidden**: a locked control shows a 🔒 and stays where it was; a click explains what free and premium get, with **Get premium** and **I have a key**. Nothing you made before is lost: custom plans, another plan in use and your own ear-training settings are kept as they are, shown locked, and come back with premium.
+- Until a store is set up for a copy of Tabloop, nothing is locked: everything works as before, and ⚙ Settings → Premium says *Premium isn't set up in this build: everything is available*.
+
 ## 0.44.0 — 2026-11-10
 
 ### New
