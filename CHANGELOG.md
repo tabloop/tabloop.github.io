@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.42.1 — 2026-11-09
+
+### Improved
+- **🎼 Scales: the cascade** (F-61). **Sequence → Cascade** plays a few notes in a row, goes back one (to the 2nd note you just played) and plays on from there: *8 7 6 5 · 7 6 5 4 · 6 5 4 3 · 5 4 3 2 · 4 3 2 1*. Choose the **group** (3, 4, 5 or 6 notes; 4 by default) and the direction: **descending** (the classic, and the default when you pick it), ascending (*1 2 3 4 · 2 3 4 5 …*), or both ways (the new **Descending + ascending**, or ascending + descending). It ends on the root: from the shape's top note down to its lowest root, from its bottom note up to its highest root, root to root both ways. **On a string** plays each group on one string where it fits the shape's frets (a few notes on a string, then the next string), otherwise across the strings as in the shape; it works best with as many notes per string as the group (3 per string in groups of 3: every group on a string). **Legato (pull-offs)** marks a group's notes after the first on the same string as pull-offs going down, hammer-ons going up, on the tab. A line under the exercise shows **the note order in degrees** (for every sequence), e.g. *4 3 2 8 · 3 2 8 7 · 2 8 7 6 · … · 4 3 2 1 · 15 groups, 60 notes*. The exercise is named *“…, 3nps 1, cascade 4”*, and 📈 Practice keeps each cascade apart (*3nps 1 (from 1) · fret 3 · cascade 4 back1*); the other sequences keep their history.
+
 ## 0.42.0 — 2026-11-09
 
 ### New
