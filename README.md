@@ -2,7 +2,7 @@
 
 # Tabloop
 
-**Version 0.48.0** · [what's new](https://tabloop.github.io/help/whats-new.html) · [detailed change log](CHANGELOG.md)
+**Version 0.49.0** · [what's new](https://tabloop.github.io/help/whats-new.html) · [detailed change log](CHANGELOG.md)
 
 **Open the app: https://tabloop.github.io/**
 
