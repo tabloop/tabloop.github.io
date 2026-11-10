@@ -2,6 +2,21 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.42.0 — 2026-11-09
+
+### New
+- **🥁 Backing tracks to improvise over** (F-54). **🥁 Backing** (at the top and on the welcome screen; in the ☰ menu on a phone) makes a band — drums, bass, keys and a rhythm guitar, played by Tabloop's own synths — in the **style** you pick: blues shuffle, slow blues (12/8), rock, pop, funk, jazz swing, bossa nova, reggae, metal, ballad or country, each with its own drum pattern and fill, bass line (a **walking bass** for jazz, root–5th for country and rock, syncopated for funk and bossa) and comping (rootless voicings for jazz, the boogie riff for the shuffle, skanks for reggae, palm-muted chugs for metal…). Set the **tempo**, the **key** and **mode**, the **chords** — presets per style (12-bar blues, minor blues, jazz blues, I–V–vi–IV, I–vi–IV–V, ii–V–I, minor i–iv–v, the Andalusian cadence…) or typed in, as names (*Am F C G*) or **roman numerals** (*I IV V*, *ii7 V7 Imaj7*), with **bars per chord** (*Am\*2*) or bar lines (*| Dm7 G7 | Cmaj7 |*) — the **swing**, the length and each instrument's level. It plays as a song, looped, a section per chorus: speed, the metronome, the Tracks panel's levels and ⏺ Rec work on it.
+- **The chord chart** above the tab follows the music: the chord now and next, the bar and chorus, the chorus's bars, and **the scales that fit** the key and each chord; **🎼** opens Scales with one of them.
+- **🎸 Improvise**: play along and see each note you play on a fretboard, against the scale you pick and the chord sounding — a chord tone, in the scale, or outside. **⏺ Rec** records takes over the backing. (**✎ Transcribe** is there for when transcribing what you play arrives, F-55.)
+- **💾 Save** a backing track as a feedpak: the band as real audio (a WAV stem per instrument), the chords, the key, and the guitar, bass, keys and drum parts as charts.
+- **📈 Practice → 🎷 Improvisation**: the time over backing tracks, by style, key and progression, with your takes and the notes you played.
+- **📅 Practice plans** (F-53). **📅 Plans** (at the top and on the welcome screen) gives your practice a shape, built on how teachers plan practice and on the research (deliberate practice, tempo ladders, spaced repetition, rest days; the help says more): a week of short sessions of **blocks** — warm-up, scales, a song section, ear training, improvising over a backing track, free play, a review of songs you haven't played for a while. **Ready-made plans** — Beginner 15 min a day, Intermediate 30 min, Advanced 60 min, Technique & speed, Repertoire, Improvisation, Ear & theory — or **your own**: edit the sessions and their blocks (add, remove, reorder, the minutes, the priority, what each opens). Set your **minutes a day** and **days a week**: the blocks are fitted to your time (the optional ones go first when it's short) and spread over the week with rest days.
+- **▶ Today's session**: a timer takes you through the blocks and opens each — the warm-up exercise, 🎼 Scales with its settings, the song at its section with the speed trainer (a song you're 📖 Learning, at the section you play slowest), 🎧 Ear training with its intervals, a backing track — with ❚❚, ＋1 min, ⏭ Skip and ■ End, and a summary at the end. Goals (a section at the trainer's end speed, a scale at full speed — its tempo then goes up — ear training at 80 %) and a reminder on the days you planned to play.
+- **📈 Practice → 📅 Plans**: sessions done, the streak (rest days don't break it), minutes per kind of block and goals met; each block's time still counts where it was spent (Scales, Ear training, the song, Improvisation), never twice. Plans and sessions are synced, backed up and exported with your practice; a plan edited on two devices keeps the latest edit.
+
+### Improved
+- **🥁 Backing tracks → ✎ Transcribe** works now that the transcription engine is in: it opens **⏺ Transcribe** on your latest take, to put what you improvised on a tab part (Keep or Discard).
+
 ## 0.41.0 — 2026-11-09
 
 ### New
