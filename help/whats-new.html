@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What's new in Tabloop</title>
+  <meta name="description" content="What's new in Tabloop, version by version: new ways to practise guitar, bass, keys, drums and vocals, and what was fixed." />
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <style>
+    :root { --bg: #0f1115; --panel: #171a21; --line: #2a2f3a; --text: #e8eaf0; --dim: #9aa3b2; --accent: #ffb347; --accent2: #ff8a3d; --link: #7cc4ff; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    a { color: var(--link); }
+    .wrap { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
+    nav { position: sticky; top: 16px; align-self: start; font-size: 14px; max-height: calc(100vh - 32px); overflow-y: auto; }
+    nav a { display: block; color: var(--dim); text-decoration: none; padding: 4px 8px; border-left: 2px solid transparent; }
+    nav a:hover { color: var(--text); border-left-color: var(--accent2); }
+    nav .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--text); font-weight: 800; font-size: 20px; border: 0; padding: 0; }
+    nav .brand img { width: 40px; height: 40px; border-radius: 10px; }
+    nav .back { margin-bottom: 10px; color: var(--link); }
+    .wordmark .inf { display: inline-block; font-size: 1.55em; line-height: 0; vertical-align: -0.12em; color: var(--accent2); font-weight: 700; }
+    h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; }
+    h2 { font-size: 24px; margin: 48px 0 4px; padding-top: 8px; border-top: 1px solid var(--line); }
+    h2 .date { font-size: 15px; font-weight: 400; color: var(--dim); margin-left: 8px; }
+    h2 .soon { font-size: 13px; font-weight: 700; color: #17130a; background: var(--accent); border-radius: 6px; padding: 1px 8px; margin-left: 8px; vertical-align: 3px; }
+    .theme { margin: 0 0 8px; color: var(--accent); font-weight: 600; }
+    h3 { font-size: 16px; margin: 18px 0 4px; color: var(--dim); }
+    p, li { max-width: 72ch; }
+    ul { padding-left: 22px; margin: 6px 0; }
+    li { margin: 4px 0; }
+    .lead { font-size: 18px; color: var(--dim); }
+    .cta { display: inline-block; margin: 10px 10px 0 0; padding: 10px 18px; border-radius: 10px; background: var(--accent); color: #17130a; font-weight: 700; text-decoration: none; }
+    .cta.alt { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 600; }
+    .earlier li b { color: var(--accent); }
+    footer { color: var(--dim); font-size: 13px; margin-top: 60px; }
+    @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; gap: 16px; } nav { position: static; max-height: none; } nav .links { display: flex; flex-wrap: wrap; gap: 2px 4px; } nav a { border: 0; padding: 2px 6px; } h2 .date { display: block; margin: 0; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Versions">
+    <a class="brand" href="../"><img src="../logo.png" alt="" /><span class="wordmark" aria-label="Tabloop">tabl<span class="inf" aria-hidden="true">∞</span>p</span></a>
+    <a class="back" href="./">‹ Help &amp; guide</a>
+    <div class="links">
+      <a href="#v0.46.0">0.46 Looper</a>
+      <a href="#v0.45.0">0.45 Premium</a>
+      <a href="#v0.44.0">0.44 Edit your progress</a>
+      <a href="#v0.43.0">0.43 New layout</a>
+      <a href="#v0.42.0">0.42 Backing tracks &amp; plans</a>
+      <a href="#v0.41.0">0.41 Write &amp; transcribe</a>
+      <a href="#v0.40.0">0.40 Power chords</a>
+      <a href="#v0.39.0">0.39 Scales &amp; ear training</a>
+      <a href="#v0.38.0">0.38 Note cards</a>
+      <a href="#v0.37.0">0.37 Your own recordings</a>
+      <a href="#v0.36.0">0.36 Play it on the bullseye</a>
+      <a href="#v0.35.0">0.35 Chord names</a>
+      <a href="#v0.34.0">0.34 A bullseye per note</a>
+      <a href="#v0.33.0">0.33 Guitar Pro &amp; MIDI</a>
+      <a href="#v0.32.0">0.32 Edit the tab</a>
+      <a href="#v0.31.0">0.31 Tab from an image</a>
+      <a href="#v0.30.0">0.30 Target practice</a>
+      <a href="#v0.29.0">0.29 YouTube</a>
+      <a href="#v0.28.0">0.28 Check my input</a>
+      <a href="#v0.27.0">0.27 Karaoke files</a>
+      <a href="#v0.26.0">0.26 Highway for everyone</a>
+      <a href="#v0.25.0">0.25 Timing only</a>
+      <a href="#v0.24.0">0.24 Speed 10–200 %</a>
+      <a href="#v0.23.0">0.23 Calibration</a>
+      <a href="#v0.22.0">0.22 Portrait layout</a>
+      <a href="#v0.21.0">0.21 Google Drive in step</a>
+      <a href="#earlier">Earlier versions</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1 id="top">What's new in Tabloop</h1>
+    <p class="lead">The latest first: what you can do now that you couldn't before, and what was fixed. The website always has the newest version.</p>
+    <a class="cta" href="../">Open Tabloop</a><a class="cta alt" href="./">Help &amp; guide</a>
+
+    <section id="v0.46.0">
+      <h2>0.46.0 <span class="date">10 November 2026</span></h2>
+      <p class="theme">A looper, like a looper pedal</p>
+      <ul>
+        <li>Record a loop, then layer over it as many times as you like: set the tempo, the time signature and the length in bars, or just play and let your first layer decide how long the loop is.</li>
+        <li>A count-in and a click get you started, and a big bar and beat counter shows where you are in the loop.</li>
+        <li>Mute, solo, level or rename any layer while it plays, undo and redo layers, and use the space bar as your pedal.</li>
+        <li>The layers stay perfectly in time with each other, however long you keep going, and there's no click where the loop starts again.</li>
+        <li>Save your loop as a WAV file, or as a song with a track per layer, ready to open, slow down and write a tab over.</li>
+        <li>Time spent with the looper shows up in your practice stats. Find it in <b>Play along → Looper</b>, or on the welcome screen.</li>
+      </ul>
+    </section>
+
+    <section id="v0.45.0">
+      <h2>0.45.0 <span class="date">10 November 2026</span></h2>
+      <p class="theme">Premium, with a license key</p>
+      <ul>
+        <li>Premium is on its way: buy a license key, paste it in <b>Settings → Premium</b>, and you're done. No account, no sign-in.</li>
+        <li>It keeps working offline for up to two weeks at a time, and you can move it to another computer by removing it from this one.</li>
+        <li>Premium will unlock all the ready-made practice plans and your own, and every ear training setting. The Beginner plan and the standard ear training stay free.</li>
+        <li>Anything locked shows a small lock and explains what's included. Nothing you've made is ever lost.</li>
+        <li>Until premium is switched on, everything stays available to everyone, and Settings says so.</li>
+      </ul>
+    </section>
+
+    <section id="v0.44.0">
+      <h2>0.44.0 <span class="date">10 November 2026</span></h2>
+      <p class="theme">Your practice, as you really did it</p>
+      <ul>
+        <li>Practised at a lesson, a rehearsal or on an unplugged guitar? Tick off the tasks of a practice plan session, change their minutes, mark a goal as met and add a note.</li>
+        <li>Add a session you did on an earlier day (“yesterday, 20 minutes of scales”), and look back at every session in the new History tab.</li>
+        <li>Add practice time to any song for a past day. What you enter is marked as yours, counts towards your streak and calendar, and can be edited, deleted or undone. Nothing is counted twice.</li>
+      </ul>
+    </section>
+
+    <section id="v0.43.0">
+      <h2>0.43.0 <span class="date">9 November 2026</span></h2>
+      <p class="theme">A new layout, and colour themes</p>
+      <ul>
+        <li>The tools are now in four groups: <b>Practice</b>, <b>Play along</b>, <b>Create</b> and <b>Songs</b>. On a computer they open from a slim rail on the left; on a phone, from tabs at the bottom. The tab keeps its full height, whatever you have switched on.</li>
+        <li>One button switches between the two layouts, and Tabloop picks the right one for your screen by itself.</li>
+        <li>Colour themes: Dark, Light, High contrast, Midnight blue and Warm, or follow your system.</li>
+        <li>New, clearer icons that look the same on every device; show them with or without words.</li>
+        <li>Settings now opens as a page of its own, and buttons on phones are bigger and easier to tap.</li>
+      </ul>
+    </section>
+
+    <section id="v0.42.1">
+      <span id="v0.42.0"></span>
+      <h2>0.42 <span class="date">9 November 2026</span></h2>
+      <p class="theme">Backing tracks to improvise over, and practice plans</p>
+      <ul>
+        <li>Backing tracks: a full band (drums, bass, keys and rhythm guitar) in the style you choose, from blues shuffle, rock and funk to jazz swing, bossa nova, reggae and metal. Pick the key, the tempo and the chords, from ready-made progressions or typed in.</li>
+        <li>A chord chart follows the music, showing the chord now and next, and the scales that fit.</li>
+        <li>Improvise and see every note you play on a fretboard: a chord tone, in the scale, or outside it. Record takes over the backing, or save the backing track as a song.</li>
+        <li>Practice plans give your practice a shape: ready-made plans for beginners to advanced players, or your own, fitted to your minutes a day and days a week. A timer takes you through today's session, block by block.</li>
+        <li>Scales: a new cascade exercise (<i>8 7 6 5 · 7 6 5 4 …</i>), up, down or both ways, optionally with hammer-ons and pull-offs. <span class="date">(0.42.1)</span></li>
+      </ul>
+    </section>
+
+    <section id="v0.41.0">
+      <h2>0.41.0 <span class="date">9 November 2026</span></h2>
+      <p class="theme">Write a song from scratch, and let Tabloop write down what you play</p>
+      <ul>
+        <li>Start an empty song, no recording needed: give it a tempo, time signature, key and length, add guitar, bass, keys or drum parts with their tunings, then write the tab.</li>
+        <li>Transcribe: play along and Tabloop writes the notes on the tab as you play, on the string and fret a player would choose, with hammer-ons, pull-offs, slides, bends and vibrato. Check it, then keep it or throw it away.</li>
+        <li>You can transcribe a take you recorded earlier too.</li>
+      </ul>
+    </section>
+
+    <section id="v0.40.0">
+      <h2>0.40.0 <span class="date">9 November 2026</span></h2>
+      <ul>
+        <li>Power chords get their names (<i>E5</i>), and, if you like, so do two-note double stops.</li>
+        <li>New option to draw the tab with the low string on top, as you see the guitar when you look down at it.</li>
+      </ul>
+    </section>
+
+    <section id="v0.39.2">
+      <span id="v0.39.1"></span><span id="v0.39.0"></span>
+      <h2>0.39 <span class="date">9 November 2026</span></h2>
+      <p class="theme">Scales and ear training</p>
+      <ul>
+        <li>Scales: any scale in any key on the fretboard, from the major scale and its modes to pentatonics, blues, harmonic and melodic minor. See it in CAGED shapes, three notes per string, pentatonic boxes, at any position or across the whole neck, on guitar or bass in any tuning.</li>
+        <li>Practise a scale as a tab, at your tempo, up, down, in threes or fours, with the speed trainer and the metronome.</li>
+        <li>Choose how many notes per string you play, from one to six, or type your own pattern. <span class="date">(0.39.1)</span></li>
+        <li>Ear training: hear two notes and name the interval, or answer by playing the second note on your instrument.</li>
+        <li>Ear training keeps track of your progress session by session, shows which intervals are improving and which need work, and can start a round of just those. <span class="date">(0.39.2)</span></li>
+        <li>Time spent on scales and ear training counts in your practice stats and streak.</li>
+      </ul>
+    </section>
+
+    <section id="v0.38.0">
+      <h2>0.38.0 <span class="date">9 November 2026</span></h2>
+      <ul>
+        <li>Rest the pointer on any note of the tab (or tap it on a phone) and a card tells you all about it: the note name, the string, how long it rings and how to play its techniques.</li>
+        <li>For a chord, the card shows its name and a chord diagram with suggested fingers.</li>
+        <li>Hear just that note, or the whole chord, with one click, without moving the song.</li>
+      </ul>
+    </section>
+
+    <section id="v0.37.0">
+      <h2>0.37.0 <span class="date">9 November 2026</span></h2>
+      <p class="theme">Your own recordings, with a tab</p>
+      <ul>
+        <li>Open an MP3, M4A, WAV, OGG, FLAC or Opus file as a song: slow it down without changing the pitch, transpose it, loop the hard bits and record yourself over it.</li>
+        <li>Create a song: put your recording and a tab together (from a Guitar Pro or MIDI file, another song, or one you write), and save it as a song file.</li>
+        <li>Line the tab up with the recording by nudging it, tapping along to the beat, or letting Tabloop guess.</li>
+        <li>Songs you're working on are kept on this device, so you can come back to them later.</li>
+      </ul>
+    </section>
+
+    <section id="v0.36.1">
+      <span id="v0.36.0"></span>
+      <h2>0.36 <span class="date">9 November 2026</span></h2>
+      <ul>
+        <li>Click a ghost note or a marker, press <b>Play it</b>, and play the note again: each try lands on a little bullseye, so you can see whether you're early, late, sharp or flat.</li>
+        <li>Choose which chord names you see: all of them, only the song's own, only the ones Tabloop works out, or none.</li>
+        <li>Fixed: chords with a skipped or muted string in the middle now get their names too.</li>
+        <li>Fixed: the Live bar fits on one row again on a laptop screen.</li>
+      </ul>
+    </section>
+
+    <section id="v0.35.0">
+      <h2>0.35.0 <span class="date">9 November 2026</span></h2>
+      <ul>
+        <li>Chord names are worked out from the notes for any chord that doesn't come with one, including in songs imported from Guitar Pro or MIDI files, and they update as you edit the tab.</li>
+      </ul>
+    </section>
+
+    <section id="v0.34.1">
+      <span id="v0.34.0"></span>
+      <h2>0.34 <span class="date">9 November 2026</span></h2>
+      <ul>
+        <li>The card on a ghost note now has a small bullseye showing how early or late, sharp or flat you played that note.</li>
+        <li>Fixed: with the Tuner and Live both on, your input no longer shows twice.</li>
+      </ul>
+    </section>
+
+    <section id="v0.33.0">
+      <h2>0.33.0 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Open Guitar Pro (3 to 8), TuxGuitar and MIDI files as songs: every track becomes a part, with its tuning, techniques, tempo changes and sections, and repeats played out.</li>
+        <li>With no recording, the built-in guitar, keys and drum sounds play the song for you.</li>
+        <li>Save it as a song file to open it like any other song. Everything happens on your device.</li>
+      </ul>
+    </section>
+
+    <section id="v0.32.2">
+      <span id="v0.32.1"></span><span id="v0.32.0"></span>
+      <h2>0.32 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Edit the tab right in the app: fix a wrong fret, move notes, add or delete them, and set techniques like hammer-ons, slides and bends, with undo.</li>
+        <li>Your edits are kept with the song, and can be saved into it.</li>
+        <li>Moving a note to another string keeps it the same note. <span class="date">(0.32.1)</span></li>
+        <li>Fixed: long notes played by the tab sound now ring for their full length. <span class="date">(0.32.2)</span></li>
+      </ul>
+    </section>
+
+    <section id="v0.31.1">
+      <span id="v0.31.0"></span>
+      <h2>0.31 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Tab from an image: paste or drop a photo or screenshot of a tab, check what Tabloop read, and add it to the song as a part you can see, hear and play along with. The image never leaves your device.</li>
+        <li>A guided tour: new to Tabloop? A one-minute tour shows where everything is, and after an update a short tour shows what's new.</li>
+        <li>Fixed: extra notes you play are no longer read an octave or two too low.</li>
+      </ul>
+    </section>
+
+    <section id="v0.30.1">
+      <span id="v0.30.0"></span>
+      <h2>0.30 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Target practice: play the notes Tabloop asks for, on the beat, and see each one land on a bullseye. If they're all off by the same amount, Tabloop offers to fix your timing settings for you.</li>
+        <li>Brighter default string colours, a new high-contrast set and a new colour-blind friendly set.</li>
+      </ul>
+    </section>
+
+    <section id="v0.29.0">
+      <h2>0.29.0 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Practise with YouTube videos: paste a link, then loop the hard part, slow it down, save loops and use the speed trainer.</li>
+        <li>Mark sections on a video to jump to and loop them.</li>
+      </ul>
+    </section>
+
+    <section id="v0.28.0">
+      <h2>0.28.0 <span class="date">8 November 2026</span></h2>
+      <ul>
+        <li>Check my input: if notes are missed or judged wrong, play one and see exactly what Tabloop hears, with advice on what to change.</li>
+        <li>Much better at hearing your notes through distortion, fuzz, delay and other effects, from a quiet input, and in fast legato runs.</li>
+        <li>The drum highway now uses the lane layout drummers know from rhythm games.</li>
+        <li>Settings is split into tabs, and you can switch between your takes from the main screen.</li>
+      </ul>
+    </section>
+
+    <section id="v0.27.0">
+      <h2>0.27.0 <span class="date">7 November 2026</span></h2>
+      <ul>
+        <li>Open UltraStar karaoke songs, duets included, and sing along on the Vocals tab.</li>
+        <li>Rock Band and Clone Hero charts now bring their vocals and harmonies along with the drums.</li>
+      </ul>
+    </section>
+
+    <section id="v0.26.0">
+      <h2>0.26.0 <span class="date">7 November 2026</span></h2>
+      <ul>
+        <li>The highway view now works for drums, keys and vocals, not just guitar and bass.</li>
+        <li>Split screen: show several parts and each player gets their own highway, side by side.</li>
+      </ul>
+    </section>
+
+    <section id="v0.25.0">
+      <h2>0.25.0 <span class="date">7 November 2026</span></h2>
+      <ul>
+        <li>Judge timing only: when you know the notes and want to work on your timing, Tabloop ignores the pitch.</li>
+        <li>The anonymous usage counts now include rough practice patterns, like how long people practise. Still no ID, no song names, and you can turn them off in Settings.</li>
+      </ul>
+    </section>
+
+    <section id="v0.24.2">
+      <span id="v0.24.1"></span><span id="v0.24.0"></span>
+      <h2>0.24 <span class="date">7 November 2026</span></h2>
+      <ul>
+        <li>Slow down to 10 % or speed up to 200 %, and type the exact speed you want.</li>
+        <li>Calibration now works out the right settings and suggests them to you.</li>
+        <li>A Reset button puts the mixer back to how it started.</li>
+        <li>Fixed: the microphone opens again in Safari on Mac, iPhone and iPad. <span class="date">(0.24.1)</span></li>
+        <li>Fixed: songs in iCloud Drive and similar folders can be opened again, and busy solos no longer have technique marks piled on the notes.</li>
+        <li>Fixed: practice time now counts only while you actually hear the song, and each device keeps its own list of recent songs. <span class="date">(0.24.2)</span></li>
+      </ul>
+    </section>
+
+    <section id="v0.23.1">
+      <span id="v0.23.0"></span>
+      <h2>0.23 <span class="date">6 November 2026</span></h2>
+      <ul>
+        <li>Calibration: a one-minute guided setup so what you see, hear and play line up, even with Bluetooth headphones.</li>
+        <li>A bigger mixer that scrolls when there are many channels.</li>
+        <li>Phones and tablets held upright use the portrait layout automatically. <span class="date">(0.23.1)</span></li>
+      </ul>
+    </section>
+
+    <section id="v0.22.0">
+      <h2>0.22.0 <span class="date">6 November 2026</span></h2>
+      <ul>
+        <li>A portrait layout gives the song most of the screen on an upright phone or tablet.</li>
+        <li>Set the level of your microphone or instrument in the mixer, and hear yourself through the app.</li>
+        <li>Delete several takes at once.</li>
+        <li>Point at a ghost note to see what the tab expected and what you played.</li>
+      </ul>
+    </section>
+
+    <section id="v0.21.0">
+      <h2>0.21.0 <span class="date">6 November 2026</span></h2>
+      <ul>
+        <li>Google Drive keeps several computers in step by itself; when both have changed, you choose what to keep.</li>
+        <li>Soloing a part in the Tracks panel now silences the metronome too.</li>
+        <li>Songs with separate instrument tracks play them separately, so each can be muted or turned up.</li>
+      </ul>
+    </section>
+
+    <section id="earlier">
+      <h2>Earlier versions <span class="date">3–6 November 2026</span></h2>
+      <p>The first weeks, in short:</p>
+      <ul class="earlier">
+        <li id="v0.20.0"><b>0.20</b> The Tracks panel, to show, mute, solo and level each part, and techniques drawn like printed tab.</li>
+        <li id="v0.19.0"><b>0.19</b> The highway view: notes come down towards you, one lane per string.</li>
+        <li id="v0.18.0"><span id="v0.18.1"></span><span id="v0.18.2"></span><b>0.18</b> The Vocals tab: sing along with the melody and see how in tune you are. The tab sound now plays bends, slides and other techniques.</li>
+        <li id="v0.17.0"><b>0.17</b> Choose how forgiving the judging is. More reliable Google Drive backup, and songs with accented file names open.</li>
+        <li id="v0.16.0"><span id="v0.16.1"></span><b>0.16</b> Markers under the tab as another way to see how you played, and a full privacy policy.</li>
+        <li id="v0.15.0"><span id="v0.15.1"></span><span id="v0.15.2"></span><b>0.15</b> Live: see how you're playing as you play, without recording. A tuner. Bigger numbers in the page view.</li>
+        <li id="v0.14.0"><b>0.14</b> Lyrics in time with the song, and guitar, bass and keys parts from a MIDI file.</li>
+        <li id="v0.13.0"><span id="v0.13.1"></span><b>0.13</b> Ghost notes show what you played on the tab; loop with your takes to compare them.</li>
+        <li id="v0.12.0"><b>0.12</b> Record yourself playing along, and see which notes were early or late.</li>
+        <li id="v0.11.0"><span id="v0.11.1"></span><b>0.11</b> The help guide, a welcome screen and a demo song to try everything.</li>
+        <li id="v0.10.0"><span id="v0.10.1"></span><b>0.10</b> A new name: Tabloop (it was Feedpak Player), with a new logo and address.</li>
+        <li id="v0.9.0"><span id="v0.9.1"></span><span id="v0.8.0"></span><span id="v0.8.1"></span><b>0.8–0.9</b> Keep several computers in sync through a shared folder, recent songs, tuning badges, one Settings window and Google Drive backup.</li>
+        <li id="v0.7.0"><b>0.7</b> Change the pitch, a count-in, the speed trainer, and saved loops you can play in a row.</li>
+        <li id="v0.6.0"><b>0.6</b> A song library, playlists, “Learning” and “Mastered” tags, and Rock Band and Clone Hero drum charts.</li>
+        <li id="v0.5.0"><span id="v0.5.1"></span><span id="v0.4.0"></span><b>0.4–0.5</b> Practice tracking with streaks and a calendar, and drum parts from MIDI files.</li>
+        <li id="v0.3.0"><span id="v0.3.1"></span><b>0.3</b> Hear the tab played, a metronome, a mixer and string colours.</li>
+        <li id="v0.2.0"><span id="v0.2.1"></span><b>0.2</b> The first version: play songs with their tab, several parts side by side, slow down without changing the pitch, and loop any section.</li>
+      </ul>
+    </section>
+
+    <footer><a href="./">Help &amp; guide</a> · <a href="../">Open Tabloop</a> · <a href="../privacy.html">Privacy policy</a> · <a href="../terms.html">Terms of use</a></footer>
+  </main>
+</div>
+</body>
+</html>

@@ -51,6 +51,7 @@
       <a href="#create-song">Create a song</a>
       <a href="#scales">Scales</a>
       <a href="#backing-tracks">Backing tracks</a>
+      <a href="#looper">Looper</a>
       <a href="#practice-plans">Practice plans</a>
       <a href="#youtube">YouTube songs</a>
       <a href="#library">Library &amp; playlists</a>
@@ -80,6 +81,7 @@
       <a href="#browsers">Which browser?</a>
       <a href="#keys">Keyboard shortcuts</a>
       <a href="#faq">Questions</a>
+      <a href="whats-new.html">What's new</a>
     </div>
   </nav>
 
@@ -197,6 +199,20 @@
       <li><b>🎸 Improvise</b>: play along on your instrument (it listens on your input, like the <a href="#tuner">Tuner</a>): each note you play appears on a fretboard against the scale you picked (click a scale's name), as a <b>chord tone</b> (green), <b>in the scale</b> (blue) or <b>outside</b> (red), with the counts. <b>⏺ Rec</b> records a take over the backing (as for any song). <b>✎ Transcribe</b> (turning what you play into tab) comes with a later version; the button is there, greyed out until then.</li>
       <li><b>💾 Save</b> keeps it as a feedpak that plays anywhere: the band as <b>real audio</b>, a WAV stem per instrument as rendered (no silent stem), and the parts as charts — the rhythm guitar and bass tabs (the chords named), the keys as notation, the drums as a drum chart — plus the chords (harmony.json), the key and a section per chorus.</li>
       <li>In <a href="#practice">📈 Practice</a>, the time goes to <b>🎷 Improvisation</b> (not a song), by style, key and progression, with the takes you recorded and the notes you played (chord tones, in the scale, outside).</li>
+    </ul>
+
+    <h2 id="looper">Looper</h2>
+    <p><b>➿ Looper</b> (in <b>Play along</b>, at the foot of the panel, or <b>➿ Looper…</b> on the welcome screen) works like a looper pedal: record a loop over the metronome, then layer after layer over it, and switch the layers on and off as it plays. It needs no song; it records from your input, like <a href="#record">⏺ Rec</a> (use headphones, so the loop isn't recorded again through the microphone).</p>
+    <ul>
+      <li><b>Set it up:</b> the <b>tempo</b> (type it, or press <b>Tap</b> on the beat a few times), the <b>time signature</b> and the loop's <b>length</b> in bars (1 to 16). Or <b>Free</b>: the first layer's length sets the loop — press the big button again when it's done, and it's rounded to the nearest bar. With <b>No tempo</b> there's no metronome and the loop is exactly as long as you played. <b>Click</b> turns the metronome on or off (while you record and while it plays); the <b>count-in</b> (1 or 2 bars) leads in the first layer.</li>
+      <li><b>The counter</b> shows where you are: <i>Count-in 1 2 3 4</i>, then bar and beat (<i>1.1, 1.2 … 2.4</i>), with a bar along the loop.</li>
+      <li><b>⏺ Record</b>: the count-in, then the first layer, exactly the loop's length; it plays back straight away. <b>⏺ Overdub</b> adds a layer over it on the next loop start (one pass), while it keeps looping. Prefer to come in at once? Set <b>Overdub → Right away (punch in)</b>.</li>
+      <li><b>The big button is the pedal:</b> record, close the loop (free length), overdub, play. <b>Space</b> presses it. Also <b>▶ Play</b>, <b>■ Stop</b> (<kbd>S</kbd>; a layer being recorded is dropped), <b>↶ Undo</b> the last layer (<kbd>Z</kbd>; while recording, the take), <b>↷ Redo</b> (<kbd>Y</kbd>), <b>🗑 Clear</b> all the layers, and <kbd>1</kbd>–<kbd>9</kbd> mute or unmute that layer. The keys work while the looper is open (Space then belongs to the looper, not the song).</li>
+      <li><b>Each layer</b>: <b>M</b> mutes it, <b>S</b> solos it (only the soloed layers play), its slider sets its level, its name can be changed, and 🗑 deletes it. Changes come in at once while it plays, with a tiny fade so they never click. <b>Play</b> can stop by itself after 2, 4, 8 or 16 times.</li>
+      <li><b>In time</b>: what you play is lined up with the beat using the same latency compensation as <a href="#record">⏺ Rec</a> — if your notes land early or late, <a href="#calibration">⏱ Calibrate</a> your input. Every layer is exactly the loop's length, to the sample, so it never drifts however long it plays, and the point where the loop wraps is crossfaded so it doesn't click.</li>
+      <li><b>A song and the looper</b> don't play together: starting the looper pauses the song, and ▶ on the song stops the looper.</li>
+      <li><b>Save it:</b> <b>⬇ WAV</b> downloads the mix as you hear it; <b>💾 Save .feedpak</b> keeps it as a song, with each layer as a stem (set their levels in the <a href="#trackspanel">Tracks panel</a> and the mixer), the tempo, the beats and a section per bar; <b>Open as song</b> opens it, looped (then ✏ Edit or ⏺ Transcribe can write a tab for it). Your looper session stays on this device, even after a reload; <b>＋ New session</b> starts again.</li>
+      <li>In <a href="#practice">📈 Practice</a>, looper time is its own category, <b>➿ Looper</b> (by tempo and time signature, with the layers you recorded).</li>
     </ul>
 
     <h2 id="practice-plans">Practice plans</h2>
@@ -486,7 +502,7 @@
       <li>your <b>streak</b> (days in a row with at least 1 minute of playing; the header shows 🔥 while it runs),</li>
       <li>time today, this week and in total, and a calendar of practice per day,</li>
       <li>each song's time, plays and full plays, and how often and how fast you played each section and loop,</li>
-      <li>under <b>Other practice</b>, practice that isn't a song: <a href="#ear-training">🎧 Ear training</a> with its record, <a href="#scales">🎼 Scales</a>, with the time, the shapes played through and the 👂 Live score by scale, key and shape, <a href="#backing-tracks">🎷 Improvisation</a> over backing tracks, and <a href="#practice-plans">📅 Plans</a>, your plan sessions and goals.</li>
+      <li>under <b>Other practice</b>, practice that isn't a song: <a href="#ear-training">🎧 Ear training</a> with its record, <a href="#scales">🎼 Scales</a>, with the time, the shapes played through and the 👂 Live score by scale, key and shape, <a href="#backing-tracks">🎷 Improvisation</a> over backing tracks, <a href="#looper">➿ Looper</a> time, and <a href="#practice-plans">📅 Plans</a>, your plan sessions and goals.</li>
     </ul>
     <p>Tag songs <b>📖 Learning</b> or <b>⭐ Mastered</b> (next to the song title) to filter them and see your repertoire.</p>
     <h3 id="practice-entered">Practice you enter (✎)</h3>
@@ -589,7 +605,7 @@
     <h3 id="settings-differ">My settings differ between computers</h3>
     <p>Each browser keeps its own copy of your settings and practice history; they only meet through a <b>🔄 sync folder</b> or <b>☁ Google Drive</b>. With a sync folder they stay in step by themselves. With Google Drive, the app compares the two each time it starts while signed in to Google (Google's sign-in lasts about an hour, so after that it compares right after you click <b>Reconnect</b>). If both computers changed the same thing in between, it asks which to keep; otherwise it takes the newer side by itself and offers <b>Undo</b>. Practice stats from several computers are added up with each session counted once. To force one computer's version: on that computer use <b>Back up now</b>; on the others <b>Restore from Drive</b> and choose <i>Use all Google Drive's</i>. Settings that change how the app looks (view, colours, mixer) take effect after a reload, which the app offers.</p>
     <h3>What's new?</h3>
-    <p>See the <a href="../CHANGELOG.md">release notes</a>.</p>
+    <p>See <a href="whats-new.html">what's new</a>, version by version.</p>
 
     <footer><a href="../privacy.html">Privacy policy</a> · <a href="../terms.html">Terms of use</a> · Screenshots show “First Riff” by Tabloop Demo, an original song made for this guide. Tabloop is independent and not affiliated with or endorsed by the got-feedback project; it reads their open feedpak format.</footer>
   </main>
