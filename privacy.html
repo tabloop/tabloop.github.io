@@ -37,8 +37,8 @@
     <p><b>In short:</b> Tabloop has no server and no user accounts. Your songs, recordings and microphone audio never leave
     your device. Your settings and practice history are stored in your browser, and only go elsewhere if <i>you</i> choose to
     back them up to your own Google Drive or sync them through a folder you pick. If you open a YouTube video, it plays in
-    YouTube's own player and Google's privacy policy applies to it. An optional premium license key is checked with Lemon
-    Squeezy, the store that sells it. The hosted site sends anonymous usage counts,
+    YouTube's own player and Google's privacy policy applies to it. An optional premium license key is checked with the
+    store that sells it (Polar or Lemon Squeezy). The hosted site sends anonymous usage counts,
     which you can turn off. Nothing is sold or shared for advertising.</p>
   </div>
 
@@ -132,21 +132,24 @@
   privacy policy applies to the copy it syncs.</p>
 
   <h2 id="premium">Premium license (optional)</h2>
-  <p>Premium is bought with a license key from <a href="https://www.lemonsqueezy.com">Lemon Squeezy</a>, the store that sells it.
-  There is no account and no sign-in in Tabloop.</p>
+  <p>Premium is bought with a license key from the store that sells it: <a href="https://polar.sh">Polar</a> or
+  <a href="https://www.lemonsqueezy.com">Lemon Squeezy</a> (⚙ Settings → Premium says which one this site uses). The app talks
+  to that store's license API only. There is no account and no sign-in in Tabloop.</p>
   <ul>
-    <li><b>Buying:</b> <b>Get premium</b> opens Lemon Squeezy's checkout page in a new tab. What you enter there (your email, payment
-    details) goes to Lemon Squeezy, not to Tabloop, and <a href="https://www.lemonsqueezy.com/privacy">Lemon Squeezy's privacy policy</a>
-    applies. Lemon Squeezy emails you the license key.</li>
-    <li><b>Activating and checking:</b> when you paste the key in <b>⚙ Settings → Premium</b>, the app sends it to Lemon Squeezy
-    (<code>api.lemonsqueezy.com</code>) with a name for this device such as “Tabloop on Chrome on macOS”, to activate it here. After
-    that it sends the key and this device's activation ID at most once a day, to check that the license is still valid, and once more
-    if you choose <b>Remove from this device</b>. Nothing else is sent: not your songs, settings or practice.</li>
-    <li><b>Stored on your device:</b> the key, the activation ID, the product's name, the license's status and expiry, and when it was
-    last checked, in your browser only. Lemon Squeezy's answers also include the buyer's name and email; Tabloop does not keep them.
-    Removing the key from the device, or clearing this site's data, deletes it.</li>
+    <li><b>Buying:</b> <b>Get premium</b> opens the store's checkout page in a new tab. What you enter there (your email, payment
+    details) goes to the store, not to Tabloop, and the store's privacy policy applies
+    (<a href="https://polar.sh/legal/privacy">Polar's</a>, <a href="https://www.lemonsqueezy.com/privacy">Lemon Squeezy's</a>).
+    The store emails you the license key.</li>
+    <li><b>Activating and checking:</b> when you paste the key in <b>⚙ Settings → Premium</b>, the app sends it to the store's
+    license API (<code>api.polar.sh</code> or <code>api.lemonsqueezy.com</code>) with a name for this device such as “Tabloop on
+    Chrome on macOS”, to activate it here. After that it sends the key and this device's activation ID now and then, to check
+    that the license is still valid, and once more if you choose <b>Remove from this device</b>. Nothing else is sent: not your
+    songs, settings or practice.</li>
+    <li><b>Stored on your device:</b> the key, the activation ID, the product's name (if the store gives one), the license's status
+    and expiry, and when it was last checked, in your browser only. The store's answers also include the buyer's name and email;
+    Tabloop does not keep them. Removing the key from the device, or clearing this site's data, deletes it.</li>
   </ul>
-  <p>If you never enter a key, Tabloop never contacts Lemon Squeezy.</p>
+  <p>If you never enter a key, Tabloop never contacts the store.</p>
 
   <h2>Anonymous usage counts</h2>
   <p>The hosted site (tabloop.github.io) sends anonymous counts to <a href="https://www.goatcounter.com">GoatCounter</a>, a
