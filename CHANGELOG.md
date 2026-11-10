@@ -2,6 +2,13 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
 
+## 0.44.0 — 2026-11-10
+
+### New
+- **✎ Your progress, as you did it** (F-62). Practised away from the app (a lesson, a rehearsal, scales on an unplugged guitar) or longer than the timer saw? In a **📅 plan session**, each task (block) can be **ticked done** even if you didn't practise it in the app, its **minutes set** (more or less than the timer recorded), its **goal marked met** by hand (e.g. the tempo reached: *marked by you*) and a **note** added; a whole **session marked done**. Where: **✓ Done** on the session's timer bar, the **summary** at the end, **Mark done** on today's tasks (**Today**), and the new **History** tab (every session of a plan, to edit later), with **＋ Add a past session** (a day up to today: “yesterday, 20 min of scales”).
+- **📈 Practice counts what you enter**, marked **✎ entered by you**: the day's total, the streak, the calendar (its tooltip says how much was entered), the songs and the categories. **＋ Add practice** (and **＋ Add time** in a song's or a category's detail) adds time to a song or a category on a day up to today (“I practised this song for 15 min on Tuesday”); **✎ Entered by you** lists it all, to **✎ Edit** or **Delete**, with **↶ Undo** for the last change.
+- **The rules**: the minutes you set for a task replace the timer's in the plan; your daily total gets only the difference (never below 0), so nothing counts twice. A task counts by its kind (warm-up and scales → Scales, ear → Ear training, improvisation → Improvisation, free play → Free play, a song section or review → that song). Scores (ear-training accuracy, 👂 Live, speeds) stay measured only. Entries are saved, exported, synced and backed up with your practice: the latest edit wins across devices, and a deletion stays deleted.
+
 ## 0.43.0 — 2026-11-09
 
 ### New
