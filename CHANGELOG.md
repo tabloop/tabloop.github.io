@@ -2,6 +2,24 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.53.0 — 2026-11-11
+
+### Changed (Play's pages, branch `ui/takes-page`; the rail panel shows the five tabs as words, no icons)
+- **Takes, a fifth page of Play** (`#play-takes` / `#pp-takes`, icon `i-takes`, after Play along): ⏺ Rec · takes (`#paRec`) and the take card (`#recBar`: "🎙 Take X (X/Y)", ‹ Prev / ▶ Play take / Next ›, what you hear, the nudge) moved out of Play along, which keeps the input line (`#paStatus`), 👂 Live and 🎤 Sing. `PlayPane` / `PLAY_PANES` gain `"takes"`; a stored `tabloopUI.pane` of `"takes"` is kept, the old values (`"along"`, `"controls"`, the pre-F-68 groups) still work. The tab keys (←/→/Home/End) cycle five tabs.
+- **⏺ Rec opens Play at Takes** (`SHOWS_GROUP` `recBtn` → `"takes"`; the `#recBar` observer picks the page from the card's pane); 👂 Live still opens Play along; still not when turned on from Play's own panel.
+- **A dot on the Takes tab** (`.tk-dot`): a red ring while Rec is armed, filled while it records (`#recState.rec`); Play along's green `.pa-dot` stays for Live.
+- **The five tabs fit**: phone upright, a 3 + 2 grid of 40 px icons (was 2 × 2; 120 px wide, as tall as a card, so the strip and the tab's height are unchanged: 56 % at 360 × 780, 59 % at 390 × 844); sideways (300 px side sheet) the words at 11 px with 2 px padding (42–70 px each, one row); the rail panel and Modes, one row.
+- Tour (`live`, `rail`, `menu` steps), the help page (Play's pages, the phone layout) and portrait.ts's header list the five pages. Tests: e2e-ux-layout (homes `play/takes`; five pages; Rec → Takes and its dot; the five tabs fit at every size — one row, or the 3 + 2 grid upright), e2e-sidebar (pinned sections on every page).
+
+### Changed (Play → Loop)
+- **The loop card and the speed trainer are always on Play → Loop with a song open**, loop or not. `#loopBar` / `#trainerBar` are shown once a song (or video) has loaded (`loopControlsReady()`, at the sites that used to only enable `#loopToggle`) and no longer hide with the loop. `#loopCard.no-loop` with no loop: the name says "No loop", ⏮ Restart and 💾 Save are disabled (dimmed: `#loopBar .btn:disabled`), Start / End are empty and greyed, with placeholders showing the range ⟲ Loop: On would loop from where you are (`showLoopPreview()`, from `frame()`, only while the Loop page is shown, every 0.2 s of song time). `#loopHint` shows while there's no loop.
+- **⟲ Loop: On / Off** (`#loopOn`, `aria-pressed`, styled like the transport's `#loopToggle.on`) replaces ✕ Clear (`#loopClear`, gone). On = exactly L (`toggleLoop()`: a switched-off loop back on, else the new ~4 bars / 8 s of a video, now from `defaultLoop()`); Off = what Clear did (`setLoop(null)`). `setLoop()` keeps it in sync, so L, the transport's ⟲ Loop, a section or saved loop clicked, a plan, a song reopened with its loop all show on it. A loop switched off with L (kept, "Loop off · …") shows Off; On turns it back on.
+- **Editing Start / End with no loop turns the loop on**, then applies the edit (like `[` / `]` already did): a nudge applies to the loop L would make, a typed time keeps L's other end (or the same length if it wouldn't fit), ⌖ goes through `loopEndHere()` = `[` / `]` (start here → song end; end here → 0).
+- **🏋 Speed trainer**: `#trainerBtn` (which opened `#trainerBar`) is gone with `trainerOpen()`; the bar is always there. Ticking it with the loop off or none turns the loop on, as L would (it only trains while looping; "Turn the loop on to train." still shows if the loop is switched off later).
+- `portrait.ts`: `loopBar` and `trainerBar` left the "card appears → open its group" observer (they no longer appear on a click; a song opened from Songs would have jumped to Play). Opening Play at Loop stays with `#loopToggle.on` in `SHOWS_GROUP`; `#loopOn` and the trainer are inside Play, so `inPlay()` keeps the page.
+- Tour (Loops step) and help (Play pages, Looping, Speed trainer) describe ⟲ Loop: On / Off and the card without a loop. `help/img/speed-trainer.png` (`make-help.mjs`) still shows the old card until the images are made again.
+- Tests: `e2e-ui.mjs` `hasLoop()` (replaces `barOn(…, "#loopBar")` as "there's a loop") and `clearLoop()` (replaces clicks on `#loopClear`); `#trainerBtn` clicks dropped (`e2e-trainer` checks the trainer is shown); `e2e-loop` checks the card with no loop, ⟲ Loop: On = L (same loop as the preview), L → On, Off clears and the controls stay, the transport's ⟲ Loop and a section clicked, an edit and the trainer turning the loop on. `e2e-ux-layout`'s "on screen" check accepts a card taller than the panel it scrolls in when its top is in view (the loop card with the trainer in a phone's side sheet, 844×390).
+
 ## 0.52.0 — 2026-11-11
 
 ### Added
