@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.52.0 — 2026-11-11
+
+### Added
+- **🏠 Home** (`home.ts`): back to the welcome screen, first in the rail, the Modes buttons (`#mode-home`) and the phone's tab bar (`#tabbar-home`, six tabs; fits 360 px). It closes the group shown (a panel; Train or Progress) and, with a song or a video open, pauses it and lays the welcome over the tab (`body.home-over`: opaque, above it), with "‹ Back to <song>" (`#welcomeBack`) at its top. The song stays open: ‹ Back, ▶ / Space or any group brings it back; a song opened from it replaces it as before. Without a song, Home just closes what's open over the welcome. Home is pressed while the welcome shows and no group is open; in Modes the folded group isn't shown as current meanwhile. New icon `home` (branding/ui-icons). Test: `tools/e2e-home.mjs` (Rail 1440 × 900, phone 360 × 780).
+
 ## 0.51.1 — 2026-11-11
 
 ### Changed (🎸 Tune & Input)
