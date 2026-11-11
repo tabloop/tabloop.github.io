@@ -1,6 +1,13 @@
 # Release log
 
-All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ and https://bazarcad-ai.github.io/feedpak-player-app/ (also downloadable as a single `index.html`).
+All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
+
+## 0.51.1 — 2026-11-11
+
+### Changed (🎸 Tune & Input)
+- **The chosen input is always shown.** The input row (`#recInputs`) stays in 🎸 Tune & Input with nothing open (class `closed`): the device menu, and "Not open: turn on the 🎸 Tuner, 👂 Live or ⏺ Rec" where the note goes. Devices are listed at start-up and on `devicechange`; before the browser allows the input (no names), the last input opened keeps its name (`tabloopRec.deviceLabel`, saved by `Recorder.openInput`). A choice made while closed is saved for the next open (`saveLastDevice`). 👂 Live's own row replaces the closed one while Live is on. Play along's input line says "<device> · not open".
+- **One size, whatever is heard.** The top-bar button: a dot (grey closed, green listening) and a 30 px slot with the note name only ("A2", the needle's colour), "—" when silent, "Off" when closed (was the whole reading — name, cents, Hz, string — so the button went 165 → 303 px). The panel: the device on its own line, then the note line (fixed height); the Level and Monitor controls stay in place, greyed out and disabled while closed (`#mixInControls.closed`; the "open the input with…" hint and the duplicate device heading are gone), so the panel keeps its height open or closed.
+- **A simpler note:** the name, the needle and the cents; no Hz or nearest string (still in its tooltip and `InputNote.state()`), and the row's own meter is gone (the Level meter just below shows the same).
 
 ## 0.51.0 — 2026-11-11
 
