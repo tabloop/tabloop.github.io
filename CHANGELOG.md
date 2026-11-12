@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.56.1 — 2026-11-11
+
+### Added (Solo and Mute in the 🎚 Mixer, branch `ui/mixer-solo`)
+- **M and S on each part in the 🎚 Mixer** (*This song's parts*; `tracks.ts mixerRow`): **M** mutes the part, **S** solos it (only it plays; Cmd/Ctrl-click — or Cmd/Ctrl + Enter — adds or removes another part; S again on the only solo ends it), the same as the (hidden) Play → Tracks list: one state and one set of handlers (`muteButton` / `soloButton` / `setSolo`), so a mute or solo set in either shows in both. As before, a solo silences the metronome and the count-in while it's on, isn't saved, and never changes the levels; the levels and mutes are kept per song (`feedpak.trackMix`). This brings back the Solo lost when Play → Tracks was hidden.
+- **The part rows' On / Off was already that mute** (the part's level `on`): it's now the **M** button, lit red when muted (no second mute). The channels' On / Off (Song, Tab synth, Metronome, MIDI drums / instruments, My take) are unchanged.
+- **Look** (style.css): M sits in the channels' On / Off column and S at the start of the name's, so every slider lines up; a lit S is yellow (`--solo`) and its part's name too; while a solo is on the other parts' names, levels and sliders are dimmed. The note under the parts is always there, two lines tall (a hint, or which parts are soloed), so the mixer keeps its size as solos, mutes and levels change (F-23). Phones (≤ 600 px or a coarse pointer): M and S are 40 × 40 px; the name's column is 96–120 px (was 70–110) so a part's name still fits beside its S. Light and dark themes. Buttons have `aria-pressed` and labels ("Mute Bass", "Solo Bass").
+- Help (*Parts*, the 🎚 Mixer item, Play's pages) and the tour's 🎚 Mixer step mention M and S. Tests: `e2e-mixer` (new Chrome section: S / Cmd-Ctrl-S / S again / keyboard / M on the gains and the output, the same state in the hidden track list both ways, kept after a reload without the solo, rows aligned, nothing moves at 1440×900 and 390×844, ≥ 40 px on a phone, light theme; screenshots `test-packs/mixer-solo-1440.png`, `-1440-light.png`, `-390.png`); `e2e-tracks` reads the Mixer's M instead of On / Off.
+
 ## 0.56.0 — 2026-11-11
 
 ### Changed
