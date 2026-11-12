@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.56.2 — 2026-11-12
+
+### Fixed
+- **Space is ▶ / ❚❚ wherever focus is** (main.ts, a capture-phase keydown): a just-clicked button no longer takes Space — Song / Tab / Both cycled what you hear instead of playing (its own Space handler), a mixer M / S, ⟲ Loop: On / Off, a Play page tab, a rail button. Not while typing (text fields, selects), inside an open dialog (calibration taps, ear training, the tour keep their keys), nor while the ➿ Looper's keys are active (`looperView keysActive()`: Space is its pedal). Test: `tools/e2e-space.mjs`.
+
 ## 0.56.1 — 2026-11-11
 
 ### Added (Solo and Mute in the 🎚 Mixer, branch `ui/mixer-solo`)
