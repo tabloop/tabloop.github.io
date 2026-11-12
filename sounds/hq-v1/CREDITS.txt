@@ -1,0 +1,36 @@
+Tabloop HQ sounds, pack hq-v1
+==============================
+
+Samples from these sets, all published under CC0 1.0 Universal (public domain). Thank you!
+Trimmed, mixed to mono (drums: the kick, snare and overhead mics premixed in stereo), level-matched
+and re-encoded (Opus / AAC) by tools/make-sound-pack.mjs; nothing else was added.
+
+FSBS Electric Guitar Clean #1 (small, bridge pickup)
+  by FreePats, version 2026-08-07
+  https://freepats.zenvoid.org/ElectricGuitar/clean-electric-guitar.html
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/freepats-clean-small.txt
+
+FSBS Electric Guitar Distorted #2 (bridge pickup)
+  by FreePats, version 2022-09-11
+  https://freepats.zenvoid.org/ElectricGuitar/distorted-electric-guitar.html
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/freepats-dist2.txt
+
+Spanish Classical Guitar
+  by FreePats, version 2019-06-18
+  https://freepats.zenvoid.org/Guitar/acoustic-guitar.html
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/freepats-nylon.txt
+
+Finger Bass YR
+  by FreePats (Andrea Biasior), version 2019-09-30
+  https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/freepats-fingerbass.txt
+
+Picked Bass YR
+  by FreePats (Andrea Biasior), version 2019-09-30
+  https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/freepats-pickedbass.txt
+
+Virtuosity Drums
+  by Karoryfer Samples / Virtuosity Musical Instruments, version GitHub HEAD 2026-11-11
+  https://github.com/sfzinstruments/virtuosity_drums
+  Licence: CC0 1.0 Universal (public domain dedication); text in licences/virtuosity-drums.txt
