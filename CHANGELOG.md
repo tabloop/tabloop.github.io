@@ -2,6 +2,21 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.59.0 — 2026-11-13
+
+### Added (Library Tags and Loops tabs, Home's 🕘 Recent, branch `ui/library-tabs`)
+- **Home → Songs → 🕘 Recent**, between 📚 Library and YouTube video…: the same 🕘 Recent popover as in the Songs panel (reopen, remove, clear), opened under the button (`recentView.ts openMenu(anchor)`: one popover, either button; its button again closes it). Hidden while there are no recent songs, as the Songs panel's button is. A popover rather than a window: 📚 Library opens its window because the folder, search and tabs need the room; five recent songs fit under the button, and Home stays where it is.
+- **📚 Library → Tags**: the library's songs grouped by their tag — 📖 Learning, ⭐ Mastered (the `#songStatus` tag, `PracticeTracker.statusOf`), then *Not tagged*, folded (a `<details>`, its open state kept this session). The same song cards as the Songs tab (a click opens the song; ＋ Playlist works), the same search and sort. The groups come from a list (`libraryView.ts TAGS`), so custom tags would be more groups. A song tagged under its MusicBrainz id (`mbid:…`; library entries don't have it) is found by title and artist.
+- **📚 Library → Loops**: the saved loops of the library's songs (by path, else song id, else title and artist), one section per song with its tuning / drums badges, ordered by the window's sort; the search also finds loop names. A loop opens the song and loops it (`main.ts openLoop`, shared now with Songs → 🔁 Loops) and closes the window. Kept current when loops are saved, renamed or deleted.
+- The Library's tabs have `aria-selected` / roving `tabindex` and ← / → between them, as the Songs panel's tabs. 📚 Library still opens at Songs.
+
+### Changed
+- `libraryView.ts`: the song card and its click handling are shared by the Songs and Tags tabs; `LibraryExt` / `PlaylistHost` take the four tabs (`LibTab`). Help (Opening songs, Library) and the tour's 📚 Library step mention the new tabs and Home's 🕘 Recent.
+
+### Tests
+- `tools/e2e-library.mjs`: Tags groups by tag (Learning, Mastered, Not tagged folded), the search filters every group; → moves to Loops; Loops lists a saved loop under its song, its search, *No loops match*; clicking the loop with another song open opens it, loops it (the loop cleared first) and closes the window; 📚 Library opens at Songs again.
+- `tools/e2e-recent.mjs`: Home's 🕘 Recent hidden with no recent songs (and after Clear list), placed between 📚 Library and YouTube video…, lists the recent songs under its button, above the welcome screen, closes on a second click, opens a song.
+
 ## 0.58.1 — 2026-11-13
 
 ### Changed
