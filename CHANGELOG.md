@@ -2,6 +2,14 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.58.1 — 2026-11-13
+
+### Changed
+- **A song opened goes to Play → Play along** (main.ts `showPlay`: `openGroup("play", "along")`; it was Play at its last page): 👂 Live, the song's stats and Sing first. Same exceptions (exercises, Create, a narrow Rail window).
+
+### Fixed
+- **A message over the welcome screen** (an error opening a song from Home): `.status` was drawn under the welcome cards (earlier in the markup, no z-index); now `z-index: 8`, opaque, with a shadow, above the welcome and Home over a song.
+
 ## 0.58.0 — 2026-11-12
 
 ### Added (unclear notes confirmed by their harmonics, F-74, branch `detect/harmonic-confirm`)
