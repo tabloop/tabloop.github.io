@@ -2,6 +2,15 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.60.0 — 2026-11-13
+
+### Added (📚 Library → Takes, branch `ui/library-takes`)
+- **Takes tab** in the 📚 Library window, after Loops (`libraryView.ts` `renderTakes`, `#library .lib-tabs [data-tab="takes"]`): the takes recorded with ⏺ Rec (IndexedDB `tabloop-takes`, new `listAllTakes()` in `takes.ts`) of the library's songs, one section per song (the window's sort orders the songs), newest take first, each with its name, date, length, where it starts and its speed. Laid out like the Loops tab (`.sl-song` / `.sl-row` / `.sl-use`). A take's song is found by its song id, else (a song with a MusicBrainz id) by the title and artist kept for that id in 📈 Practice or 🕘 Recent; takes of songs not in the library aren't listed. The search finds take names, titles and artists ("No takes match."); empty: "No takes yet — ⏺ Rec records you playing along." The ← / → keys reach it like the other tabs.
+- **Clicking a take** opens its song (from the library, if another song is open), selects that take, shows the take lane and plays it as ▶ Play take does (new `takesUI.playById`; it waits for the song's takes to load: `songChanged()` now returns that loading), then closes the window.
+- ⭐ Free tier: every stored take is listed; those beyond the usable one per song (`takesUnlocked`) show 🔒 premium, and clicking one opens the song and explains premium (as selecting it in the takes list does).
+- Not added: a score per take (the feedback is worked out when a take is loaded with its song, not stored), and a ▶ / ❚❚ preview without opening the song (a take plays only with its song loaded).
+- Help → Library, the tour's 📚 Library step: the Takes tab. `e2e-library`: the Takes tab (empty state, per song newest first, date / length / start / speed, count, search by take name and title, a click opens the song and plays that take, a take of the open song, five tabs at 390 px).
+
 ## 0.59.2 — 2026-11-13
 
 ### Changed
