@@ -2,6 +2,18 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.59.1 — 2026-11-13
+
+### Added (👂 Live's box folds and moves, branch `ui/hud-collapse`)
+- **`hudPanel.ts`** (new; set up by `liveView.ts`): the 👂 Live box over the tab (`#liveHud`) **folds to one row** — the score and its label (this pass's "X/Y") — with a **–** button at the end of that row (`#lhFold`, a real button: `aria-expanded`, `aria-controls` the breakdown and the passes; its icon becomes ⌄ when folded) or a click on that row; folded, a click anywhere on it opens it again. Its width follows the row; it overlays the tab, so nothing moves under it. The 🎤 Sing box (`#vocalHud`) sits just under the folded box (its CSS 84 / 64 px is for the full one).
+- **It moves**: dragged (pointer events: mouse, pen, touch; the whole box, or the dotted grip `#lhGrip` left of the score) anywhere over the tab (the canvas: not over the edit bar or the lyrics), kept inside it. A press that moves less than 5 px (8 px by touch) is still a click; the click ending a drag is swallowed. Moves are followed on the window while pressed, the pointer captured only once it's a drag (a click keeps its own target). Resizes, Rail ↔ Modes, a phone turned, the box's own size changing (ResizeObserver on the stage, the canvas, the box): kept inside. A double-click on the grip, or Home / Enter with it focused, puts it back top right; with the grip focused the arrow keys move it 10 px (Shift: 40). Space stays ▶ / ❚❚ (main.ts's capture handler, unchanged).
+- **Remembered per device**: `tabloopHud` (local only, like `tabloopUI`: not exported nor synced) `{"folded":bool,"x":0…1,"y":0…1}` — the position as fractions of the room left over the tab (0 = left / top, 1 = right / bottom), so a box put on the right stays on the right in any window size; removed when open and in the corner.
+- The box now takes the pointer over itself (it was `pointer-events: none`): the tab beside it still gets its clicks; one on the box no longer seeks the tab under it. `#liveHud` only (`.live-hud` is shared with the 🎤 box, unchanged). The fold button's target is 42 px (a `::before`), on phones clear of the tab's edge. Moved away from the corner: the 🎤 box takes the corner, and the "⏱ timing only" badge (`timingBadge.ts`) stays in the corner unless the box is there.
+- Help → 👂 Live: folding and moving the box.
+
+### Tests
+- `tools/e2e-hud.mjs` (new): at 1440×900 the box filled by a test input (a loop, a pass right, one with mistakes); – folds it to one row (height, width fitted, the score), the tab not moved, remembered; a click on it opens it; a click on the row folds it, one on the breakdown doesn't; Enter on the button; Space with it focused plays and pauses; a mouse drag moves it, beyond the tab: clamped in the corner (fractions 0 / 1), not folded by the drag; a 2-px wobble is a click; a touch drag moves it; a click on the tab beside it seeks, one on it doesn't; after a reload and a resize: folded, in its corner, its fractions kept; Rail → Modes → Rail inside; double-click on the grip and Home: back top right; the grip's arrows move it without seeking. 390×844 and 844×390 (touch): it fits, the fold button's target ≥ 40 px, a tap folds, a touch drag clamps it, turned: inside. Light theme. Screenshots `test-packs/hud-*.png`.
+
 ## 0.59.0 — 2026-11-13
 
 ### Added (Library Tags and Loops tabs, Home's 🕘 Recent, branch `ui/library-tabs`)
