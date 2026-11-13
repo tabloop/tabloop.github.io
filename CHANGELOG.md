@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.59.2 — 2026-11-13
+
+### Changed
+- **Play's pages in a new order: Play along · Sections · Loop · Takes** (`PLAY_PANES`, `#playSeg`; the phone's 2 × 2 grid follows). Tour, help, e2e-ux-layout.
+
 ## 0.59.1 — 2026-11-13
 
 ### Added (👂 Live's box folds and moves, branch `ui/hud-collapse`)
