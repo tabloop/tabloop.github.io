@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.61.0 — 2026-11-13
+
+### Changed (➿ Looper → Train, branch `ui/looper-train`)
+- **The ➿ Looper is a Train tool now**, a fourth tile after 🎼 Scales, 🎧 Ear training and 🥁 Backing tracks (`#trainTiles .tr-tile[data-trainer="looper"]`, icon `i-looper`): a preview of the session kept on this device (a ring per track, lit when it holds layers, its name and layer count), when it was last used (the practice category `looper`), its last settings (tempo · signature · length · layout · layers / parts), **▶ Continue** (`#trLooperGo`: the session as it was) and **New…** (`#trLooperNew`: a fresh session — 3 tracks, the parts A B C, the default settings; it asks first when the last one has layers). `trainView.ts` (`TrainHost.looper()`), `looperView.ts` (`summary()`, `openNew()`), the tile drawn again once the stored session has loaded and when the looper closes.
+- **Shown in the Train view itself, as Ear training is** (it has its own clock: no transport, no tab): the card moved from Create's `#lpMount` to `#trainView` (`#lpMount.train-looper`, a panel up to 1180 px wide; the tiles hide while it's open). Its ✕ became **‹ Train** (first in its header); **Esc** goes back to the tiles too (not out of Train). Closing stops it, saves the session and releases the input, as ✕ did. Leaving Train for another group leaves it open as it was (hidden; still playing or recording if it was, until a song plays — as when Create's panel closed before), and Train shows it again. Every looper function is unchanged (layouts A / B / C, record / overdub, layers, mute / solo / level, undo / redo, Space = the pedal you're on and Shift+Space all only while it's the active tool, count-in, metronome, ⬇ WAV, 💾 Save .feedpak, Open as song).
+- **Create**: the Looper card is now a pointer, **➿ Looper moved to Train** (`#crLooperMoved`, opens it in Train), kept for a while for people used to it; `#looperBtn` is gone. The rail / tab bar / mode tooltips: Train lists the Looper, Create doesn't.
+- **Home**: ➿ Looper… (`#welcomeLooper`) moved from the Create card to the Train card, after Backing tracks.
+- 📈 Progress: the Looper category's way in is Train → Looper (`CAT_GO`, `goCat` opens the session kept). Train's foot no longer says "The Looper is in Create now".
+- Tour (the rail step, Five groups, ➿ Looper's step targets the tile), Help (Where things are: Train / Create; Looper: in Train, ‹ Train / Esc, ▶ Continue / New…, the keys while it's on screen), README (Where things are, features, Looper).
+- Tests: `e2e-looper` (the tile, Create's pointer, the welcome Train card, opened in Train with no transport, the tile showing the reloaded session, ▶ Continue reopens it, ‹ Train and Esc back to the tiles, New… a fresh session, the pointer opens it in Train; every way in now through Train), `e2e-ux-layout` (four tiles, the looper as Train's main view, Create's pointer, ➿ Looper… on the welcome Train card after Backing tracks, the homes).
+
 ## 0.60.0 — 2026-11-13
 
 ### Added (📚 Library → Takes, branch `ui/library-takes`)
