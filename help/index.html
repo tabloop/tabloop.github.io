@@ -48,6 +48,7 @@
       <a href="#layout">Where things are</a>
       <a href="#open">Opening songs</a>
       <a href="#guitar-pro">Guitar Pro &amp; MIDI files</a>
+      <a href="#rock-band">Rock Band / Clone Hero songs</a>
       <a href="#create-song">Create a song</a>
       <a href="#scales">Scales</a>
       <a href="#backing-tracks">Backing tracks</a>
@@ -131,6 +132,7 @@
       <li><b>🕘 Recent</b> (in <b>Songs</b>, and on the welcome screen under <b>📚 Library</b>) reopens one of the last 5 songs you played. It shows once you have played a song.</li>
       <li><b>▶ YouTube</b>: paste a YouTube link to loop and slow down a video (see <a href="#youtube">YouTube songs</a>).</li>
       <li><b>Guitar Pro, TuxGuitar and MIDI files</b> (<code>.gp3</code>, <code>.gp4</code>, <code>.gp5</code>, <code>.gpx</code>, <code>.gp</code>, <code>.tg</code>, <code>.mid</code>) open the same ways, as songs played by Tabloop's synths (see <a href="#guitar-pro">Guitar Pro &amp; MIDI files</a>).</li>
+      <li><b>Rock Band, Clone Hero and YARG songs</b> (a song folder with <code>notes.mid</code> or <code>notes.chart</code>, a zip of one or of several, a <code>.sng</code>, a Rock Band <code>CON</code> / <code>LIVE</code> file) open the same ways, with their recording and stems (see <a href="#rock-band">Rock Band / Clone Hero songs</a>).</li>
       <li><b>Your own audio files</b> (MP3, M4A, WAV, OGG, FLAC, Opus): a song you bought, ripped or recorded opens the same ways, as a song to slow down, loop and record yourself over; <b>＋ Create</b> adds a tab to it and makes it a feedpak (see <a href="#create-song">Create a song</a>).</li>
     </ul>
     <div class="tip">Songs aren't included with Tabloop; you bring your own feedpak files. The demo song is there so you can try things out.</div>
@@ -146,6 +148,19 @@
       <li>Not carried over: swing (triplet feel), D.C. / D.S. / coda jumps, gradual tempo changes (they change at once), the whammy bar, and a Guitar Pro 7 file's own audio track. The message when the song opens says what applies to that file.</li>
     </ul>
     <div class="tip">Tabloop reads these files itself, on your device: nothing is uploaded. Older TuxGuitar files (version 1) can't be read: open them in TuxGuitar 2 and save again, or export them as Guitar Pro 5. Tabs are usually copyrighted: only open files you have the right to use.</div>
+
+    <h2 id="rock-band">Rock Band / Clone Hero songs</h2>
+    <p>Songs made for <b>Rock Band</b>, <b>Clone Hero</b> and <b>YARG</b> open as songs: a song folder (its <code>notes.mid</code> or <code>notes.chart</code>, <code>song.ini</code>, the audio and the album art), a <b>zip</b> of it (the folder can be anywhere inside, whatever the zip is called), a zip with several songs (Tabloop asks which one), a Clone Hero <code>.sng</code>, or a Rock Band <code>CON</code> / <code>LIVE</code> package. Use <b>Open file</b>, <b>Open folder</b>, drop it on the window, or keep them in your <a href="#library">📚 Library</a> folder: each song is listed on its own, even several from one zip.</p>
+    <ul>
+      <li><b>The recording and its stems:</b> <code>song.ogg</code> (or <code>.opus</code>, <code>.mp3</code>, <code>.wav</code>) and, when the song has them, the separate <i>guitar</i>, <i>rhythm</i>, <i>bass</i>, <i>keys</i>, <i>drums</i> (one file, or kick / snare / toms &amp; cymbals), <i>vocals</i> and <i>crowd</i> tracks, each with its own level, mute and solo in <b>🎚 Mixer</b> and <a href="#trackspanel">Parts</a>.</li>
+      <li><b>The title, artist, album, year and cover</b> from <code>song.ini</code> and the album art; the chart's <b>delay</b> is applied, so the notes and beats line up with the recording.</li>
+      <li><b>Pro Guitar and Pro Bass</b> charts become real <b>tab</b>: strings and frets, with the chart's tuning, chords (with their names) and the techniques it marks: hammer-ons and pull-offs, slides, palm mutes, muted notes, harmonics and pinch harmonics, bends, vibrato, taps, accents. A chart doesn't say how far a bend goes: it's shown as a half step.</li>
+      <li><b>Five-button guitar, bass and keys charts</b> (the usual ones) aren't strings and frets, so they don't become tab; the song's <b>tempo map, beats and sections</b> come from the chart, so loops, sections, the metronome and the speed trainer work. The message when the song opens says which ones the song has. <b>Pro Keys</b> charts become a keys part.</li>
+      <li><b>Drums</b> (as <a href="#drums">＋ Drums</a> reads them), the <b>vocals</b> (the lead and each harmony, with their lyrics, for <a href="#vocals">🎤 Sing</a>; a Clone Hero <code>.chart</code>'s lyrics) and the song's <b>sections</b>.</li>
+      <li><b>💾 Save pack</b> turns it into a feedpak with all of that (the stems, parts, beats, sections and cover), so it opens like any other song.</li>
+      <li>Songs bought for Rock Band on a console have <b>encrypted</b> audio (<code>.mogg</code>): Tabloop can't play it, and says so; the song's parts still open and play with the synths.</li>
+    </ul>
+    <div class="tip">Tabloop reads these files itself, on your device: nothing is uploaded, and the audio isn't read until the song plays. Charts and recordings are usually copyrighted: only open songs you have the right to use.</div>
 
     <h2 id="create-song">Create a song</h2>
     <p>Have a recording of a song (an <b>MP3</b>, <b>M4A</b>, <b>WAV</b>, <b>OGG</b>, <b>FLAC</b> or <b>Opus</b> file) and a tab for it? Tabloop puts them together, lines them up and saves them as a feedpak.</p>

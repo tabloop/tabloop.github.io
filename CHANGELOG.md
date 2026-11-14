@@ -2,6 +2,20 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.64.0 — 2026-11-14
+
+### Added (Rock Band / Clone Hero / YARG songs as songs, F-81, branch `feature/rb-songs`)
+- **`rbSong.ts`** (new, loaded when one is opened): a Rock Band / Clone Hero / YARG song opens as a feedpak built in memory (`ImportKind` `"rb"`), from a song folder, a zip (by content; the folder at any depth; `__MACOSX/` ignored; a `.sng`, CON / LIVE or zip inside searched one level down; several songs → the `#songPick` chooser), a `.sng`, a CON / LIVE, or a `notes.mid` (one with Rock Band track names: other MIDI files still open as scores) / `notes.chart` alone. Every way in: Open file, Open folder (a song folder, or a folder of zips), drag and drop, 📚 Library, 🕘 Recent (`wantSong`: a library entry's `inner` key, or the recent song's id, picks the song of a multi-song file without asking).
+- **Audio**: `song.*` as `full` (alone) or a `song` stem, plus `guitar` / `rhythm` / `bass` / `keys` / `drums` or `drums_1–4` / `vocals` or `vocals_1–2` / `crowd` stems named for the 🎚 Mixer (*Drums: kick*, *Drums: snare*, *Drums: toms & cymbals*…); read lazily (zip central directory). Unencrypted `.mogg` → its Ogg stream; encrypted → the message *“this song’s audio is encrypted (a Rock Band disc or store song): Tabloop can’t play it”* (status shown as an error, 20 s) and the parts on the synths.
+- **song.ini / `.sng` metadata / `songs.dta`**: title, artist, album, year, cover (`album.*`), `song_length`, `delay` (else `.chart` Offset) applied to all times, charter, drum hints, Pro Guitar / Bass tunings.
+- **Pro Guitar / Pro Bass → tab** (`proTab`): strings, frets, chords (`[chrd…]` names), anchors, and the techniques the chart marks (channels, markers 102 / 103 / 104 / 108, Phase Shift SysEx modifiers). **Pro Keys** → a keys part. **Five-button** parts: timing only (tempo map, beats, sections), named in the opening message; a chart with nothing else gets an empty *Guitar (5-lane chart: no tab)* part.
+- **Drums** → `drum_tab.json` (the ＋ Drums reading), **vocals** → the vocal parts (also a `.chart`'s lyric events), **sections**, **tempo map** (`song_timeline.json`). 💾 Save pack → `<Artist> - <Title>.feedpak`.
+- **📚 Library**: zips, `.sng`, extensionless files (CON / LIVE) and Rock Band / Clone Hero song folders are scanned (only those with a song are listed; a `.zip` without one may still be a feedpak); each song of a multi-song file is its own entry (`LibEntry.container` / `inner`, `path` `<file>::<song>`), with title, artist, cover, length, parts, 🥁 and the Pro Guitar tuning badge.
+- `tools/make_rb_song.py` (a synthetic Pro Guitar / Pro Bass song, a CON with an encrypted .mogg and one unencrypted), `tools/e2e-rb-songs.mjs` (the user's four test songs copied from `rockband-files/` at run time, the synthetic song, CONs, nested / multi-song / zip-in-zip zips, drop, Open folder of zips, Save pack round trip, Library, Recent).
+
+### Changed
+- `midi.ts` keeps SysEx events (`sysex`) and text events' ticks. `scorePack.ts`: `writePack` takes stems, files, a cover, a year and the import kind (`midiTimeline` split out of `midiSong`, beats to an end time, times before 0 s dropped). `rbImport.ts`: `sngIndex` / `sngRead` / `sngIni` (a `.sng`'s metadata as its song.ini), `stfsFiles(b, want)`, `chartFile` (a whole `.chart` as a MIDI file), `chartSongKeys`, `dtaEntries`; `songSources` (＋ Drums) unzips only chart files and searches a `.sng` / CON / zip inside a zip. `audio.ts`: a file with more than 2 channels is mixed to mono (was: its first two channels). `libraryScan.ts`: `zipEntries` / `zipRead` exported, on any Blob. `main.ts`: a `.mid` / `.chart` under `source/` isn't loaded as the drum part.
+
 ## 0.63.0 — 2026-11-13
 
 ### Added (🏷 Custom tags, F-78, branch `ui/custom-tags`)
