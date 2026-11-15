@@ -2,6 +2,20 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.67.1 — 2026-11-14
+
+### Added (🎸 Amp per song, branch `feature/amp-per-song`)
+- **The 🎸 Amp remembers its tone per song**: changing the capture, the cabinet, On / Off or the Input / Output level with a song open (a YouTube video too) stores them in that song's state (`songState.ts` `amp`: `{ on, cap, ir, inDb, outDb, capName, irName }` — so in the settings export, the sync folder and the Drive backup), and opening the song brings them back (`ampView.ts` `songOpened` / `songChoice`, called from `openPack` / `openYouTube`; saved by `saveSongStateNow`). A song never set keeps the current tone (the amp isn't switched off). A capture / IR no longer in this device's list (removed, or the state came from another device) isn't restored: the current one stays, with a note in the Amp's status (*This song's capture "…" isn't on this device any more: the current one is kept.*). The Amp says *♪ Remembered for this song* (♪ before its summary) or that the song has no tone of its own yet. Bypass, Light size and where it applies stay global.
+
+### Changed (Tune & Input without a song)
+- **🎸 Tune & Input works with no song open**: the 🎸 Tuner no longer says *Open a song first*: it creates the player's AudioContext when needed (`TakesHost.audio` → `ensurePlayer()`, resumed inside the click), so the input, its device choice, the level meter, Level / Monitor, ⏱ Calibrate, 🔍 Check input and the 🎸 Amp (monitoring through it) all work on the welcome screen. A song opened afterwards uses the same AudioContext: the input stays open, the tuner keeps reading, monitoring (through the amp) continues. With no tab shown, the tuner's nearest string is a standard-tuned guitar's. ⏺ Rec, 👂 Live and 🎤 Sing still need a song (unchanged messages); 👂 Live pressed with no song no longer takes the tuner's input row (`liveOn` needs a song), so the tuner keeps showing until a song starts Live. The amp's status with no audio yet: *Starts when the input opens (🎸 Tuner) or a song opens — no song needed.*
+- The 🎸 Tuner no longer opens Play → Takes when it starts (its record bar is *tuner-only* from the start; `portrait.ts` doesn't open a group for it).
+- Removing a capture / IR (✕) picks the next one at once (a pick made while the list is written isn't undone).
+
+### Tests
+- `tools/e2e-input-no-song.mjs` (new): no song — the Tuner reads A2 from Chrome's fake input, the meters move, Level / Monitor shown, Monitor on through the amp (clipped vs Bypass), ⏺ Rec still needs a song, Check input / Calibrate open; then a song opens — input still open, tuner still reading, monitoring through the amp, one AudioContext; screenshots `test-packs/input-no-song-*.png`.
+- `tools/e2e-amp.mjs`: per song (A → X, B → Y, a song never set keeps the current, reopen, On / Off per song, a YouTube video, stored in `feedpak.songState`, over a reload, a deleted capture → the current kept with a note); `tools/e2e-tuner-live.mjs`: the Tuner without a song (and then a song with 👂 Live). The YouTube mock moved to `tools/yt-mock.mjs` (shared by `e2e-youtube.mjs` and `e2e-amp.mjs`).
+
 ## 0.67.0 — 2026-11-14
 
 ### Added (🥁 Live drums with a MIDI drum kit, F-87, branch `feature/midi-drums-live`)
