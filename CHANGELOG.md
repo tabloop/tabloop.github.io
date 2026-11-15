@@ -2,6 +2,21 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.65.0 — 2026-11-14
+
+- ⚙ Settings → Premium with no store: one line, "Everything in Tabloop is free: nothing is locked, no key needed." (it showed "Premium isn't set up in this build…" twice).
+
+### Added (🎸 Amp: NAM captures, branch `feature/nam-amp`)
+- **🎸 Tune & Input → 🎸 Amp** (`ampView.ts`, new): play through a Neural Amp Modeler capture (`.nam`) and a cabinet IR (`.wav`) loaded from a file. Free (no ⭐ Premium lock), offline, no sign-in, nothing fetched (no TONE3000 API; the help links to tone3000.com). On / Off (remembered; loading a capture turns it on), Bypass (A/B), Capture and Cabinet lists (IndexedDB, the last 8 of each, ✕ removes), the capture's metadata (name, author, gear, tone type, date, licence when the file has one), Input gain and Output level, *Light size* for A2 captures, a status line (resampling, CPU, warnings).
+- **Where it applies**: *Monitoring* (on): `Recorder.setMonitorInsert` — the amp between the input level and the monitor volume; recording, the Tuner, Live and Sing keep the clean input. *My takes* (on): takes recorded dry, played back through the amp (the engine's take channel on its new second output, `Player.ampSend`). *The tab's electric guitar* / *…and bass parts* (off): those parts DI (bare string, HQ sounds' clean set, no `PartFx` amp / cab, no synth reverb) onto the same send (`Player.setAmpRoute`, engine command `amp`). Two NAM instances: input and playback.
+- **`amp.ts`** (new): `AmpEngine` (once per context; the worklet module from a `data:` URL, the wasm inflated from the build), `AmpNode`, `AmpChain` (input gain → NAM → normalised ConvolverNode → output level, dry path), `parseCapture`, `decodeIr`. **`amp.worklet.ts`** (new): the processor — the vendored engine's glue and wasm unmodified; resampling when the capture's rate isn't the context's (+20 frames at 48 kHz for a 44.1 kHz capture), active / idle (0.5 s of silence), load once a second, a benchmark.
+- **`web/vendor/neural-amp-modeler-wasm/`** (new): neural-amp-modeler-wasm 3.0.7's `nam-engine.wasm`, `nam-worklet.js` and the licences (MIT TONE3000, NeuralAmpModelerCore MIT, Eigen MPL-2.0; `THIRD-PARTY.md`). `vite.config.ts`: `virtual:amp-worklet` (glue + processor; wasm raw-deflated, base64) and their credits (⚙ Settings → Credits).
+- Help: *🎸 Amp (NAM captures)*. `tools/e2e-amp.mjs` (new): test captures and an IR made by the test; the engine offline (clipping level and shape, no added delay with and without the IR, resampling), the UI, monitoring, detection unchanged, takes dry and re-amped, the tab synth's electric part, persistence, CPU, Chrome / Firefox / WebKit from `file://`.
+
+### Changed
+- `engine.worklet.ts`: two outputs (the mix; the amp's mono send). `audio.ts`: `ampSend`, `setAmpRoute`. `recorder.ts`: `setMonitorInsert`, `monitorExtra` (the monitor latency note adds the amp's). `main.ts` `sendNotes`: amped parts take the clean HQ set and are sent with the route.
+- App HTML 2,071,903 → 2,342,335 bytes (+270 KB: the engine's wasm, deflated, ~210 KB of it).
+
 ## 0.64.1 — 2026-11-14
 
 ### Changed

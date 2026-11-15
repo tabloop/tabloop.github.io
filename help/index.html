@@ -69,6 +69,7 @@
       <a href="#lyrics">Lyrics</a>
       <a href="#vocals">Vocals / karaoke</a>
       <a href="#tuner">Tuner</a>
+      <a href="#amp">Amp (NAM captures)</a>
       <a href="#ear-training">Ear training</a>
       <a href="#record">Recording yourself</a>
       <a href="#live">Live: see how you play</a>
@@ -450,6 +451,19 @@
     <h2 id="tuner">Tuner</h2>
     <p>To tune your instrument or check your input, open <b>🎸 Tune &amp; Input</b> in the top bar, press <b>🎸 Tuner</b> and choose your microphone or audio interface. Its input row shows the input level and the <b>note you're playing</b>, in large: its name (“A2”), how many cents it's off on a small needle — green within ±5 ¢, blue flat, orange sharp — its frequency and the nearest open string of the song's tuning. It shows “—” when the input is silent. It works while the song plays or is paused, down to a bass's low E, and nothing is recorded.</p>
     <p>Press 🎸 Tuner again to turn it off; with ⏺ Rec, 👂 Live and 🎙 Sing off too, Tabloop stops using the microphone. The tuner starts off on every visit; the only thing that asks for the microphone by itself is <a href="#live-on-open">👂 Live when a song opens</a> (untick it in ⚙ Settings to stop that). The input, its level and the note show <b>once</b>, in Tune &amp; Input, whichever of the Tuner, 👂 Live and ⏺ Rec is on; the button in the top bar shows the note heard and a green dot while the input is open. Without the tuner the note is labelled <i>Heard</i>.</p>
+
+    <h2 id="amp">🎸 Amp (NAM captures)</h2>
+    <p>Play through a real amp's sound: open <b>🎸 Tune &amp; Input</b> and, under <b>🎸 Amp</b>, press <b>Load capture (.nam)…</b> and choose a <b>NAM capture</b> — a <a href="https://www.neuralampmodeler.com/" target="_blank" rel="noopener">Neural Amp Modeler</a> file of an amp, a pedal or a whole rig. Add <b>Load cabinet IR (.wav)…</b> for the speaker cabinet when the capture is an amp without its cabinet (its level is evened out for you). The amp is free, works offline and from the downloaded file, and needs no account.</p>
+    <p><b>Where to get captures.</b> Thousands are shared on <a href="https://www.tone3000.com/" target="_blank" rel="noopener">TONE3000</a>: download a <code>.nam</code> file there (and an IR if you like) and load it here. Each capture comes with its creator's licence: Tabloop shows the name, who made it, the gear and the licence when the file carries them; otherwise the licence is the one on the page you downloaded it from. Tabloop doesn't connect to TONE3000 or anywhere else: your files stay on your device.</p>
+    <p><b>On / Off</b> switches the amp; <b>Bypass</b> lets you hear without it for a moment (to compare), keeping the capture loaded. <b>Input</b> drives the capture harder (more distortion) or softer; <b>Output</b> sets its volume. The captures and IRs you load are kept on this device in a short list (the last 8 of each), to switch between; <b>✕</b> removes one.</p>
+    <p><b>Play through the amp</b> chooses where it applies:</p>
+    <ul>
+      <li><b>Monitoring (hear yourself)</b>, on by default: with <b>Monitor</b> on in Tune &amp; Input → Input, you hear your instrument through the amp. It adds no delay of its own (a capture made at another sample rate than your audio device's is converted, which adds about half a millisecond). Use headphones.</li>
+      <li><b>My takes (played back)</b>, on by default: takes are still <b>recorded clean</b> — the judging, ghost notes and feedback need your real playing — and they play back through the amp, so you can try another amp on a take you already recorded.</li>
+      <li><b>The tab's electric guitar</b>, off by default: the tab synth and 🎸 HQ sounds play the song's electric guitar parts clean into the amp, instead of their own built-in amp sound. <b>…and bass parts</b> does the same for bass parts.</li>
+    </ul>
+    <p>The 🎸 Tuner, 👂 Live, ⏺ Rec and 🎙 Sing always listen to the clean input, so the amp never changes how your notes are heard or judged.</p>
+    <p><b>CPU.</b> A capture is a small neural network that runs while you play: Tabloop measures it when it loads and shows how much of the audio time it takes (on a recent laptop, about 10–20 % for a standard capture). If a device can't keep up you may hear crackles: Tabloop warns you; use the amp in fewer places, tick <b>Light size</b> for an A2 capture, or pick a lighter capture.</p>
 
     <h2 id="ear-training">Ear training</h2>
     <p>Press <b>🎧 Ear training</b> (on the welcome screen, or in <b>Train</b>) to train your ear on <b>intervals</b>; it fills the screen, with this session's score beside it. Press <b>▶ Start</b> (or <kbd>Enter</kbd>): you hear a reference note, then a second one — higher, lower, or both together — and you pick the interval from the buttons: unison, minor 2nd, major 2nd, minor 3rd, major 3rd, perfect 4th, tritone, perfect 5th, minor 6th, major 6th, minor 7th, major 7th, octave (and, if you tick <i>beyond the octave</i>, up to two octaves). The answer turns green, or red with the right one in green; after a wrong answer, <b>▶ The right one</b> and <b>▶ Yours</b> let you hear the difference. <b>🔁 Replay</b> plays both notes again, <b>Reference</b> and <b>Second note</b> one of them. <b>Next ▶</b> asks the next one.</p>
