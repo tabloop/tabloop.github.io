@@ -5,12 +5,13 @@
 <!-- Tabloop × TONE3000 (F-83): the OAuth redirect page (https://tabloop.github.io/t3k-callback.html, the
      redirect URI registered for Tabloop's publishable key). TONE3000 sends the sign-in pop-up here with
      ?code=…&state=…&tone_id=… (or error / canceled=true). This page hands them to the Tabloop window that
-     opened the pop-up — postMessage to https://tabloop.github.io only, or BroadcastChannel("t3k_oauth")
-     (same origin by design) when the browser dropped window.opener — and closes itself. Tabloop checks
+     opened the pop-up — postMessage to https://tabloop.github.io only (when it has an opener) AND
+     BroadcastChannel("t3k_oauth") (same origin by design; always, as an opener can be a dead proxy) —
+     and closes itself. With them: whether it had an opener and the parameter names (not values). Tabloop checks
      the state and does the token exchange with its PKCE verifier; this page keeps nothing, sends nothing
      anywhere else, logs nothing, loads nothing. The CSP hashes are of the inline style and script below
      (change either, then: node tools/t3k-callback-csp.mjs --write; tools/e2e-t3k.mjs checks them). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-1OLWIEJcxuBe1LFaLltOSO5NXUCEVCCK9kVSgVW6hW4='; style-src 'sha256-Acz2La0KeCrMLgaY93R9Z/Nup5JBXUhXT1WfXetXV1Y='; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-E/tj/ms+3o7B8p64Mv68bh/WEhFnc4N/qXpH2/uIz+w='; style-src 'sha256-Acz2La0KeCrMLgaY93R9Z/Nup5JBXUhXT1WfXetXV1Y='; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,14 +42,17 @@ p { margin: 0 auto 10px; max-width: 30em; }
     return;
   }
   var pick = function (k) { var v = q.get(k); return v === null ? null : String(v).slice(0, 2048); };
-  var msg = { type: "t3k_oauth_callback", code: pick("code"), state: pick("state"), error: pick("error"), tone_id: pick("tone_id"), canceled: q.get("canceled") === "true" };
-  var sent = false;
-  try {
-    if (window.opener && window.opener !== window) { window.opener.postMessage(msg, APP); sent = true; }
-  } catch (e) { /* */ }
-  if (!sent) {
-    try { var bc = new BroadcastChannel("t3k_oauth"); bc.postMessage(msg); bc.close(); } catch (e) { /* */ }
-  }
+  // The names (never the values) of what TONE3000 sent, for Tabloop's "Copy details".
+  var keys = [];
+  q.forEach(function (v, k) { if (/^[A-Za-z0-9_-]{1,32}$/.test(k) && keys.indexOf(k) < 0 && keys.length < 16) keys.push(k); });
+  var hasOpener = false;
+  try { hasOpener = !!window.opener && window.opener !== window; } catch (e) { /* */ }
+  var msg = { type: "t3k_oauth_callback", code: pick("code"), state: pick("state"), error: pick("error"), tone_id: pick("tone_id") || pick("toneId") || pick("tone"), canceled: q.get("canceled") === "true", opener: hasOpener, keys: keys, via: "" };
+  // Both ways, always: postMessage to the opener (when there is one; after a cross-origin sign-in it can
+  // be a proxy that delivers nothing) AND BroadcastChannel (same origin by design). Tabloop takes the
+  // first copy and drops the second (the state is spent).
+  try { if (hasOpener) { msg.via = "postMessage"; window.opener.postMessage(msg, APP); } } catch (e) { /* */ }
+  try { msg.via = "BroadcastChannel"; var bc = new BroadcastChannel("t3k_oauth"); bc.postMessage(msg); bc.close(); } catch (e) { /* */ }
   msg = null; q = null;
   setTimeout(function () { window.close(); }, 50);
 })();
