@@ -2,6 +2,23 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.67.0 — 2026-11-14
+
+### Added (🥁 Live drums with a MIDI drum kit, F-87, branch `feature/midi-drums-live`)
+- **🎸 Tune & Input → 🥁 Drum kit (MIDI)** (`midiDrums.ts`, `drumLiveView.ts`, new): **🔌 Connect a MIDI kit** (Web MIDI, no SysEx; Chrome / Edge / Opera / Firefox), the kit chosen from every MIDI input (updated as devices are plugged in or out; remembered by name, connected again at start once MIDI was allowed), pads that light as they're hit (9 chart rows) with the note → piece and the velocity, the hi-hat pedal (CC 4), **🥁 Mapping & learn…** (`#kitDlg`: General MIDI or Roland V-Drums preset, the pads hit with their piece, every piece with its notes, 🎯 Learn = choose a piece, hit its pad, ✕, Reset), **🔊 Sound** (the app's drum kit for pads without a sound of their own), the **kit offset** (ms, −5 / +5, typed) and **⏱ Calibrate kit** (hit along with 4 + 8 clicks; Use this), ↺ to count again. Safari / iOS: a note that Web MIDI isn't there, no Connect. Kept per kit in `localStorage["tabloopMidiDrums"]` (this browser only, not exported or synced).
+- **🥁 Drums in the transport** (next to 👂 Live, shown once a kit is connected; on or off remembered): the kit's hits judged against the open song's drum part (a pack's drum part, a Rock Band / Clone Hero chart, a ＋ Drums MIDI / chart; shown beside the tab when it's turned on). `drumJudge.ts` (new, pure): pairing per chart row, then across rows (wrong pad), missed, extra (a pad's double trigger within 25 ms ignored); on time within ⚙ Settings' timing limit (as 👂 Live), else early / late; passes and loop history as 👂 Live. MIDI timestamps mapped to the context clock (median of performance.now − currentTime), less the output latency and the kit offset.
+- **The 🥁 box** over the tab (`#drumHud`): X/Y, early / late / wrong pad / missed / extra, average timing, the run; with a loop the last five passes and the best. Folds and moves like 👂 Live's (`hudPanel.ts`: options `key`, `name`, `avoid`; remembered apart, `tabloopHud.drums`), kept clear of 👂 Live's and 🎤's boxes.
+- **Ghost marks for drums** on the drum chart (Scrolling, Page) and the drums highway (`DrumLane.live`): a ring at the hit by timing colour, a red ✕ for a wrong pad, a dashed ring missed, an orange ring extra; the highway's pad targets light as pads are hit.
+- **Guitarist and drummer together**: 👂 Live and 🥁 Live drums run at once on one song, each judging its own part with its own score; **📊 This song** / Progress keep each best apart (*🥁 Best drum pass*, `tabloopLive.drumBest`).
+- Help (*🥁 Play drums with a MIDI kit*: browsers, connecting, mapping / Learn, calibration, playing with a guitarist; *Which browser?*), README, BACKLOG F-87.
+
+### Changed
+- `hudPanel.ts`: `initHudPanel(hud, opts)` (storage key, name, boxes to keep clear of); 👂 Live's box unchanged. `songStats.ts`: `loadLive(drums)`, `saveLive(store, drums)`, `SongStats.drums`; Reset practice clears both. On a phone held upright with 🥁 shown, the transport row tightens so ⏺ Rec stays on it.
+
+### Tests
+- `tools/test-drum-judge.mjs` (new, Node): pairing per row / across rows, late at Strict vs Normal, half speed, fast runs, double triggers, loop passes and a hit just before the loop start, the GM / e-kit / Roland mapping, MIDI parsing.
+- `tools/e2e-midi-drums.mjs` (new): a fake Web MIDI (init script) played with timestamped messages — connect / refuse / hot-plug / remember, pads and pedal, mapping, Roland preset, Learn, remap, ✕, Sound; on a song with a guitar and a drum part (`tools/make_drums_live_pack.py`, new) drums and the guitar on 👂 Live (fake audio input) judged at once over a loop (🥁 0/16, 16/16, 13/16, 16/16; 👂 0/8, 8/8, 7/8, 8/8), Strict → Normal rejudged, verdicts (on time, +30 ms late, wrong pad, missed, extra), ghost marks in Scrolling / Page / Highway, 📊 This song's two bests; ⏱ Calibrate kit (+20 ms) and the offset in the judging; the two boxes (no overlap, fold, drag either onto the other, remembered); 390 × 844; WebKit (no Web MIDI). Screenshots `test-packs/midi-drums-*.png`.
+
 ## 0.66.0 — 2026-11-14
 
 ### Added (🎚 TONE3000 picker for the 🎸 Amp, F-83, branch `feature/t3k-picker`)

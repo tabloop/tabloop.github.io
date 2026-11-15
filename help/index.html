@@ -76,6 +76,7 @@
       <a href="#input-check">Notes missed? Check my input</a>
       <a href="#markers">Ghost notes &amp; markers</a>
       <a href="#forgiveness">How forgiving</a>
+      <a href="#midi-drums">Play drums with a MIDI kit</a>
       <a href="#practice">Practice tracking</a>
       <a href="#tags">Tags</a>
       <a href="#settings">Settings, sync &amp; backup</a>
@@ -551,6 +552,35 @@
     <figure><img src="img/forgiveness.png" alt="Settings: Note feedback (ghost notes or markers), How forgiving the judging is set to Normal, plus or minus 40 ms and 15 cents, and the Singing limit set to Normal, plus or minus 30 cents" width="640" height="564" loading="lazy" />
       <figcaption>⚙ Settings: note feedback, and how forgiving the judging is for instruments and for singing.</figcaption></figure>
 
+    <h2 id="midi-drums">🥁 Play drums with a MIDI kit</h2>
+    <p>Plug in an <b>electric drum kit</b> (Roland, Alesis, Yamaha, …) and Tabloop judges what you play against the song's drum part, hit by hit, as the song plays — on its own, or <b>at the same time as a guitarist</b> plays along with 👂 Live. Free, nothing recorded.</p>
+    <h3 id="midi-drums-browsers">Browsers</h3>
+    <p>It uses <b>Web MIDI</b>: <b>Chrome</b>, <b>Edge</b> or <b>Opera</b> on a computer (or Chrome on Android), and <b>Firefox</b> (it asks you to allow the site's MIDI access). <b>Safari, iPhone and iPad have no Web MIDI</b>: Tabloop says so in 🎸 Tune &amp; Input, and the rest of the app works as usual.</p>
+    <h3 id="midi-drums-connect">Connecting the kit</h3>
+    <ol>
+      <li>Connect the kit's module to the computer with its <b>USB cable</b> (most kits are class-compliant: no driver needed), or its MIDI out through a USB MIDI interface.</li>
+      <li>Open <b>🎸 Tune &amp; Input</b> (top bar) → <b>🥁 Drum kit (MIDI)</b> → <b>🔌 Connect a MIDI kit</b>. The browser may ask to allow MIDI devices.</li>
+      <li>Choose your kit in <b>Kit</b> (every MIDI input is listed; plugging one in or out updates the list). Hit a pad: it lights up, with the note the kit sent, the kit piece it plays and how hard you hit it. The hi-hat pedal's position shows next to it.</li>
+    </ol>
+    <p>Tabloop remembers the kit on this browser and connects it again the next time (once MIDI was allowed). A <b>🥁 Drums</b> button appears in the transport, next to 👂 Live.</p>
+    <h3 id="midi-drums-mapping">Mapping your pads (and Learn)</h3>
+    <p>Kits send <b>General MIDI</b> drum notes: 36 kick, 38 / 40 snare (head / rim), 37 side stick, 42 / 44 / 46 hi-hat closed / pedal / open, 48 · 50 · 45 · 47 · 43 · 41 toms, 49 / 57 crashes, 51 / 59 ride, 53 bell, 52 china, 55 splash. Tabloop knows these, and also the hi-hat edges many e-kits send (22 closed, 26 open) and tom 3's rim (58). Every kit differs a little, so <b>🥁 Mapping &amp; learn…</b> lets you fix it:</p>
+    <ul>
+      <li><b>Preset</b>: <i>General MIDI</i> for most kits, or <i>Roland V-Drums</i> (39 is tom 4's rim, the floor tom, not a hand clap).</li>
+      <li><b>Pads you hit</b>: each note your kit sent, with the kit piece it plays; choose another piece to change it.</li>
+      <li><b>🎯 Learn</b>: press it next to a kit piece, then hit the pad that should play it. Done.</li>
+      <li><b>✕</b> on a note takes it off a piece (it's ignored); <b>Reset to defaults</b> goes back to the preset.</li>
+    </ul>
+    <p>Hits are judged on the drum chart's rows: an open or closed hi-hat both count as the hi-hat, crash 1 or 2 as the crash, a rim shot as the snare. The mapping is kept for each kit, on this browser.</p>
+    <p><b>🔊 Sound</b> plays the app's drum sounds as you hit the pads, for a kit (or a pad controller) with no sound of its own. Leave it off when the kit's module makes its own sound.</p>
+    <h3 id="midi-drums-play">Playing along</h3>
+    <p>Open a song with a drum part: a feedpak's drum part, a <a href="#rock-band">Rock Band / Clone Hero</a> chart, or any drum part you add with <a href="#drums">＋ Drums</a> (a MIDI file or a chart). Press <b>🥁 Drums</b>: the drum part shows beside the tab, and a <b>🥁 box</b> over the tab counts your hits right in this pass (e.g. <b>14/16</b>): right pad and on time (within the same limit as 👂 Live, ±40 ms with the <a href="#forgiveness">Normal</a> setting), else <b>early</b>, <b>late</b>, <b>wrong pad</b> (another pad than the chart's) or <b>missed</b>, and <b>extra</b> hits not in the part; your <b>average timing</b> (a steady + or − means the kit offset needs a calibration) and your run of right hits. Your hits show on the drum chart, the Page view and the drums highway: a ring where you hit, green on time, yellow a little off, red clearly off; a red ✕ for a wrong pad; a dashed grey ring for a hit missed. With a loop on, each pass is counted on its own, with the last five passes and your best. <b>↺</b> in the 🥁 Drum kit section starts counting again.</p>
+    <p>The 🥁 box folds and moves like 👂 Live's (press <b>–</b>, drag it by its grip, double-click the grip to put it back); it keeps clear of the 👂 Live and 🎤 Sing boxes.</p>
+    <h3 id="midi-drums-calibration">Kit offset and calibration</h3>
+    <p>Your kit's module, the cable and your own feel add a few milliseconds. <b>⏱ Calibrate kit</b> plays 4 clicks to count in, then 8 more: hit any pad with each of the 8. Tabloop shows how late your hits came (and how steady), and <b>Use this</b> makes it the <b>kit offset</b>. You can also set it with −5 / +5 or type it (+ = your hits arrive later). It's kept for each kit; the output delay the browser reports is taken into account, as for 👂 Live. For the steadiest timing, use wired headphones (Bluetooth adds a lot of delay).</p>
+    <h3 id="midi-drums-band">A guitarist and a drummer together</h3>
+    <p>Both can play along with the same song at once: the guitarist with <b>👂 Live</b> (the audio input), the drummer with <b>🥁 Drums</b> (the MIDI kit). Each part is judged on its own, each player has their own box and score, and the screen shows both parts: the tab and the drum chart one above the other in Scrolling and Page, side by side in the Highway (one highway per part). <a href="#song-stats">📊 This song</a> and Progress keep each player's best pass: <b>🏆 Best Live pass</b> for the guitar, <b>🥁 Best drum pass</b> for the drums. Use headphones (or keep the song quiet), so the microphone hears the guitar rather than the song or the drums.</p>
+
     <h2 id="practice">Practice tracking</h2>
     <p>Tabloop records your practice automatically while you play, and keeps it only in your browser: it's saved every couple of seconds while you play, and at once when you pause, at the end of each loop pass and of the song, and when you jump. <b>Progress</b> (on the rail or the tabs) is a page of it all — tap any part to go there (a plan task opens its song at the section with the speed trainer set; a category opens its trainer; a song opens it in Play); on a phone it's one long page with a jump list (Today · Stats · Calendar · Ear · Goals). It shows:</p>
     <ul>
@@ -652,6 +682,7 @@
       <li><b>Firefox or Safari on a computer</b>: everything plays. The Library list is remembered, but you pick its folder again each session to open songs, and there's no sync folder.</li>
       <li><b>iPhone and iPad</b>: use Safari and Share → <b>Add to Home Screen</b>. Open songs as files; there's no <i>Open folder</i>.</li>
       <li><b>The downloaded file</b> (opened from disk): Google Drive backup needs the web version, and the demo song needs an internet connection.</li>
+      <li><b>A MIDI drum kit</b> (<a href="#midi-drums">🥁 Play drums with a MIDI kit</a>): Chrome, Edge, Opera or Firefox; not Safari, iPhone or iPad (no Web MIDI).</li>
     </ul>
 
     <h2 id="keys">Keyboard shortcuts</h2>
