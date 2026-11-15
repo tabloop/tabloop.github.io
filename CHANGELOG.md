@@ -2,6 +2,23 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.66.0 — 2026-11-14
+
+### Added (🎚 TONE3000 picker for the 🎸 Amp, F-83, branch `feature/t3k-picker`)
+- **🎸 Tune & Input → Amp → 🎚 Choose from TONE3000…** (`t3k.ts`, `t3kView.ts`, new), next to *Load capture (.nam)…*, with *Powered by TONE3000*: TONE3000's sign-in and its own tone picker in a pop-up (OAuth 2.0 authorization code + PKCE S256, `prompt=select_tone`, `format=nam`; Tabloop's publishable key `t3k_pub_TTiWEcqye4e0VCtx6-_Enc89Yl_0kuD8`, `T3K_CLIENT_ID` at build time for another), then `/api/v1/oauth/token`, `/api/v1/tones/{id}` and `/api/v1/models?tone_id=…` (A2 and the default A1 + custom list). One model → downloaded; several → a list with the one the Amp runs best first (A2, standard), only the chosen one downloaded (`model_url` with the Bearer token). It joins the Amp's capture list (the same IndexedDB store as a loaded file, selected, the amp on) with the tone's name, its creator, its licence (on the row and in the details), *↗ Tone page* and *Powered by TONE3000*.
+- **`publish/t3k-callback.html`** (new): the registered redirect URI `https://tabloop.github.io/t3k-callback.html`. Relays `code` / `state` / `tone_id` (or `error` / `canceled`) to the opener by `postMessage` to `https://tabloop.github.io` (or `BroadcastChannel("t3k_oauth")` when `window.opener` is gone), takes them out of its address and closes; CSP `default-src 'none'` with its inline script / style by hash (`tools/t3k-callback-csp.mjs`), no-referrer, noindex, nothing loaded or logged. `publish-site.yml` copies it to the site root.
+- **Security**: a reply is accepted only from our origin (by postMessage: from our pop-up) with the state of the flow in progress (15 min), then the flow is spent; the verifier and state in memory only; the token only ever sent to `https://*.tone3000.com`; no code or token in the app's URL, the console or the usage counts.
+- **Tokens**: `localStorage["tabloopT3k"]`, this browser only (not a `feedpak.*` key: never in the settings export, folder sync or Drive backup); refreshed 60 s before expiry and once after a 401; a refused refresh signs out. *Signed in to TONE3000 · Sign out* clears them (picked captures stay).
+- **Not offered**: on `file://` (and any host but tabloop.github.io) the button is disabled with *Open Tabloop on tabloop.github.io to choose tones from TONE3000 (or download a .nam on tone3000.com and load the file)* — TONE3000's device flow is sign-in only (no `prompt=select_tone`), so it can't replace the redirect; in a build with a ⭐ Premium store configured the picker is hidden (`t3kAvailable`: TONE3000's free API tier is for apps with no paid product; Premium back = a commercial agreement first).
+- Pop-up blocked → a message; the model download blocked (offline / CORS) → a note linking the tone page to download the `.nam` by hand.
+- Help (*🎸 Amp* → *Choose from TONE3000…*, what's kept on the device, sign out, tabloop.github.io only), privacy policy (*TONE3000 amp captures*), README (*TONE3000 picker (F-83)*: the flow, the callback page, the API terms and our reading of them), ⚙ Settings → Credits note for neural-amp-modeler-wasm.
+
+### Changed
+- `ampView.ts`: `addCaptureText` (a capture from text, shared by Load capture and the picker); a capture's `t3k` record; the Amp's note mentions the picker. `vite.config.ts`: `__T3K_CLIENT_ID__`. App HTML 2,342,335 → 2,356,326 bytes (+14 KB).
+
+### Tests
+- `tools/e2e-t3k.mjs` (new, 59 checks): TONE3000 mocked with Playwright routes, the app served as https://tabloop.github.io/ — the authorize URL (client_id, redirect_uri, PKCE S256 checked by the mock at the exchange, state, prompt=select_tone), the callback page relaying and closing (its CSP, alone, its address cleaned), the token exchange, tone and models, one model / several (A2 standard first, only the chosen one downloaded), the capture in the Amp with creator / licence / Powered by / tone page, refresh on a 401 and before expiry, a wrong state / a replay / another origin rejected, pop-up blocked, download blocked, sign out, nothing in the settings export, GoatCounter (a build with a site code) and the console clean, file:// disabled with the note, a configured Premium store hiding it; screenshots `test-packs/t3k-*.png` (1440×900, 390×844, light and dark).
+
 ## 0.65.0 — 2026-11-14
 
 - ⚙ Settings → Premium with no store: one line, "Everything in Tabloop is free: nothing is locked, no key needed." (it showed "Premium isn't set up in this build…" twice).

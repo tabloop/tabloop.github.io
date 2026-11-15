@@ -27,7 +27,7 @@
 <main>
   <a class="brand" href="./"><img src="logo.png" alt="" width="40" height="40" />Tabloop</a>
   <h1>Privacy policy</h1>
-  <p class="dim">Last updated: 10 November 2026</p>
+  <p class="dim">Last updated: 14 November 2026</p>
 
   <p>Tabloop (<a href="https://tabloop.github.io/">tabloop.github.io</a>) is a free web app for practising music: it plays
   song packages (<code>.feedpak</code> files) with their tab, and lets you slow down, loop, record yourself and track your
@@ -38,7 +38,8 @@
     your device. Your settings and practice history are stored in your browser, and only go elsewhere if <i>you</i> choose to
     back them up to your own Google Drive or sync them through a folder you pick. If you open a YouTube video, it plays in
     YouTube's own player and Google's privacy policy applies to it. An optional premium license key is checked with the
-    store that sells it (Polar or Lemon Squeezy). The hosted site sends anonymous usage counts,
+    store that sells it (Polar or Lemon Squeezy). If you choose amp captures from TONE3000, you sign in on TONE3000's site
+    and Tabloop downloads the captures you pick from it. The hosted site sends anonymous usage counts,
     which you can turn off. Nothing is sold or shared for advertising.</p>
   </div>
 
@@ -57,6 +58,9 @@
     <li><b>Microphone audio:</b> with ⏺ Rec, 🎸 Tuner or 👂 Live, the app listens to your input to show your notes. The audio is
     processed on your device and not sent anywhere. The browser asks for your permission first, and the microphone is released
     when you turn these off.</li>
+    <li><b>Amp captures and your TONE3000 sign-in:</b> the 🎸 Amp's captures and cabinet IRs (files you load, or captures you
+    pick from TONE3000) and, if you use TONE3000, the sign-in token it gives Tabloop, stay on this device only: they are never
+    included in exports, folder sync or Google Drive backups.</li>
     <li><b>A premium license key:</b> if you enter one, the key and this device's activation ID (see <a href="#premium">Premium</a>)
     stay on this device only: they are never included in exports, folder sync or Google Drive backups.</li>
   </ul>
@@ -125,6 +129,22 @@
   that window is open, then discarded. Only the notes recognised (string, fret, time, technique) are saved, with the song,
   like its loops (and included in exports, sync and backups the same way). Tabloop never takes pictures of your screen or
   of YouTube's player.</p>
+
+  <h2 id="tone3000">TONE3000 amp captures (optional)</h2>
+  <p>In <b>🎸 Tune &amp; Input → Amp</b>, <b>Choose from TONE3000…</b> lets you pick a capture from
+  <a href="https://www.tone3000.com/">TONE3000</a>'s catalogue. It only happens when you press it, on tabloop.github.io:</p>
+  <ul>
+    <li><b>Your sign-in happens on TONE3000's site</b>, in a window TONE3000 shows, under its own
+    <a href="https://www.tone3000.com/privacy">privacy policy</a>. Tabloop never sees your TONE3000 email or password.</li>
+    <li>When you've picked a tone, TONE3000 gives Tabloop a <b>sign-in token</b> (and a code to renew it). Tabloop keeps it in
+    this browser only, and uses it only to ask TONE3000 for the tone you picked (its name, creator, licence and versions) and
+    to <b>download the capture you choose</b>. Your browser talks to TONE3000 directly: there is no Tabloop server in between.</li>
+    <li>TONE3000 sees what any site you sign in to sees: your account, the tone you picked and the download, and your
+    browser's address. Tabloop sends it <b>nothing else</b> — no songs, recordings, settings or practice data.</li>
+    <li>Nothing about it goes into the anonymous usage counts.</li>
+    <li><b>Signed in to TONE3000 · Sign out</b> deletes the token from this browser; the captures you picked stay until you
+    remove them. You can also remove Tabloop's access in your TONE3000 account.</li>
+  </ul>
 
   <h2>Sync folder (optional)</h2>
   <p>If you choose a sync folder in Settings, Tabloop writes your settings and practice history to that folder on your

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Tabloop × TONE3000 (F-83): the OAuth redirect page (https://tabloop.github.io/t3k-callback.html, the
+     redirect URI registered for Tabloop's publishable key). TONE3000 sends the sign-in pop-up here with
+     ?code=…&state=…&tone_id=… (or error / canceled=true). This page hands them to the Tabloop window that
+     opened the pop-up — postMessage to https://tabloop.github.io only, or BroadcastChannel("t3k_oauth")
+     (same origin by design) when the browser dropped window.opener — and closes itself. Tabloop checks
+     the state and does the token exchange with its PKCE verifier; this page keeps nothing, sends nothing
+     anywhere else, logs nothing, loads nothing. The CSP hashes are of the inline style and script below
+     (change either, then: node tools/t3k-callback-csp.mjs --write; tools/e2e-t3k.mjs checks them). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-1OLWIEJcxuBe1LFaLltOSO5NXUCEVCCK9kVSgVW6hW4='; style-src 'sha256-Acz2La0KeCrMLgaY93R9Z/Nup5JBXUhXT1WfXetXV1Y='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TONE3000 · Tabloop</title>
+<style>
+body { font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; padding: 32px 20px; color: #1d2128; background: #f6f7f9; text-align: center; }
+@media (prefers-color-scheme: dark) { body { color: #e6e8ec; background: #14171d; } }
+p { margin: 0 auto 10px; max-width: 30em; }
+.dim { opacity: .7; font-size: 13px; }
+[hidden] { display: none; }
+</style>
+</head>
+<body>
+<p id="done">Back to Tabloop… you can close this window.</p>
+<p id="none" hidden>This page finishes a TONE3000 sign-in for Tabloop. Open Tabloop and use <b>🎸 Tune &amp; Input → Amp → Choose from TONE3000…</b></p>
+<p class="dim">Tones powered by TONE3000</p>
+<script>
+(function () {
+  "use strict";
+  var APP = "https://tabloop.github.io";
+  var q = new URLSearchParams(location.search);
+  // Take the code out of the address bar and the history right away.
+  try { history.replaceState(null, "", location.pathname); } catch (e) { /* */ }
+  var isReply = q.has("state") && (q.has("code") || q.has("error") || q.has("canceled"));
+  if (!isReply) {
+    document.getElementById("done").hidden = true;
+    document.getElementById("none").hidden = false;
+    return;
+  }
+  var pick = function (k) { var v = q.get(k); return v === null ? null : String(v).slice(0, 2048); };
+  var msg = { type: "t3k_oauth_callback", code: pick("code"), state: pick("state"), error: pick("error"), tone_id: pick("tone_id"), canceled: q.get("canceled") === "true" };
+  var sent = false;
+  try {
+    if (window.opener && window.opener !== window) { window.opener.postMessage(msg, APP); sent = true; }
+  } catch (e) { /* */ }
+  if (!sent) {
+    try { var bc = new BroadcastChannel("t3k_oauth"); bc.postMessage(msg); bc.close(); } catch (e) { /* */ }
+  }
+  msg = null; q = null;
+  setTimeout(function () { window.close(); }, 50);
+})();
+</script>
+</body>
+</html>
