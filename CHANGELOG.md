@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.64.1 — 2026-11-14
+
+### Changed
+- **No premium provider chosen = no store** (licenseConfig.ts): an empty `PREMIUM_PROVIDER` used to fall back to Lemon Squeezy / Polar when their values were set; now it means Premium is off and nothing is locked, whatever store values the build has (they're kept for switching it back on). The repo's `PREMIUM_PROVIDER` variable is removed, so the published app is free. Tests (e2e-premium, e2e-tags) name their store explicitly (`tabloop-premium-provider` meta). Help → Premium says it's switched off for now.
+
 ## 0.64.0 — 2026-11-14
 
 ### Added (Rock Band / Clone Hero / YARG songs as songs, F-81, branch `feature/rb-songs`)
