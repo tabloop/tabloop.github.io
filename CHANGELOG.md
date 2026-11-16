@@ -2,6 +2,16 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.79.0 — 2026-11-16
+
+### Changed (🎸 Tune & Input in tabs, F-102; branch `ui/tune-tabs`)
+- **The strip, always on top**: Input On / Off, the device, the row's own level meter (shown again: the Level meter moved to the Input tab), the note heard and **≈ N ms** (`#tnLat`, the latency line's total, mirrored every 250 ms; a click: the Input tab, ▸ Details open). 👂 Live's row still takes the closed row's place.
+- **The tabs** `#tnTabs` (role=tablist / tab / tabpanel; ← → Home End; Tune by default, then the last one, `tabloopTuneTab`, local only; the top-bar 🎸 opens it, the focus on its tab): **Tune** — `#tuneBig`, the open input row's note mirrored big (a MutationObserver on `#recNote` / `#liveNote`: name 44 px, the needle, cents, Hz, the nearest string; fixed rows), a hint, `#tunerBtn`; **Input** — Level, Clip, Monitor, the headphones note, the latency line, Lowest latency; ▸ More: ⏱ Calibrate…, 🔍 Check input…; **Amp** — On · Bypass, Rig + 💾 🎛, Recent (moved under the rig), Capture + Model, Cabinet + Model, Recent cabinets, Get from TONE3000 (`#ampMain`); ▸ More = `#ampMore` (was ▾ in the header; still ampView's remembered `open`) → `#ampBody`: Load capture / IR, the TONE3000 buttons, sign-in / Copy details, the capture's and cabinet's facts and attribution, Input / Output, Output mode, Calibrate input, Play through the amp, Light size, CPU; *All…* now only focuses the capture list (it's on the tab); **Kit** — Connect, Kit, the pads, the message; ▸ More: Mapping & learn, Sound, Kit offset, ⏱ Calibrate kit, ↺. Dots (CSS `:has()`): the Tuner on, Monitor on, the Amp on, a kit connected.
+- **Links into it**: `show(target)` opens the panel at a tab or a control (its tab, its ▸ More, scrolled to): the tour (and `reachable()` sees through the tabs), ⚙ Settings → *Open Tune & Input* (at ⏱ Calibrate…), the welcome screen's *Before you play* (Tune), `[data-tune]` links, the address `#tune` / `#tune/<tab>`.
+- Nothing removed: every id of the long panel kept (139, checked by the new test). Phones: the four tabs on one row (40 px), the sheet scrolls.
+- Help (*How Tune & Input is laid out*, `#tune-tabs`; where the Tuner, latency, Amp, TONE3000, levels and the kit's controls are now), README, BACKLOG F-102.
+- Tests: new `tools/e2e-tune-tabs.mjs`; `tools/e2e-ui.mjs` `reveal` clicks the control's tab and ▸ More, `shown` sees through them, new `followTuneTabs(p)` (a click / setInputFiles / selectOption / fill on a control behind another tab or a folded ▸ More clicks those first) for the older panel tests.
+
 ## 0.78.0 — 2026-11-16
 
 ### Added (⚡ Lowest latency, F-97; branch `feature/low-latency`)
