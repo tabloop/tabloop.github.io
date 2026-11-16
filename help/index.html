@@ -71,6 +71,7 @@
       <a href="#lyrics">Lyrics</a>
       <a href="#vocals">Vocals / karaoke</a>
       <a href="#tuner">Tuner</a>
+      <a href="#latency">Latency (delay)</a>
       <a href="#amp">Amp (NAM captures)</a>
       <a href="#ear-training">Ear training</a>
       <a href="#record">Recording yourself</a>
@@ -485,6 +486,26 @@
     <p id="tuner-no-song"><b>No song needed.</b> Tune &amp; Input works on the welcome screen too, before you open anything: the 🎸 Tuner, the choice of input, the level meter, <b>Level</b> and <b>Monitor</b>, ⏱ Calibrate, 🔍 Check input and the <a href="#amp">🎸 Amp</a> (hear yourself through it with Monitor on). Open a song afterwards and nothing stops: the input stays open, the tuner keeps reading and monitoring carries on. What plays along with a song still needs one: ⏺ Rec, 👂 Live and 🎤 Sing say so if you press them first.</p>
     <p>Press 🎸 Tuner again to turn it off; with ⏺ Rec, 👂 Live and 🎙 Sing off too, Tabloop stops using the microphone. The tuner starts off on every visit; what turns the input on by itself is <a href="#input-switch">Input: On</a>, if you left it on (at your first click), and <a href="#live-on-open">👂 Live when a song opens</a> (untick it in ⚙ Settings to stop that). The input, its level and the note show <b>once</b>, in Tune &amp; Input, whichever of the Tuner, 👂 Live and ⏺ Rec is on; the button in the top bar shows the note heard and a green dot while the input is open. Without the tuner the note is labelled <i>Heard</i>.</p>
 
+    <h3 id="latency">Latency: how late you hear yourself</h3>
+    <p>When you play through Tabloop (<b>Monitor</b> on, with or without the <a href="#amp">🎸 Amp</a>), your sound goes into the computer, through the browser and back out to your ears. That takes a moment: the <b>latency</b>. Under about 10–15 ms it feels instant; past 25–30 ms you start to hear an echo; with Bluetooth headphones (150–250 ms) playing along is very hard.</p>
+    <p>With the input on, <b>🎸 Tune &amp; Input</b> shows <b>Latency ≈ 29 ms</b> under Monitor. Click it for where the time goes:</p>
+    <ul>
+      <li><b>Input</b>: your microphone or audio interface and the browser taking the sound in (the browser's own number when it gives one, else an estimate of 10 ms).</li>
+      <li><b>Audio buffer</b>: the browser's processing, in small blocks (about 3–10 ms).</li>
+      <li><b>Output</b>: the way out to your speakers or headphones, as the browser reports it. Some browsers don't say; <a href="#calibration">⏱ Calibrate</a> then measures it.</li>
+      <li><b>🎸 Rig</b>: what the amp adds to what you hear. Nearly always 0: a capture made at another sample rate than your audio's (44.1 kHz on 48 kHz, say) is converted, which adds about half a millisecond to a few.</li>
+      <li><b>Total</b>: how late you hear yourself. Under it, the <b>round trip ⏱ Calibrate measured</b> for this input, if you ran it, next to what the browser's numbers say: when they differ, the measured one is what the app uses to judge your timing.</li>
+    </ul>
+    <p id="latency-bluetooth"><b>Bluetooth.</b> If your output looks like Bluetooth headphones or speakers (AirPods, Galaxy Buds, Beats…, or an output the browser says is very late), Tune &amp; Input warns you: <i>Bluetooth adds 150–250 ms — use wired headphones or your audio interface.</i> Songs still play fine over Bluetooth (the cursor is shifted to match, and <a href="#calibration">⏱ Calibrate</a> can fine-tune it); it's hearing yourself live that suffers.</p>
+    <p id="latency-tips"><b>What helps</b>:</p>
+    <ul>
+      <li><b>Wired headphones</b>, or headphones plugged into your <b>audio interface</b>, instead of Bluetooth.</li>
+      <li><b>The browser</b>: Chrome and Edge, on a Mac or on Windows, usually have the lowest latency. Firefox and Safari work too, often a little later.</li>
+      <li><b>Close other tabs and apps that play sound</b> (video calls, music players): they can make the browser use bigger buffers.</li>
+      <li><b>Your interface's direct monitor</b>: most audio interfaces have a <i>direct monitor</i> knob or switch (sometimes <i>mix</i>, <i>input / playback</i>). It sends your guitar straight to your headphones with <b>no delay at all</b>, mixed with Tabloop's song. You hear your dry guitar (not the 🎸 Amp), so turn Tabloop's <b>Monitor</b> off to avoid hearing yourself twice. The best way to practise with zero delay.</li>
+      <li><b>Below about 10 ms</b> round trip isn't possible in a browser: that needs a desktop app with the interface's own drivers (ASIO, Core Audio) and very small buffers.</li>
+    </ul>
+
     <h2 id="amp">🎸 Amp (NAM captures)</h2>
     <p>Play through a real amp's sound: open <b>🎸 Tune &amp; Input</b> and, under <b>🎸 Amp / rig</b>, press <b>Load capture (.nam)…</b> and choose a <b>NAM capture</b> — a <a href="https://www.neuralampmodeler.com/" target="_blank" rel="noopener">Neural Amp Modeler</a> file of an amp, a pedal or a whole rig. Add <b>Load cabinet IR (.wav)…</b> for the speaker cabinet when the capture is an amp without its cabinet (its level is evened out for you). The amp is free, works offline and from the downloaded file, and needs no account.</p>
     <p><b>Where to get captures.</b> Thousands are shared on <a href="https://www.tone3000.com/" target="_blank" rel="noopener">TONE3000</a>: pick one straight from Tabloop with <b>🎚 Choose from TONE3000…</b> (below), or download a <code>.nam</code> file there (and an IR if you like) and load it with <b>Load capture (.nam)…</b>. Each capture comes with its creator's licence: Tabloop shows the name, who made it, the gear and the licence when the file carries them; otherwise the licence is the one on the page you downloaded it from. A file you load stays on your device: Tabloop doesn't send it anywhere.</p>
@@ -730,6 +751,7 @@
       <li><b>Firefox or Safari on a computer</b>: everything plays. The Library list is remembered, but you pick its folder again each session to open songs, and there's no sync folder.</li>
       <li><b>iPhone and iPad</b>: use Safari and Share → <b>Add to Home Screen</b>. Open songs as files; there's no <i>Open folder</i>.</li>
       <li><b>The downloaded file</b> (opened from disk): Google Drive backup needs the web version, and the demo song needs an internet connection.</li>
+      <li><b>Hearing yourself with little delay</b>: Chrome and Edge usually have the lowest latency (see <a href="#latency">Latency</a>).</li>
       <li><b>A MIDI drum kit</b> (<a href="#midi-drums">🥁 Play drums with a MIDI kit</a>): Chrome, Edge, Opera or Firefox; not Safari, iPhone or iPad (no Web MIDI).</li>
     </ul>
 
