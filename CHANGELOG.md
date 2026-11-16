@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.75.1 — 2026-11-15
+
+### Fixed
+- **Tune & Input**: with the input off, the *Not open: turn the Input on…* line wrapped onto two lines in its fixed 26 px row and ran over the Clip / Level row (`groups.css` `.rec-inputs.closed .rn-label`: `min-height` instead of `height`). B-23.
+
 ## 0.75.0 — 2026-11-15
 
 ### Added (🎚 Cabinets from TONE3000, F-101; branch `feature/t3k-cabinets`)
