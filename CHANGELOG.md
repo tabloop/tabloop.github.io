@@ -2,6 +2,18 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.81.1 — 2026-11-17
+
+### Fixed (✋ Finger trainer: fingers follow the song's hand positions; branch `fix/finger-anchors`)
+- **Song riff fingers** used far too many ring / pinky fingers: `assignFingers` picked its own positions to shift as little as possible, so on Ghost's *Square Hammer* lead it stayed at fret 7 and played 9–10 with fingers 3–4 while the song's own hand positions move the hand to fret 9 (fingers 1–2). Now each note's finger comes from, in order: the tab's own finger (`fg`; a chord's note without one: its template's `fingers`, `partNotes`) → `from: "song"`; the song's **hand position** in effect (§6.4 `anchors`: finger = fret − anchor fret + 1, width 5 puts the fifth fret on the pinky, a note past the width a pinky stretch, one below the anchor the index reaching back) → `"hand position"`; else the DP → `"estimated"` (was `"position"`). An anchor the riff's notes don't fit (under 75 % within its frets, e.g. a placeholder at fret 1 for a whole song) is left out. The lane's *Position N · frets N–N+3* follows the anchor (width 5: N–N+4). The riff setup has a line *Fingers: from the song's hand positions* / *Fingers: estimated (one finger per fret)* (`#ftFingerSrc`, `fingerSource`).
+- **The DP** (songs without anchors) no longer favours staying put over the index: each finger costs a little (0 / 0.03 / 0.1 / 0.2, index … pinky) and a shift at a gap of ≥ 0.2 s costs 0.4 (1 inside a fast run, ¼ at a rest of ≥ 0.45 s), so the index goes on the lowest fret of a passage.
+- *Square Hammer* lead, 1130 fretted notes, fingers 1/2/3/4: before 394/166/317/253 (the tab's chord shapes ignored too); with its hand positions and chord shapes now 574/132/366/58 (index 50.8 %, pinky 5.1 %); estimated with nothing from the song now 555/128/385/62 (index 49.1 %, pinky 5.5 %).
+- `Arrangement.anchors` (feedpak.ts `normAnchors`: optional, validated — fret 1–30, width 1–12 or 4 —, sorted; a multi-difficulty pack's hardest level's when the file has none of its own); Pitch → frets moves them with the notes (`transposeArrangement`; one pushed off the neck: none kept).
+- Tests: `tools/test-finger-trainer.mjs` 134 checks (+31: anchors with widths 4 / 5, below / beyond, in effect by time, a placeholder left out, the tab's finger wins, off ignores them, chord template fingers, `riffTargets` moving anchors with the range, the Square Hammer riff with and without anchors, `fingerSource`, anchors parsed / multi-difficulty / transposed, the real *Square Hammer* lead when `songs/` has it: index ≥ 45 %, pinky ≤ 10 %; expectations changed where the old behaviour was the bug: `from` *estimated* instead of *position*, and 7(2) 9(4) → 10 is now the middle finger in position 9, not the pinky); `tools/e2e-finger-trainer.mjs` 93 checks (+2: the setup line says *from the song's hand positions* on the demo's first section, *estimated* on its power chords at 5–7).
+
+### Added
+- **✋ Finger trainer → Keys: Both** (`fingerTrainer.ts` `LAYOUTS.both`, `fingerOfKeys`): F D S A and J K L ; at once, mirrored (index on F or on J), so either hand plays without switching; the keys row shows both sets (8 keys, one row at 390 px). The J K L ; set is labelled *index on J* (was *left-handed*).
+
 ## 0.81.0 — 2026-11-17
 
 ### Added (✋ Finger trainer: hear the song with a riff, F-104; branch `feature/finger-song`)
