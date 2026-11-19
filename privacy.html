@@ -41,7 +41,8 @@
     store that sells it (Polar or Lemon Squeezy). If you choose amp captures from TONE3000, you sign in on TONE3000's site
     and Tabloop downloads the captures you pick from it. If you play 🕹 Arcade online with a friend, the free PeerJS service
     introduces your two browsers (it sees both IP addresses), then only game moves, names and a fingerprint of the song go
-    directly between them. The hosted site sends anonymous usage counts,
+    directly between them — and the song file itself only if the host sends it and the friend accepts (straight to their
+    browser, not through any server). The hosted site sends anonymous usage counts,
     which you can turn off. Nothing is sold or shared for advertising.</p>
   </div>
 
@@ -163,8 +164,16 @@
     <li><b>What is sent to your friend</b>: the app's version, the name you type, a fingerprint of the song (a hash of its
     title and artist and of the chosen parts' notes — not the file, its name or where it is), the host's game settings
     (range, speed, loop, what you hear), clock-sync pings, start / pause / restart events, each note's result as you play
-    (right, wrong or missed, how early or late, your score and streak) and your final result. <b>Nothing else</b>: no
+    (right, wrong or missed, how early or late, your score and streak), your level and your final result — and, only if
+    the host sends it and you accept, the song file (below). <b>Nothing else</b>: no
     audio, no recordings, no other settings or practice history, nothing about your device.</li>
+    <li><b>Sending the song (only if you choose to)</b>: when your friend doesn't have the song, the host can press
+    <b>📤 Send the song</b>. The friend sees who wants to send what and how big it is, and accepts or says no thanks —
+    nothing is ever accepted by itself. <b>A song you send goes directly to your friend's browser, not through any
+    server</b> (not Tabloop's, not PeerJS's): over the same encrypted connection, in pieces, with a checksum (SHA-256) to
+    check it arrived intact. It's opened like any song file you open yourself and kept only for that session; your
+    friend can choose <b>💾 Keep a copy</b> (a normal download). Songs over 150 MB aren't sent. Only accept songs from
+    people you trust, and share only songs you're allowed to share.</li>
     <li>The code is a random invitation that works only while the host keeps the game open, and lets in one friend.</li>
     <li>Your online best is kept in this browser, like the rest of your practice history. Tabloop keeps no record of who
     played with whom, and nothing about it goes into the anonymous usage counts.</li>
