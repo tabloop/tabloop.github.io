@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.85.0 — 2026-11-19
+
+### Changed (✋ Finger trainer → 🕹 Arcade, F-106; branch `ui/arcade`)
+- **Renamed 🕹 Arcade**, with the line *Play songs on your keyboard — no guitar needed.*, still in **Train**: Train's tile (its name, the line under it, a new **arcade** joystick icon — `branding/ui-icons/arcade.svg`, the sprite regenerated — instead of the hand), the view's header (the icon, *Arcade*, the line, then a shorter honest note: finger independence, timing and fingering memory, not fretting strength; Help → `#arcade`), the welcome screen's Train card (**🕹 Arcade**), Train's title in the rail / modes / tab bar, the tour's group texts, the Mixer's section (*🕹 Arcade · its own sounds*, a part's *muted by the Arcade*), the results (*counts in 📈 Progress as Arcade*), 📈 Progress's category (**🕹 Arcade (without a guitar)**; its › says *Train → 🕹 Arcade*), a YouTube song's note, README.
+- **Songs first**: the material control is now **🎵 Songs** (was *Song riff*) then a small *Practice:* label and **🕷 Drills · 🎼 Scales** (`#ftMat`, the same segmented control). Songs is the default for a fresh setup (a saved choice stays as it was); with no song open it says so and points at Practice: Drills or Scales. The tile's last settings read *Songs · …* (was *Song riff · …*).
+- **Help**: the section is **🕹 Arcade** (`#arcade`); `#finger-trainer` stays as an empty anchor right before it, so old links (and the app's older copies) still land there; the contents link, Train, Progress and Keyboard shortcuts point at `#arcade`; *Song riff* → *Songs*, Drills and Scales under Practice.
+- **Nothing to migrate**: the internal names are unchanged — the settings key `feedpak.fingerTrainer`, the 📈 Progress category id `finger` (its exercises, bests and two-player bests; a record saved under the old name shows the new one: practiceView.ts `CATEGORY_NAME`), the analytics feature `finger-trainer`, the element ids and the file names — so your settings, scores and progress carry over.
+
+### Tests
+- `tools/e2e-finger-trainer.mjs`: the tile (*Arcade*, its line and icon, *Songs* by default), the header, the line, the material control *🎵 Songs | Practice: | 🕷 Drills | 🎼 Scales* with Songs chosen, Help → `#arcade`, Progress's *🕹 Arcade (without a guitar)*, *muted by the Arcade*; the 390 px run now picks Drills itself (Songs is the default, no song open there). `tools/e2e-ux-layout.mjs`: Train's tiles' names (*Scales, Ear training, Arcade*), the welcome card's *🕹 Arcade*. `tools/e2e-finger-2p.mjs`: labels only.
+
 ## 0.84.0 — 2026-11-18
 
 ### Added (✋ Finger trainer: two players on one keyboard, F-105; branch `feature/finger-2p`)
