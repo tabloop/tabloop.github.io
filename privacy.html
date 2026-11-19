@@ -27,7 +27,7 @@
 <main>
   <a class="brand" href="./"><img src="logo.png" alt="" width="40" height="40" />Tabloop</a>
   <h1>Privacy policy</h1>
-  <p class="dim">Last updated: 14 November 2026</p>
+  <p class="dim">Last updated: 19 November 2026</p>
 
   <p>Tabloop (<a href="https://tabloop.github.io/">tabloop.github.io</a>) is a free web app for practising music: it plays
   song packages (<code>.feedpak</code> files) with their tab, and lets you slow down, loop, record yourself and track your
@@ -39,7 +39,9 @@
     back them up to your own Google Drive or sync them through a folder you pick. If you open a YouTube video, it plays in
     YouTube's own player and Google's privacy policy applies to it. An optional premium license key is checked with the
     store that sells it (Polar or Lemon Squeezy). If you choose amp captures from TONE3000, you sign in on TONE3000's site
-    and Tabloop downloads the captures you pick from it. The hosted site sends anonymous usage counts,
+    and Tabloop downloads the captures you pick from it. If you play 🕹 Arcade online with a friend, the free PeerJS service
+    introduces your two browsers (it sees both IP addresses), then only game moves, names and a fingerprint of the song go
+    directly between them. The hosted site sends anonymous usage counts,
     which you can turn off. Nothing is sold or shared for advertising.</p>
   </div>
 
@@ -145,6 +147,27 @@
     <li>Nothing about it goes into the anonymous usage counts.</li>
     <li><b>Signed in to TONE3000 · Sign out</b> deletes the token from this browser; the captures you picked stay until you
     remove them. You can also remove Tabloop's access in your TONE3000 account.</li>
+  </ul>
+
+  <h2 id="arcade-online">🕹 Arcade online (optional)</h2>
+  <p>In <b>🕹 Arcade → Players: Online</b>, two people play the same song together, each on their own device. It only happens
+  when you press <b>Host</b> or <b>Join</b>:</p>
+  <ul>
+    <li><b>Connecting uses the free PeerJS service to introduce your two browsers; it sees both your IP addresses. After that,
+    your browsers talk directly. Only game moves, names and a fingerprint of the song are sent.</b> The PeerJS service
+    (<a href="https://peerjs.com/">peerjs.com</a>, its public server 0.peerjs.com) is run by the PeerJS project, not by
+    Tabloop, under its own terms; it sees the game's code and both browsers' IP addresses while it introduces them.</li>
+    <li>To find a direct way between the two of you, each browser also asks a public STUN server (Google's,
+    stun.l.google.com) for its own public address, so that server sees your IP address too. There is no relay server: the
+    game itself goes straight between the two browsers, encrypted (WebRTC).</li>
+    <li><b>What is sent to your friend</b>: the app's version, the name you type, a fingerprint of the song (a hash of its
+    title and artist and of the chosen parts' notes — not the file, its name or where it is), the host's game settings
+    (range, speed, loop, what you hear), clock-sync pings, start / pause / restart events, each note's result as you play
+    (right, wrong or missed, how early or late, your score and streak) and your final result. <b>Nothing else</b>: no
+    audio, no recordings, no other settings or practice history, nothing about your device.</li>
+    <li>The code is a random invitation that works only while the host keeps the game open, and lets in one friend.</li>
+    <li>Your online best is kept in this browser, like the rest of your practice history. Tabloop keeps no record of who
+    played with whom, and nothing about it goes into the anonymous usage counts.</li>
   </ul>
 
   <h2>Sync folder (optional)</h2>
