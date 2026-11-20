@@ -2,6 +2,18 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.91.0 — 2026-11-19
+
+### Added (🕹 Arcade on touch screens, F-119; branch `feature/arcade-touch`)
+- **Play by touch** on an iPad or a phone (`arcadeTouch.ts`): tap a lane of the highway near its hit line (±12 % of the highway's height, the band at least 64 px tall) or the button under it (finger numbers, drum pieces, the 4 pads; the ▦ Pad grid's pads). Each finger on its own (multitouch: a chord, a kick + snare), timed from the touch's own time like a key press, judged by the same path as the keys (`onFinger`); a lift is a release (`onFingerUp`, for F-118's hold / lift). The button lights as with a key, a dot shows where the finger landed (still with reduced motion). Lanes: Strings can't tell the finger: the buttons play there; the Kit's kick is its button.
+- **Touch first**: a coarse pointer and no hardware key pressed this session (a key outside a text field switches to keyboard mode). Then **Highway** is the default view (a view you choose is remembered and wins; Highway saved before counts as chosen), the hints say ▶ and tap instead of Space, and the note says how to play by touch — it replaces *this version needs a keyboard* (choosing your own keys still needs one).
+- **During a run** the play area doesn't scroll or zoom (`touch-action: none`, restored after); on one player the highway fits so the run bar's ▶ / ❚❚, the hit line and the buttons are in sight at once; the keys row's buttons are 44 px at least on a touch screen. Two players on one device: each highway and keys row is its own player's.
+- Help (*Playing on a touch screen*, `#arcade-touch`), README, BACKLOG F-119.
+
+### Tests (F-119)
+- `tools/e2e-arcade-touch.mjs` (new, 36 checks; touch emulation at 1024 × 768, 820 × 1180, 390 × 844): Highway by default, a choice kept, Lane on a computer; lane taps on time / early / late / wrong finger with scripted pointer times, a button tap, the band, nothing off it; two real fingers at once (CDP); no scroll on a drag during a run; a key → keyboard mode for the session; the Kit's kick + hi-hat + snare at once, the Pad grid's pads; two players on a phone, each touch to its side; screenshots.
+- `tools/e2e-finger-trainer.mjs`: the touch note instead of *needs a keyboard*.
+
 ## 0.90.0 — 2026-11-19
 
 ### Added (🕹 Arcade drums for songs without a drum chart, F-115; branch `feature/arcade-autodrums`)
