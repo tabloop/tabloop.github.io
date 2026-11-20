@@ -2,6 +2,26 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.89.0 — 2026-11-19
+
+### Added (🕹 Arcade drums on a 🎛 MIDI kit, F-114; branch `feature/arcade-midi`)
+- **Drums: 🥁 Kit · ▦ Pad grid · ▤ 4 pads · 🎛 MIDI kit**: a real e-kit (sticks and pedals) or a pad controller plays the Arcade's drums. The 🎛 MIDI kit button shows once a MIDI input is listened to (🥁 Live drums' kit, F-87); until then **🎛 Connect a MIDI kit** (`#ftMidiConnect`) opens 🎸 Tune & Input → Kit. Remembered as the Drums setting (`drums: "midi"`); chosen with no kit: *Connect your MIDI kit: 🎸 Tune & Input → Kit (or choose 🥁 Kit to play on the keys).*
+- **The kit's own input, not a copy** (`FingerHost.midi`, main.ts): `drumLiveView.ts` hands each hit to the Arcade while it's open (`setArcade`, `ArcadeTap`: note, velocity, the piece-id its **mapping** gives — preset, your notes, 🎯 Learn —, and its time: the Web MIDI event's `timeStamp` less the **kit offset**, `fingerTrainer.ts` `midiHitMs`); the Arcade maps it to the audio clock as heard like a key (`heardAt`). A hit the Arcade takes isn't judged by 🥁 Live drums too. The Arcade is told when the kit comes or goes and when its mapping or offset changes (the keys row follows).
+- **Judged like the Kit** (`onMidi`): `midiPiece` — every piece its own (cross-stick, splash, percussion as on the Pad grid; a right crash the crash unless the part has both), then folded as the level folds the part (`kitLevelPiece`: an open hi-hat is the hi-hat at Garage, the high tom the floor tom at Club…); what the level leaves out isn't judged, nor the hi-hat pedal keeping time when the part has no pedal hits; a pad's double trigger (the same pad within 25 ms, `isDoubleTrigger`) is one hit. Same kit-shaped highway (its lanes' first General MIDI notes under them), chords, levels, score, results by drum; bests per layout (`…|d:midi`).
+- **Velocity shown, not judged**: kept on the verdict (`Verdict.vel`; `judge.press(piece, τ, vel)`), the number in each hit on the highway (`KitFrame.vel`; above a narrow one), in the status line (*✓ Snare on time (+3 ms) · velocity 96*), a **Velocity** column (the average) in the results by drum, and a right hit sounds as loud as it was hit (Hear: My notes / Both; not when the Kit tab's 🔊 Sound already plays every hit).
+- **An unmapped pad**: *Unmapped pad: note 90 — map it in 🎸 Tune & Input → Kit (🥁 Mapping & learn)*, not judged, no extra. A hit before a run says what it plays (*🎛 Snare — note 38, velocity 77*).
+- **Keys**: **Space** and **Enter** ▶ / ❚❚ (the kick comes from the kit), **Esc** pauses a run, again back to Train; R / − / = as before; the keyboard's drum keys play nothing. The keys row: each drum the run plays with its notes (the kit's mapping, folded by the level). ⚙ Keys and options: *🎛 Open 🎸 Tune & Input → Kit* (the mapping is there). The kit unplugged during a run: paused, *Your MIDI kit is gone…*.
+- **Two players on one keyboard, one on the MIDI kit**: a drummer's box has **🎛 MIDI kit** (`two.midi`, once a kit is connected): they play the whole kit (the kit-shaped highway in their half), their side's four keys play nothing, the other player stays on their keys; their best kept apart (`…|midi`).
+- **Online**: `pick` `dl: "midi"` — the friend's small highway lays a MIDI drummer's hits on the kit-shaped lanes (*Drums (MIDI kit)*). **Protocol 3** (`PROTOCOL`): version 2 would refuse a "midi" pick, so it's told the versions differ.
+
+### Changed
+- On the Kit and the Pad grid, keys that aren't drum keys (A, S…) no longer play the 4 pads' pieces or a finger (they did by falling through to the online 4-pad keys).
+- The friend panel's part line shows the friend's current pick between runs (another layout picked shows at once), the run's during one.
+
+### Tests
+- `test-finger-trainer`: the GM, Roland and your own mapping → the Arcade's pieces (`midiPiece`), unmapped notes, the levels' folding, `kitNotes` on the MIDI kit, `midiHitMs` (the offset, no timestamp) then `heardAt`, double triggers, velocity on the verdicts (a key's: none). `test-arcade-online`: a `dl: "midi"` pick (not on a fretted part), protocol 3.
+- `e2e-arcade-midi` (new; the fake Web MIDI of `e2e-midi-drums`, hits sent with exact timestamps): no kit → Connect → Tune & Input → Kit; connected → 🎛 MIDI kit; the keys row's notes; every piece on its GM note judged (one late, one early), the chord, velocities on the verdicts and the highway, the ghost note, an unmapped pad, a double trigger, the results' Velocity column; a Learn remap followed; the kit offset +30 ms; Space / Enter / Esc; the Kit's keys silent; unplugged mid-run; Garage folding (46 → hi-hat, 44 not judged); two players (MIDI + Lead keys, J K L ; silent); 390 px. Screenshots `arcade-midi-{run,results,2p}-1440.png`, `arcade-midi-run-390.png`. `e2e-arcade-online`: a guest on the MIDI kit, judged, the host's panel on kit lanes (`arcade-online-midi-1440.png`). `e2e-arcade-drums`: the Drums choice counts the shown buttons.
+
 ## 0.88.0 — 2026-11-19
 
 ### Added (🕹 Arcade drums: 🥁 Kit, F-112, and ▦ Pad grid, F-113; branch `feature/arcade-drumkit`)
