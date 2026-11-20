@@ -2,6 +2,18 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.93.1 — 2026-11-20
+
+### Fixed (🕹 Arcade: the first note right after a run starts, B-25; branch `fix/b25-first-note`)
+- **Cause: the tests' timing, not the judge.** Right after an AudioContext starts (the first ▶ after the app opens, or a resume), Chrome's `getOutputTimestamp()` gives zeros for ~50–80 ms (`performanceTime` 0, then `contextTime` 0) while `currentTime` already runs ahead of the speakers and `outputLatency` still reads 0, so the fallback (current time less the latency) maps a moment ~70–100 ms off. A press is judged on the stamp read *at the press* (settled by then: the count-in is seconds long), so a player's first note is judged right; the e2e helpers worked out the first press's performance time with `perfOf(τ)` the instant the run started — on that unsettled mapping — and fired it ~70–100 ms early (seen −96 ms in `e2e-arcade-touch`; machine-dependent: slower after `coreaudiod` restarted, so 0.92.0's build failed too).
+- **Tests**: the scripted presses (keys, touch, pointer, typing helpers in `e2e-arcade-touch`, `e2e-finger-trainer`, `e2e-arcade-drums`, `e2e-arcade-autodrums`, `e2e-arcade-independence`, `e2e-finger-2p`, `e2e-arcade-typing`) now aim again at each step (`perfOf` read anew until the press, as the MIDI and online tests already did).
+- **App (online, small)**: an online start (`leadAt`: the shared moment → my context time) taken before the output clock settled is mapped again once it has, if nothing has played yet (`Run.reanchor`), so a fresh page's first online game isn't ~70 ms off the friend's. `fingerTrainer.ts` `stampOk` (a stamp counts once both times are there); `debug().clock` `{ settled, reanchor }` for tests.
+
+### Tests (B-25)
+- `tools/test-finger-trainer.mjs` (+2): `stampOk` on Chrome's first stamps; a stamp with `contextTime` 0 falls back.
+- `tools/e2e-arcade-touch.mjs` (+1): the first note after the count-in, tapped exactly then: dt 0 ms (± 5), then −85 / +85 as planned.
+- `tools/e2e-finger-trainer.mjs` (+1): keys on a fresh page (its audio context starting with the run), the press aimed the instant the run starts: the first note on time (± 5 ms).
+
 ## 0.93.0 — 2026-11-20
 
 ### Changed (🕹 Arcade typing: whole words, no rush, F-121; branch `feature/typing-words`)
