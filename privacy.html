@@ -69,13 +69,20 @@
   </ul>
   <p>You can export, import or delete your settings in <b>⚙ Settings</b>, and remove everything by clearing this site's data
   in your browser.</p>
+  <p><b>Keeping this data:</b> when you save something worth keeping (a take, a capture, a library or sync folder, a backup
+  setting), or click <b>⚙ Settings → 🔄 Sync &amp; backup → Keep my data on this device</b>, Tabloop asks your browser to keep
+  this site's storage rather than clear it when space runs low (some browsers, such as Firefox, ask you first). The
+  answer and how much space Tabloop uses are shown there; nothing about it is sent anywhere.</p>
 
   <h2>Google Drive backup (optional)</h2>
   <p>If you choose <b>⚙ Settings → Google Drive → Connect</b>, Tabloop asks Google for permission to use its own hidden app
   folder in your Google Drive (the <code>drive.appdata</code> permission). This is the only Google permission Tabloop asks for.</p>
   <table>
     <tr><th>What Tabloop accesses</th><td>Only a private folder in your Drive that only Tabloop can see. It <b>cannot</b> see, read or
-    change any of your other Drive files, and it does not access your email, contacts or profile.</td></tr>
+    change any of your other Drive files, and it does not access your contacts or profile. It reads one thing about your
+    account, once, through the same permission: its email address, only so it can tell Google which account to sign in
+    again (so Google doesn't ask you to choose one). That address stays in this browser: it is never put in the backup,
+    exports or folder sync, never sent anywhere but Google, and is forgotten when you click <b>Disconnect</b>.</td></tr>
     <tr><th>What it stores there</th><td>One backup file with your Tabloop settings and practice history (the same information as
     <i>Export settings</i>), plus what's needed to merge backups from several browsers: when each setting and saved loop last
     changed, and for each browser that backs up a random identifier, a name such as “Chrome on macOS” (browser and
@@ -86,7 +93,9 @@
     browsers in step: when Tabloop starts while signed in, it compares this browser with the backup.</td></tr>
     <tr><th>Who can see it</th><td>Only you, through your Google account. The backup goes directly from your browser to Google;
     it does not pass through any Tabloop server (there is none), and Tabloop's developers never receive it.</td></tr>
-    <tr><th>How long</th><td>Until you delete it. The sign-in token lasts about an hour and is kept only in that browser tab.</td></tr>
+    <tr><th>How long</th><td>Until you delete it. The sign-in token lasts about an hour and is kept only in that browser tab
+    (never in the backup, exports, folder sync or logs). Tabloop opens Google's sign-in window only when you click or press a
+    key: to renew the sign-in near its end, or from <b>Reconnect</b>.</td></tr>
     <tr><th>How to remove it</th><td>Click <b>Disconnect</b> in Tabloop's Settings. To delete the backup, open
     <a href="https://drive.google.com/drive/settings">Google Drive → Settings → Manage apps</a>, find Tabloop and choose
     <i>Delete hidden app data</i>. To revoke Tabloop's access, go to
