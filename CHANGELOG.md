@@ -2,6 +2,19 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.96.1 — 2026-11-22
+
+### Added (🎤 Voice: the cues, F-124; branch `ui/voice-cues`)
+- **🔊 Reference: On / Off** and **👁 Show the note: On / Off** in 🎯 Find your range, 🔥 Warm-ups and 🎧 Pitch matching: two switches (`aria-pressed`) under each part's heading (idle and while it runs) and per part in the setup (*Help while you sing*). Remembered **per part** in `feedpak.voice`, now `v: 2` with `cues: { range, warm, match: { ref, show } }`; a v 1 value (or a missing / bad cue) migrates to both on, i.e. as 0.96.0 behaved.
+- **🔊 Reference Off**: warm-ups play nothing before a step — a two-beat count-in (the metronome's clicks if on) and you sing from the shown notes or from memory; one-note matching plays nothing (*🔊 Play the note* is still there to ask for it); **intervals still play the base note** (there'd be nothing to sing above), only *💡 Hear the answer* goes. A 🔊 change applies from the next step / note; asking for the note (*🔊 Play the note*, *💡 Hear the answer*) counts as a reference on that answer.
+- **👁 Show the note Off** (sing by ear): no note name in the prompt or step line, no target bars / glide line on the pitch trail (`voiceTrail.ts` `hideTarget`: the voice at its own pitch in `--text`, not coloured by grade, so nothing gives the note away), no *from A3* in the live readout. After each warm-up step the target and your result are **revealed** for 1.8 s (*That was on A3*, the bars and the graded line), and a matched note is revealed with its verdict. Applies at once.
+- 🎯 Find your range has only 👁 (it plays no guide tone): Off hides your live note's name — the *so far* notes, the readout and the trail's note names — until the result.
+- **Results say which cues were on** (*🔊 reference played · 👁 note shown*, *🔇 no reference*, *🙈 note hidden*); both off: a **👂 By ear** badge (Playful: the 🏅 sticker, *By ear — no help at all!*, and 🏅 for good by-ear answers in This session's stickers), *n by ear* in This session and Progress (`c.byear` on warm-up steps and matched notes). Scoring is unchanged. The 🎵 Drone stays its own switch.
+
+### Tests
+- `tools/test-voice.mjs`: the settings v 2 — defaults, v 1 → v 2 (style and range kept, every cue on), saved back as v 2, per-part cues kept, only `false` turns a cue off, bad / unknown parts, `byEar`, fresh defaults.
+- `tools/e2e-voice.mjs` part 5: a v 1 value → every cue on; the switches (pressed state, focus kept, stored per part); Reference Off → no synth trigger before the steps (the trigger log) and a two-beat count-in, scored as before; Show Off → no target drawn (trail debug), no name, revealed after the step, hidden again for the next; both off → By ear (Studio badge, Playful 🏅 sticker), counted in Progress; remembered after a reload; matching: Reference Off plays nothing, Show Off hides the name / line / *from*, revealed when judged, intervals with Reference Off still play the base, no hint; Find your range with 👁 Off: no live note names; the setup's 5 switches; 1440 and 390 px in both styles (`test-packs/voice-cues-*.png`).
+
 ## 0.96.0 — 2026-11-21
 
 ### Added (🎤 Voice: a vocal trainer, F-124 part A; branch `feature/voice`)
