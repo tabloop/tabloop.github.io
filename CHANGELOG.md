@@ -2,6 +2,19 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.96.3 — 2026-11-22
+
+### Added (⌨ Arcade → Typing: a seek bar and ⏪ / ⏩ in the run bar; branch `ui/typing-seek`)
+- Typing's run bar has the Arcade's **where-box** (`.ft-posbox`, `.ft-pos`): the position (*0:12.4*; ⟲ Loop On: *⟲ 2 · 0:12.4*) and a **seek bar** (`#tpSeek`, a range input over the run's range: the whole song, a section or a loop; `aria-valuetext` *1:23 of 3:40*, with *, time 2* on a later loop pass) — plus **⏪ A line back** / **⏩ A line on** buttons (`#tpLineBack` / `#tpLineFwd`, the bar-back / bar-forward icons). Buttons and the pointer only: every key types during a run.
+- A seek (typingGame.ts `judge.seek`): counted in from there (the song plays from there with Hear the song; the own clock's get-ready moment when silent); the words from there on **fresh** (a half-typed word from its start); everything judged so far **stays in the results** (as the Arcade's seek and a ⟲ Loop pass: a word typed again is a new result); a word before it not judged yet is **passed over** (`kind: "skip", passed: true`, not judged, not missed; `stats.passed`). Its turn and speed bonus start from the new start (no turn carried over). Held inside the range; works with Loop On / Off, Speed, a range and Hear. **Paused**: it moves there and stays paused (the lane shows the words there); ▶ counts in from exactly there.
+- ⏪ / ⏩ by **lyric line** (`lineStarts` / `lineStep`: the lines with a word to type at the level, from the line's first word): ⏩ the next line after the word being typed; ⏪ the start of its line when a word of it was already in play, else the line before (the first line: its start). Off when there's nowhere to go.
+- A pause during a count-in now goes on from where it was going to start (not a moment before it).
+- Phone held upright (F-120): folded, the where-box goes as the Arcade's; **▾ More** shows ⏪ · where · the seek bar · ⏩ on a row of their own (Typing keeps its seek bar at ≤ 600 px, where the Arcade hides its own: it has no keys to move with). Desktop: the transport and the where-box on the first row, Loop · range · level · Hear · Mixer on the second.
+
+### Tests
+- `tools/test-typing.mjs`: `lineStarts` (lines without a word to type left out), `lineStep` both ways (into a line, a line's start, the last line, none left, no words), `judge.seek` on and back (fresh / passed counts, the results and score kept, passed words not missed, a half-typed word reset, a word typed again counted again, its turn from the new start), `sumStats` with `passed` (96 checks).
+- `tools/e2e-arcade-typing.mjs`: the seek bar and ⏪ / ⏩ off before a run, labelled, the Arcade's classes; by click: ⏩ (a line on, counted in, the word passed over not counted, the focus back on the lane), the seek bar at ~20 s, ⏪ (the line before: the word fresh again, the results and score kept, typed again: a third right word); paused: the seek bar moves there, still paused, ▶ counts in from there; Finish counts every word; with the song: its clock and the player follow the seek and ⏪; ⟲ Loop On (*⟲ 2 ·*, aria-valuetext); a section (the bar over it, a seek past its end held inside); 390 px: folded away, ▾ More → its own row, ⏩ by tap; `test-packs/arcade-typing-seek-{1440,390}.png` (97 checks).
+
 ## 0.96.2 — 2026-11-22
 
 ### Fixed
