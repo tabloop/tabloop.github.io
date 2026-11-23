@@ -2,6 +2,11 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.96.2 — 2026-11-22
+
+### Fixed
+- 🕹 Typing: an apostrophe typed on a keyboard layout with dead keys (US International, Portuguese / Brazilian ABNT, …) wasn't taken — the browser reports such a key as *Dead*, not its character — so words like *it's* couldn't be typed. A dead key now types its own character by where it is (`typingGame.ts` `deadKey`: ' " ` ~ ^ ´), and a composed pair (*'s*) types both. `tools/test-typing.mjs` (+5).
+
 ## 0.96.1 — 2026-11-22
 
 ### Added (🎤 Voice: the cues, F-124; branch `ui/voice-cues`)
