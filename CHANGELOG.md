@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.98.1 — 2026-11-24
+
+### Added (🎧 Ear training: hold the reference; branch `ui/ear-drone`)
+- **🎵 Hold the reference** (`earView.ts`): a switch (a button with `aria-pressed`) in the question row, beside *Second note*, and at the bottom of ⚙ Settings with a **Level** slider (0.1–1, default 0.6). On, the question's reference note keeps sounding softly as a drone: it starts with the reference, goes on through the second note, the answer and the feedback, until the next question's reference replaces it (a ~50 ms crossfade; the same note just carries on); it fades out when the round is over, when it's switched off and when Ear training is closed (Esc / ‹ Train). Replays (🔁, Reference, Second note, ▶ The right one, ▶ Yours) play over it. The questions, their timing and the scoring are unchanged (the drone is its own voice: `stopSound` never touches it). With 🎤 Answer by playing it on, it only sounds with the question's (or a replay's) notes and fades as they end, before the input listens.
+- Stored in `feedpak.earTraining` beside the settings (`hold`, `holdLevel`), so it syncs and exports with them; not a ⭐ premium setting (the free tier can use it; it sits outside the greyed settings).
+- **Shared drone** (`drone.ts`, new): Voice's 🎵 Drone tone (`renderDrone`, moved from `voiceView.ts`) and a small player (`createDrone`: set a note from a given time with a crossfade, a level, fade out; a debug view of the note, level and voices still sounding). Voice's drone uses it too (unchanged: the root an octave down from C3).
+- Help → Ear training: *🎵 Hold the reference*.
+
+### Tests
+- `tools/e2e-ear-training.mjs` (+25, 107): off by default (no drone); the switch in ⚙ Settings with its level; turned on mid-question → a drone on the reference, both switches pressed, stored; still sounding 1.5 s after the answer; 🔁 Replay keeps it; the next question → the drone on its reference, the old one gone after the crossfade, the drone's log; the question's notes unchanged; round over → faded; a new round → again; the level slider; closing → stops, reopening → none until a question; ⚙ Settings' switch off → fades, none on the next question; answering by playing → only with the notes; remembered (with its level) after a reload; phone: tap on / off, within the width; `test-packs/ear-hold-1440.png`, `ear-hold-390.png`.
+
 ## 0.98.0 — 2026-11-23
 
 ### Added (🗺 Explore: time on every card, and stars that sync; branch `ui/explore-time`)
