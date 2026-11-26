@@ -2,6 +2,19 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.101.0 — 2026-11-25
+
+### Changed (🎨 own icons for the newer features still on emoji, F-129; branch `ui/more-icons`)
+- **14 new icons in the A · Line set** (`branding/ui-icons/*.svg`, 24×24, stroke 1.75, round caps and joins, currentColor; `tools/make-ui-icons.mjs` → `uiIconSprite.ts`): `explore` (a folded map: 🗺 Explore Tabloop, its title, Home's button, the tour's offer, the festival's 🗺 Map toggle, *🗺 Explore's stars* in the sync texts), `key-map` (a neck with its nut, two frets and the key's notes: 🗺 Key map in Train → Scales, its dialog, Play along's card `#paKeyMap`), `festival` (a big top), `bus` (a tour bus), `skill-tree` (three nodes branching from a root) for Explore's tabs 🎪 Festival · 🚌 Tour · 🎮 Skill tree (and the skill tree's 🎮 Tree toggle and heading), `independence` (four keys, one lifted: ✋ Independence in the Arcade), `notes` (a page and a pencil: 📝 My notes, the 📝 Note kind), `climb` (a mountain and its flag: 🧗 Struggling with), `reminder` (an alarm clock: ⏰ Reminder, a reminder's day, *⏰ n due*), `pin` (a push pin: 📌 pins the Sections beside the tab), `trophy` (🏆 the Arcade's winner and *wins*, 🏆 Best Live pass in 📊 This song), `two-players` (🤝 a draw), `send` (📤 Send the song).
+- **Tokens, not new labels** (`icons.ts` TOKENS): the sources keep writing their emoji; `🗺` is `explore` before *Explore* / *Map*, else `key-map` (the Play card's `🗺 <span>key</span>`). The emoji stay in `textContent` (hidden `.ic-t`), so labels read back, the tests' text checks, the usage counts and the sync/Drive conflict texts (`driveMerge.ts` *📝 Note “…”*, a note's kind icon) are unchanged; titles, `aria-label`s and `<option>`s drop the token as before.
+- 🗺 Explore: its tabs and title were `data-noic` (only 📖 and 🎛 had icons, so they stayed all emoji); now every tab has its own icon and `data-noic` is gone there (the stars' legend keeps it). Booth / card icons: *Key map* → `key-map` (was `chord-diagram`), *Independence* → `independence` (was `finger-trainer`), *📝 My notes* → `notes` (was `rename`), *Two players* → `two-players` (was `arcade`).
+- `waiting` (an hourglass): the Arcade's ⏳ while the friend's online result is on its way (now 151 icons).
+- Help: `tools/make-help.mjs` adds a **📝 My notes** shot (`publish/help/img/notes.png`, a note of each kind, typed as a user would; in Help under *📝 My notes*); the help screenshots retaken where the app changed — `practice.png` (the My notes card), `welcome.png` (🗺 Explore's icon, the version), `train.png`, `playing.png`, `page-view.png`, `speed-mixer.png`, `tracks.png` (🗺 Key map's icon); the others kept (only test-input timing, dates and codes differed).
+- Left on emoji: the feedback glyphs of the earlier sets; Voice's Playful emoji, the music signs (♭ ♯ ♮ ♪ ♫), the Help pages and What's new (F-117's decision); emoji in comments.
+
+### Tests (F-129)
+- `tools/e2e-explore.mjs`: the five tabs, the title, the Map toggle and Home's button in their icons; 🗺 Key map (Train, Play's card) gets `key-map`. `tools/e2e-progress-notes.mjs`: the card's and the kinds' icons, the emoji kept in the text. `tools/e2e-finger-trainer.mjs`: ✋ Independence and 📤 Send the song. `tools/e2e-finger-2p.mjs`: 🏆 on the winner, 🤝 on a draw. `tools/e2e-sidebar.mjs`: 📌. `tools/e2e-arcade-online.mjs`: the winner line's icon, ⏳ in the hourglass.
+
 ## 0.100.0 — 2026-11-25
 
 ### Added (📝 My notes in Progress, F-128; branch `ui/progress-notes`)
