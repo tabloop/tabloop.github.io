@@ -2,6 +2,17 @@
 
 All notable changes to Tabloop (called Feedpak Player up to 0.9.1), newest first. Each version is published to https://tabloop.github.io/ (also downloadable as a single `index.html`).
 
+## 0.105.0 — 2026-11-26
+
+### Fixed (🥁 a MIDI drum kit not judged by 👂 Live / 👻 ghost notes on the song's drum part, B-28; branch `fix/drum-ghost`)
+- **Root cause:** two separate judges, two switches. 👂 Live (`liveView.ts` / `liveGhost.ts`, what users know as ghost notes) only judges the audio input against the fretted parts shown (`expectedNotes()`: `isFrettedPart` tracks); the MIDI kit is judged only by 🥁 Live drums (`drumLiveView.ts` / `drumJudge.ts`), whose own switch (`tabloopLive.drums`, the 🥁 Drums transport button) is off unless pressed. Picking the song's drum tab (`showDrums(key, true)`: `selected = []`) with 👂 Live on left 👂 Live with no notes and nothing listening to the kit; Tune & Input → Kit's pads lit (the kit, mapping and MIDI timing were fine), so it looked like Ghost ignored the kit.
+- **Fix** (`drumJudge.ts` `drumJudging`, pure): the kit is judged when 🥁 is pressed on (`chosen`, remembered as before) **or** it follows 👂 Live — Live on, a drum part shown (`drumsVisible && drumLane`), a kit connected, a song open — unless 🥁 was pressed off while following (`muted`, for this song; cleared on the next song). `drumLiveView.ts`: host `liveOn()` / `drumsShown()`, `isOn()` replaces `on` for hits, the clock sampling, the box, the ghost layer and 📊 This song; a change of following (Live pressed, a part shown / hidden, the kit connected) resets the judge and renders (25 ms timer); the 🥁 button pressed / its title says *with 👂 Live*. `main.ts` `autoLive`: a song opened on its drum part with a kit connected also turns 👂 Live on (⚙ Settings → Turn on 👂 Live when a song opens). `liveView.ts`: host `drums()` — with no tab notes shown and a drum part shown, the 👂 Live box's label says *drums: scored in the 🥁 box*, *drums: connect your MIDI kit in 🎸 Tune & Input → Kit*, *drums: plug in your MIDI kit* or *drums: off for this song (press 🥁)* (re-rendered when that changes).
+- Timing unchanged: MIDI timestamps → the context clock (median map), less the output latency and the kit offset (⏱ Calibrate kit); the audio input's latency / device nudge don't apply to the kit.
+
+### Tests (B-28)
+- `tools/test-drum-judge.mjs` (+5): `drumJudging` — follows 👂 Live with a drum part and a kit; any condition missing → off; muted → off; chosen wins.
+- `tools/e2e-drum-ghost.mjs` (new): the fake Web MIDI kit, the Drums tab picked alone, 👂 Live on (test input), 🥁 never pressed → judged, the 🥁 button pressed with its reason, 👂 Live's box points at the 🥁 box; loop passes 0/16, 16/16, 13/16 (30 ms late, wrong pad, missed, extra; ⚖ Strict); ghost marks on the drum lane, in 🎯 Markers style too; 📊 This song's best 16/16; verdicts without a loop (hit, late +30 ms, wrong pad, missed, one extra) and the box's breakdown; a +25 ms kit offset → hits 25 ms late on time; no kit → *connect your MIDI kit*; 👂 Live off / on → follows; 🥁 pressed while following → off for this song (hits not judged), on (chosen), off; the next song follows again; guitar picked → no drum judging, no drum note in 👂 Live's box.
+
 ## 0.104.0 — 2026-11-26
 
 ### Fixed (☁ Google Drive asks less, B-27; branch `fix/drive-quiet`)
